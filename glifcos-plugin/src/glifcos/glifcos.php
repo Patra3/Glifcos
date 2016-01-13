@@ -32,6 +32,11 @@ class glifcos extends PluginBase implements Listener {
             mkdir($this->getDataFolder());
             $this->saveDefaultConfig();
         }
+        $res = $this->runServerCheck();
+        if (!$res){
+            $this->getLogger()->warning("Glifcos could not verify the server. Please check your info in the config file.");
+            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Glifcos-p"));
+        }
     }
     private function runServerCheck(){
         $domain = $this->getConfig()->get("glifcos-domain");

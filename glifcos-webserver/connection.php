@@ -25,6 +25,15 @@ if (isset($_GET["type"])){
         // apple = active, grape = error.
         echo "apple";
     }
+    elseif ($_GET["type"] === "grudgesync"){
+        $data = json_decode($_GET["grudge"], true);
+        if (is_file("grudge.json")){
+            unlink("grudge.json");
+        }
+        $handle = fopen("grudge.json", "w+");
+        fwrite($handle, $data);
+        fclose($handle);
+    }
 }
 else{
     die("Invalid connection.");

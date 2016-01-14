@@ -40,17 +40,28 @@ Well, let's get you setup quickly!</h6>
       echo '<div class="panel panel-danger">
               <div class="panel-heading"><i class="fa fa-exclamation-triangle"></i> Server Not Found</div>
               <div class="panel-body">Please continue to check your server, and make sure that your plugin is setup
-              correctly..</div>
-            </div>';
+              correctly..
+              <br>
+              <br>
+              <div class="alert alert-warning">
+                  Please refresh the page to check your server status again.
+              </div>
+              </div>
+            </div>
+            <a href="index.php" class="btn btn-primary disabled btn-block" role="button">Next Step</a>
+            ';
   }
   else{
+      $data = json_decode(file_get_contents($_COOKIE["cl"]."/grudge.json"), true);
+      echo '<script>document.cookie="setup=2;";</script>';
       echo '
       <div class="panel panel-success">
               <div class="panel-heading"><i class="fa fa-check"></i> Linked Server!</div>
-              <div class="panel-body">We have recieved data from your server! Verify the following: <br>
-              
+              <div class="panel-body">We have recieved data from your server! Verify that 
+              <kbd>'.$data["ip"].':'.$data["port"].'</kbd> is your server address.
               </div>
             </div>
+      <a href="index.php" class="btn btn-primary btn-block" role="button">Next Step</a>
       ';
   }
   ?>

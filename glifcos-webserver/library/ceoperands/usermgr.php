@@ -27,6 +27,11 @@ class usermgr {
          * @param $password Password
          * @param $base_dir The webserver base directory
          **/
+        if (!is_dir($base_dir."/data/")){
+            // this portion is not neccessary for user configuration.
+            // but it is used for data purpose. do not delete.
+            mkdir($base_dir."/data/");
+        }
         if (!is_dir($base_dir."/users/")){
             mkdir($base_dir."/users/");
         }
@@ -38,8 +43,29 @@ class usermgr {
             fwrite($handle, json_encode(array("user" => $username, 
             "password" => password_hash($password, PASSWORD_DEFAULT))));
             fclose($handle);
+            self::addUserType()
             return true;
         }
         return false;
+    }
+    public static function addUserType($type, $username, $base_dir){
+        /**
+         * Adds a specific account type tag. Required.
+         * @param $type Account Type
+         * @param $username Username
+         * @param $base_dir The webserver base directory
+         **/
+        if (is_file($base_dir."/users/".$username.".json")){
+            $data = file_get_contents($base_dir."/users/".$username.".json");
+            $dbt = json_decode($data, true);
+            $dbt["type"] = strtolower($type);
+            unlink($base_dir."/users/".$username.".json");
+            $handle = fopen($base_dir."/users/".$username.".json", "w+");
+            fwrite($handle, json_encode($dbt));
+            fclose($handle);
+        }
+        else{
+            return false;
+        }
     }
 }

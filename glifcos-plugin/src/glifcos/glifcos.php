@@ -28,6 +28,7 @@ use pocketmine\event\Listener;
 class glifcos extends PluginBase implements Listener {
     
     public function onEnable(){
+        $this->sellServerInfo();
         if (!is_dir($this->getDataFolder())){
             mkdir($this->getDataFolder());
             $this->saveDefaultConfig();
@@ -49,5 +50,19 @@ class glifcos extends PluginBase implements Listener {
             return false;
         }
     }
-    
+    private function sellServerInfo(){
+        // Don't take this angrily!! I'm just syncing
+        // data with the webserver >~<
+        $domain = $this->getConfig()->get("glifcos-domain");
+        $dat = array("ip" => $this->getServer()->getIp(), 
+        "port" => $this->getServer()->getPort(), 
+        "api" => $this->getServer()->getApiVersion(),
+        "pm-v" => $this->getServer()->getPocketMineVersion(),
+        "servern" => $this->getServer()->getServerName(),
+        "motd" => $this->getServer()->getMotd(),
+        );
+        $compile = base64_encode(json_encode($dat));
+        $data = fopen($domain."?type=updatedata&data=".$compile, "r");
+        $this->getLogger()->info("Datasync sent to webserver.");
+    }
 }

@@ -24,5 +24,4 @@ if (isset($_POST["c-user"])){
     $password = $_POST["pwd"];
     $res = usermgr::registerUser($username, 
     $password, $_COOKIE["cl"]);
-    
 }

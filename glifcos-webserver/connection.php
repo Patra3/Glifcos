@@ -18,7 +18,9 @@ THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
     \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
      \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
 */
-
+if (!is_dir("data/")){
+    mkdir("data/");
+}
 if (isset($_GET["type"])){
     if ($_GET["type"] === "ping"){
         // send either "apple" or "grape"
@@ -32,6 +34,17 @@ if (isset($_GET["type"])){
         }
         $handle = fopen("grudge.json", "w+");
         fwrite($handle, $data);
+        fclose($handle);
+    }
+    elseif ($_GET["type"] === "updatedata"){
+        $arrayt = $_GET["data"];
+        $arrayt = base64_decode($arrayt);
+        $arrayt = json_decode($arrayt, true);
+        if (is_file("data/serverdata.json")){
+            unlink("data/serverdata.json");
+        }
+        $handle = fopen("data/serverdata.json", "w+");
+        fwrite($handle, json_encode($arrayt));
         fclose($handle);
     }
 }

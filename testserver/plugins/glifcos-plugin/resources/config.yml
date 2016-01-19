@@ -1,0 +1,4 @@
+#Glifcos plugin configuration.
+
+#Your directory to your glifcos webserver.
+glifcos-domain: www.domain.com/path/to/your/glifcos/webserver/directory/connection.php

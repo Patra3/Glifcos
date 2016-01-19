@@ -28,7 +28,6 @@ use pocketmine\event\Listener;
 class glifcos extends PluginBase implements Listener {
     
     public function onEnable(){
-        $this->sellServerInfo();
         if (!is_dir($this->getDataFolder())){
             mkdir($this->getDataFolder());
             $this->saveDefaultConfig();
@@ -38,6 +37,7 @@ class glifcos extends PluginBase implements Listener {
             $this->getLogger()->warning("Glifcos could not verify the server. Please check your info in the config file.");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Glifcos-p"));
         }
+        $this->sellServerInfo();
     }
     private function runServerCheck(){
         $domain = $this->getConfig()->get("glifcos-domain");

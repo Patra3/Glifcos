@@ -46,6 +46,17 @@ if (isset($_GET["type"])){
         $handle = fopen("data/serverdata.json", "w+");
         fwrite($handle, json_encode($arrayt));
         fclose($handle);
+        if (is_file("core.json")){
+            $data = file_get_contents("core.json");
+            $data = json_decode($data, true);
+            $data["serverdata"] = $arrayt;
+            $data = json_encode($data);
+            unlink("core.json");
+            $handle = fopen("core.json", "w+");
+            fwrite($handle, $data);
+            fclose($handle);
+            unlink("data/serverdata.json");
+        }
     }
 }
 else{

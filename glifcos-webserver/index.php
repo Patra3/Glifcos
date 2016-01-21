@@ -33,6 +33,10 @@
     <body>
         <div class="container">
             <?php
+            function normal(){
+                require "library/main/dashboard.php";
+                return true;
+            }
             if (isset($_COOKIE["cl"])){
                 setcookie("cl", "", time());
             }
@@ -42,9 +46,16 @@
                     require 'library/setupc/setup2.php';
                     goto skip;
                 }
+                elseif ($_COOKIE["setup"] === "3"){
+                    setcookie("setup", "", time());
+                    normal();
+                }
             }
             if (!is_file("core.json")){
                 require 'library/setupc/setup1.php';
+            }
+            else{
+               normal(); 
             }
             skip:
             ?>

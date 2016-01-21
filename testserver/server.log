@@ -1,0 +1,580 @@
+2016-01-20 19:50:42 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:50:42 [INFO] Loading pocketmine.yml...
+2016-01-20 19:50:42 [INFO] Loading server properties...
+2016-01-20 19:50:42 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:50:42 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:50:42 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:50:42 [NOTICE] Level "world" not found
+2016-01-20 19:50:42 [INFO] Preparing level "world"
+2016-01-20 19:50:42 [NOTICE] Spawn terrain for level "world" is being generated in the background
+2016-01-20 19:50:42 [INFO] Starting GS4 status listener
+2016-01-20 19:50:42 [INFO] Setting query port to 19142
+2016-01-20 19:50:42 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:50:42 [INFO] Default game type: SURVIVAL
+2016-01-20 19:50:42 [INFO] Done (33.495s)! For help, type "help" or "?"
+2016-01-20 19:51:12 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:51:12 [INFO] Unloading level "world"
+2016-01-20 19:51:12 [INFO] Stopping other threads
+2016-01-20 19:51:15 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:51:15 [INFO] Loading pocketmine.yml...
+2016-01-20 19:51:15 [INFO] Loading server properties...
+2016-01-20 19:51:15 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:51:15 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:51:15 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:51:15 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:51:15 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:51:15 [ERROR] Could not load plugin 'Glifcos-p': API version not compatible
+2016-01-20 19:51:15 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:51:15 [INFO] Preparing level "world"
+2016-01-20 19:51:15 [INFO] Starting GS4 status listener
+2016-01-20 19:51:15 [INFO] Setting query port to 19142
+2016-01-20 19:51:15 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:51:15 [INFO] Default game type: SURVIVAL
+2016-01-20 19:51:15 [INFO] Done (0.397s)! For help, type "help" or "?"
+2016-01-20 19:51:19 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:51:19 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:51:19 [INFO] Unloading level "world"
+2016-01-20 19:51:19 [INFO] Stopping other threads
+2016-01-20 19:56:53 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:56:53 [INFO] Loading pocketmine.yml...
+2016-01-20 19:56:53 [INFO] Loading server properties...
+2016-01-20 19:56:53 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:56:53 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:56:53 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:56:53 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:56:53 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:56:53 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:56:53 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:56:53 [INFO] Preparing level "world"
+2016-01-20 19:56:53 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:56:53 [WARNING] RuntimeException: "fopen(www.domain.com/path/to/your/glifcos/webserver/directory/connection.php?type=ping): failed to open stream: No such file or directory" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:56:53 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:56:54 [INFO] Starting GS4 status listener
+2016-01-20 19:56:54 [INFO] Setting query port to 19142
+2016-01-20 19:56:54 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:56:54 [INFO] Default game type: SURVIVAL
+2016-01-20 19:56:54 [INFO] Done (0.581s)! For help, type "help" or "?"
+2016-01-20 19:56:57 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:56:57 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:56:57 [INFO] Unloading level "world"
+2016-01-20 19:56:57 [INFO] Stopping other threads
+2016-01-20 19:57:45 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:57:45 [INFO] Loading pocketmine.yml...
+2016-01-20 19:57:45 [INFO] Loading server properties...
+2016-01-20 19:57:45 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:57:45 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:57:45 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:57:45 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:57:45 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:57:45 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:57:45 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:57:45 [INFO] Preparing level "world"
+2016-01-20 19:57:45 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:57:45 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:57:45 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:57:45 [INFO] Starting GS4 status listener
+2016-01-20 19:57:45 [INFO] Setting query port to 19142
+2016-01-20 19:57:45 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:57:45 [INFO] Default game type: SURVIVAL
+2016-01-20 19:57:45 [INFO] Done (0.399s)! For help, type "help" or "?"
+2016-01-20 19:57:47 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:57:47 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:57:47 [INFO] Unloading level "world"
+2016-01-20 19:57:47 [INFO] Stopping other threads
+2016-01-20 19:57:51 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:57:51 [INFO] Loading pocketmine.yml...
+2016-01-20 19:57:51 [INFO] Loading server properties...
+2016-01-20 19:57:51 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:57:51 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:57:51 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:57:51 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:57:51 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:57:51 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:57:51 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:57:51 [INFO] Preparing level "world"
+2016-01-20 19:57:51 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:57:51 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:57:51 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:57:51 [INFO] Starting GS4 status listener
+2016-01-20 19:57:51 [INFO] Setting query port to 19142
+2016-01-20 19:57:51 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:57:51 [INFO] Default game type: SURVIVAL
+2016-01-20 19:57:51 [INFO] Done (0.479s)! For help, type "help" or "?"
+2016-01-20 19:57:53 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:57:53 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:57:53 [INFO] Unloading level "world"
+2016-01-20 19:57:53 [INFO] Stopping other threads
+2016-01-20 19:58:00 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:58:00 [INFO] Loading pocketmine.yml...
+2016-01-20 19:58:00 [INFO] Loading server properties...
+2016-01-20 19:58:00 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:58:00 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:58:00 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:58:01 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:58:01 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:58:01 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:58:01 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:58:01 [INFO] Preparing level "world"
+2016-01-20 19:58:01 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:58:01 [WARNING] RuntimeException: "file_get_contents(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 60
+2016-01-20 19:58:01 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:58:01 [INFO] Starting GS4 status listener
+2016-01-20 19:58:01 [INFO] Setting query port to 19142
+2016-01-20 19:58:01 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:58:01 [INFO] Default game type: SURVIVAL
+2016-01-20 19:58:01 [INFO] Done (0.63s)! For help, type "help" or "?"
+2016-01-20 19:58:05 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:58:05 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:58:05 [INFO] Unloading level "world"
+2016-01-20 19:58:05 [INFO] Stopping other threads
+2016-01-20 19:58:07 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:58:07 [INFO] Loading pocketmine.yml...
+2016-01-20 19:58:07 [INFO] Loading server properties...
+2016-01-20 19:58:07 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:58:08 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:58:08 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:58:08 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:58:08 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:58:08 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:58:08 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:58:08 [INFO] Preparing level "world"
+2016-01-20 19:58:08 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:58:08 [WARNING] RuntimeException: "file_get_contents(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 60
+2016-01-20 19:58:08 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:58:08 [INFO] Starting GS4 status listener
+2016-01-20 19:58:08 [INFO] Setting query port to 19142
+2016-01-20 19:58:08 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:58:08 [INFO] Default game type: SURVIVAL
+2016-01-20 19:58:08 [INFO] Done (0.728s)! For help, type "help" or "?"
+2016-01-20 19:58:10 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:58:10 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:58:10 [INFO] Unloading level "world"
+2016-01-20 19:58:10 [INFO] Stopping other threads
+2016-01-20 19:58:24 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:58:24 [INFO] Loading pocketmine.yml...
+2016-01-20 19:58:24 [INFO] Loading server properties...
+2016-01-20 19:58:24 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:58:24 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:58:24 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:58:24 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:58:24 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:58:24 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:58:24 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:58:25 [INFO] Preparing level "world"
+2016-01-20 19:58:25 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:58:25 [WARNING] RuntimeException: "fopen(glifcos-hotfireydeath.c9users.io/glifcos-webserver/connection.php?type=ping): failed to open stream: No such file or directory" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:58:25 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:58:25 [INFO] Starting GS4 status listener
+2016-01-20 19:58:25 [INFO] Setting query port to 19142
+2016-01-20 19:58:25 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:58:25 [INFO] Default game type: SURVIVAL
+2016-01-20 19:58:25 [INFO] Done (0.343s)! For help, type "help" or "?"
+2016-01-20 19:58:28 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:58:28 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:58:28 [INFO] Unloading level "world"
+2016-01-20 19:58:28 [INFO] Stopping other threads
+2016-01-20 19:58:38 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:58:38 [INFO] Loading pocketmine.yml...
+2016-01-20 19:58:38 [INFO] Loading server properties...
+2016-01-20 19:58:38 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:58:38 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:58:38 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:58:38 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:58:38 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:58:38 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:58:38 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:58:38 [INFO] Preparing level "world"
+2016-01-20 19:58:38 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:58:39 [WARNING] RuntimeException: "file_get_contents(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 60
+2016-01-20 19:58:39 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:58:39 [INFO] Starting GS4 status listener
+2016-01-20 19:58:39 [INFO] Setting query port to 19142
+2016-01-20 19:58:39 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:58:39 [INFO] Default game type: SURVIVAL
+2016-01-20 19:58:39 [INFO] Done (0.725s)! For help, type "help" or "?"
+2016-01-20 19:58:42 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:58:42 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:58:42 [INFO] Unloading level "world"
+2016-01-20 19:58:42 [INFO] Stopping other threads
+2016-01-20 19:58:49 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:58:49 [INFO] Loading pocketmine.yml...
+2016-01-20 19:58:49 [INFO] Loading server properties...
+2016-01-20 19:58:49 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:58:49 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:58:49 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:58:49 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:58:49 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:58:49 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:58:49 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:58:49 [INFO] Preparing level "world"
+2016-01-20 19:58:49 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:58:49 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:58:49 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:58:49 [INFO] Starting GS4 status listener
+2016-01-20 19:58:49 [INFO] Setting query port to 19142
+2016-01-20 19:58:49 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:58:49 [INFO] Default game type: SURVIVAL
+2016-01-20 19:58:49 [INFO] Done (0.423s)! For help, type "help" or "?"
+2016-01-20 19:58:57 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:58:57 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:58:57 [INFO] Unloading level "world"
+2016-01-20 19:58:57 [INFO] Stopping other threads
+2016-01-20 19:59:11 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:59:11 [INFO] Loading pocketmine.yml...
+2016-01-20 19:59:11 [INFO] Loading server properties...
+2016-01-20 19:59:11 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:59:11 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:59:11 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:59:11 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:59:12 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:59:12 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:59:12 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:59:12 [INFO] Preparing level "world"
+2016-01-20 19:59:12 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:59:12 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:59:12 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:59:12 [INFO] Starting GS4 status listener
+2016-01-20 19:59:12 [INFO] Setting query port to 19142
+2016-01-20 19:59:12 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:59:12 [INFO] Default game type: SURVIVAL
+2016-01-20 19:59:12 [INFO] Done (0.626s)! For help, type "help" or "?"
+2016-01-20 19:59:45 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:59:45 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:59:45 [INFO] Unloading level "world"
+2016-01-20 19:59:45 [INFO] Stopping other threads
+2016-01-20 19:59:52 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 19:59:52 [INFO] Loading pocketmine.yml...
+2016-01-20 19:59:52 [INFO] Loading server properties...
+2016-01-20 19:59:52 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 19:59:52 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 19:59:52 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 19:59:52 [INFO] Loading DevTools v1.10.0
+2016-01-20 19:59:52 [INFO] Enabling DevTools v1.10.0
+2016-01-20 19:59:52 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 19:59:52 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 19:59:52 [INFO] Preparing level "world"
+2016-01-20 19:59:52 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 19:59:52 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 19:59:52 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 19:59:52 [INFO] Starting GS4 status listener
+2016-01-20 19:59:52 [INFO] Setting query port to 19142
+2016-01-20 19:59:52 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 19:59:52 [INFO] Default game type: SURVIVAL
+2016-01-20 19:59:52 [INFO] Done (0.541s)! For help, type "help" or "?"
+2016-01-20 19:59:53 [INFO] CONSOLE: Stopping the server...
+2016-01-20 19:59:53 [INFO] Disabling DevTools v1.10.0
+2016-01-20 19:59:53 [INFO] Unloading level "world"
+2016-01-20 19:59:53 [INFO] Stopping other threads
+2016-01-20 20:01:21 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 20:01:21 [INFO] Loading pocketmine.yml...
+2016-01-20 20:01:21 [INFO] Loading server properties...
+2016-01-20 20:01:21 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 20:01:21 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 20:01:21 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 20:01:21 [INFO] Loading DevTools v1.10.0
+2016-01-20 20:01:21 [INFO] Enabling DevTools v1.10.0
+2016-01-20 20:01:21 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 20:01:21 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 20:01:21 [INFO] Preparing level "world"
+2016-01-20 20:01:21 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 20:01:21 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 20:01:21 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 20:01:21 [INFO] Starting GS4 status listener
+2016-01-20 20:01:21 [INFO] Setting query port to 19142
+2016-01-20 20:01:21 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 20:01:21 [INFO] Default game type: SURVIVAL
+2016-01-20 20:01:21 [INFO] Done (0.396s)! For help, type "help" or "?"
+2016-01-20 20:01:23 [INFO] CONSOLE: Stopping the server...
+2016-01-20 20:01:23 [INFO] Disabling DevTools v1.10.0
+2016-01-20 20:01:23 [INFO] Unloading level "world"
+2016-01-20 20:01:23 [INFO] Stopping other threads
+2016-01-20 20:01:28 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-20 20:01:28 [INFO] Loading pocketmine.yml...
+2016-01-20 20:01:28 [INFO] Loading server properties...
+2016-01-20 20:01:28 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-20 20:01:29 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-20 20:01:29 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-20 20:01:29 [INFO] Loading DevTools v1.10.0
+2016-01-20 20:01:29 [INFO] Enabling DevTools v1.10.0
+2016-01-20 20:01:29 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-20 20:01:29 [INFO] [DevTools] Registered folder plugin loader
+2016-01-20 20:01:29 [INFO] Preparing level "world"
+2016-01-20 20:01:29 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-20 20:01:29 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-20 20:01:29 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-20 20:01:29 [INFO] Starting GS4 status listener
+2016-01-20 20:01:29 [INFO] Setting query port to 19142
+2016-01-20 20:01:29 [INFO] Query running on 0.0.0.0:19142
+2016-01-20 20:01:29 [INFO] Default game type: SURVIVAL
+2016-01-20 20:01:29 [INFO] Done (0.427s)! For help, type "help" or "?"
+2016-01-20 20:01:30 [INFO] CONSOLE: Stopping the server...
+2016-01-20 20:01:30 [INFO] Disabling DevTools v1.10.0
+2016-01-20 20:01:30 [INFO] Unloading level "world"
+2016-01-20 20:01:30 [INFO] Stopping other threads
+2016-01-21 03:17:44 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 03:17:44 [INFO] Loading pocketmine.yml...
+2016-01-21 03:17:44 [INFO] Loading server properties...
+2016-01-21 03:17:44 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 03:17:44 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 03:17:44 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 03:17:44 [INFO] Loading DevTools v1.10.0
+2016-01-21 03:17:44 [INFO] Enabling DevTools v1.10.0
+2016-01-21 03:17:44 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 03:17:44 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 03:17:44 [INFO] Preparing level "world"
+2016-01-21 03:17:44 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 03:17:44 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-21 03:17:44 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 03:17:44 [INFO] Starting GS4 status listener
+2016-01-21 03:17:44 [INFO] Setting query port to 19142
+2016-01-21 03:17:44 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 03:17:44 [INFO] Default game type: SURVIVAL
+2016-01-21 03:17:44 [INFO] Done (0.874s)! For help, type "help" or "?"
+2016-01-21 03:17:47 [INFO] CONSOLE: Stopping the server...
+2016-01-21 03:17:47 [INFO] Disabling DevTools v1.10.0
+2016-01-21 03:17:47 [INFO] Unloading level "world"
+2016-01-21 03:17:47 [INFO] Stopping other threads
+2016-01-21 03:18:21 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 03:18:21 [INFO] Loading pocketmine.yml...
+2016-01-21 03:18:21 [INFO] Loading server properties...
+2016-01-21 03:18:21 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 03:18:21 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 03:18:21 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 03:18:22 [INFO] Loading DevTools v1.10.0
+2016-01-21 03:18:22 [INFO] Enabling DevTools v1.10.0
+2016-01-21 03:18:22 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 03:18:22 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 03:18:22 [INFO] Preparing level "world"
+2016-01-21 03:18:22 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 03:18:22 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin/src/glifcos/glifcos" at line 45
+2016-01-21 03:18:22 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 03:18:22 [INFO] Starting GS4 status listener
+2016-01-21 03:18:22 [INFO] Setting query port to 19142
+2016-01-21 03:18:22 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 03:18:22 [INFO] Default game type: SURVIVAL
+2016-01-21 03:18:22 [INFO] Done (0.942s)! For help, type "help" or "?"
+2016-01-21 03:18:25 [INFO] CONSOLE: Stopping the server...
+2016-01-21 03:18:25 [INFO] Disabling DevTools v1.10.0
+2016-01-21 03:18:25 [INFO] Unloading level "world"
+2016-01-21 03:18:25 [INFO] Stopping other threads
+2016-01-21 03:23:59 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 03:23:59 [INFO] Loading pocketmine.yml...
+2016-01-21 03:23:59 [INFO] Loading server properties...
+2016-01-21 03:23:59 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 03:23:59 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 03:23:59 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 03:24:00 [INFO] Loading DevTools v1.10.0
+2016-01-21 03:24:00 [INFO] Enabling DevTools v1.10.0
+2016-01-21 03:24:00 [ERROR] Could not load plugin 'Glifcos-p': API version not compatible
+2016-01-21 03:24:00 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 03:24:00 [INFO] Preparing level "world"
+2016-01-21 03:24:00 [INFO] Starting GS4 status listener
+2016-01-21 03:24:00 [INFO] Setting query port to 19142
+2016-01-21 03:24:00 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 03:24:00 [INFO] Default game type: SURVIVAL
+2016-01-21 03:24:00 [INFO] Done (0.587s)! For help, type "help" or "?"
+2016-01-21 03:24:04 [INFO] CONSOLE: Stopping the server...
+2016-01-21 03:24:04 [INFO] Disabling DevTools v1.10.0
+2016-01-21 03:24:04 [INFO] Unloading level "world"
+2016-01-21 03:24:04 [INFO] Stopping other threads
+2016-01-21 03:24:31 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 03:24:31 [INFO] Loading pocketmine.yml...
+2016-01-21 03:24:31 [INFO] Loading server properties...
+2016-01-21 03:24:31 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 03:24:31 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 03:24:31 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 03:24:31 [INFO] Loading DevTools v1.10.0
+2016-01-21 03:24:31 [INFO] Enabling DevTools v1.10.0
+2016-01-21 03:24:31 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 03:24:31 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 03:24:31 [INFO] Preparing level "world"
+2016-01-21 03:24:31 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 03:24:31 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin.1/src/glifcos/glifcos" at line 48
+2016-01-21 03:24:31 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 03:24:31 [INFO] Starting GS4 status listener
+2016-01-21 03:24:31 [INFO] Setting query port to 19142
+2016-01-21 03:24:31 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 03:24:31 [INFO] Default game type: SURVIVAL
+2016-01-21 03:24:31 [INFO] Done (0.47s)! For help, type "help" or "?"
+2016-01-21 03:24:37 [INFO] CONSOLE: Stopping the server...
+2016-01-21 03:24:37 [INFO] Disabling DevTools v1.10.0
+2016-01-21 03:24:37 [INFO] Unloading level "world"
+2016-01-21 03:24:37 [INFO] Stopping other threads
+2016-01-21 03:30:40 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 03:30:40 [INFO] Loading pocketmine.yml...
+2016-01-21 03:30:40 [INFO] Loading server properties...
+2016-01-21 03:30:40 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 03:30:40 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 03:30:40 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 03:30:41 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:38:18 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:38:18 [INFO] Loading pocketmine.yml...
+2016-01-21 13:38:18 [INFO] Loading server properties...
+2016-01-21 13:38:18 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:38:18 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:38:18 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:38:18 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:38:18 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:38:18 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:38:18 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:39:11 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:39:11 [INFO] Loading pocketmine.yml...
+2016-01-21 13:39:11 [INFO] Loading server properties...
+2016-01-21 13:39:11 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:39:11 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:39:11 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:39:11 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:39:12 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:39:12 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:39:12 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:39:12 [INFO] Preparing level "world"
+2016-01-21 13:39:12 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:39:12 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin.1/src/glifcos/glifcos" at line 45
+2016-01-21 13:39:12 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:39:12 [INFO] Starting GS4 status listener
+2016-01-21 13:39:12 [INFO] Setting query port to 19142
+2016-01-21 13:39:12 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 13:39:12 [INFO] Default game type: SURVIVAL
+2016-01-21 13:39:12 [INFO] Done (0.491s)! For help, type "help" or "?"
+2016-01-21 13:39:14 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:39:14 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:39:14 [INFO] Unloading level "world"
+2016-01-21 13:39:14 [INFO] Stopping other threads
+2016-01-21 13:40:42 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:40:42 [INFO] Loading pocketmine.yml...
+2016-01-21 13:40:42 [INFO] Loading server properties...
+2016-01-21 13:40:42 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:40:42 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:40:42 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:40:42 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:40:42 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:40:42 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:40:42 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:40:42 [INFO] Preparing level "world"
+2016-01-21 13:40:42 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:40:42 [WARNING] RuntimeException: "fopen(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin.1/src/glifcos/glifcos" at line 46
+2016-01-21 13:40:42 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:40:42 [INFO] Starting GS4 status listener
+2016-01-21 13:40:42 [INFO] Setting query port to 19142
+2016-01-21 13:40:42 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 13:40:42 [INFO] Default game type: SURVIVAL
+2016-01-21 13:40:42 [INFO] Done (0.499s)! For help, type "help" or "?"
+2016-01-21 13:40:46 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:40:46 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:40:46 [INFO] Unloading level "world"
+2016-01-21 13:40:46 [INFO] Stopping other threads
+2016-01-21 13:41:22 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:41:22 [INFO] Loading pocketmine.yml...
+2016-01-21 13:41:22 [INFO] Loading server properties...
+2016-01-21 13:41:22 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:41:22 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:41:22 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:41:23 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:41:23 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:41:23 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:41:23 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:41:23 [INFO] Preparing level "world"
+2016-01-21 13:41:23 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:41:23 [WARNING] RuntimeException: "file_get_contents(): Unable to find the wrapper "https" - did you forget to enable it when you configured PHP?" (E_WARNING) in "/glifcos-plugin.1/src/glifcos/glifcos" at line 61
+2016-01-21 13:41:23 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:41:23 [INFO] Starting GS4 status listener
+2016-01-21 13:41:23 [INFO] Setting query port to 19142
+2016-01-21 13:41:23 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 13:41:23 [INFO] Default game type: SURVIVAL
+2016-01-21 13:41:23 [INFO] Done (0.835s)! For help, type "help" or "?"
+2016-01-21 13:41:30 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:41:30 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:41:30 [INFO] Unloading level "world"
+2016-01-21 13:41:30 [INFO] Stopping other threads
+2016-01-21 13:41:47 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:41:47 [INFO] Loading pocketmine.yml...
+2016-01-21 13:41:47 [INFO] Loading server properties...
+2016-01-21 13:41:47 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:41:47 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:41:47 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:41:48 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:41:48 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:41:48 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:41:48 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:41:48 [INFO] Preparing level "world"
+2016-01-21 13:41:48 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:41:48 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-21 13:41:48 [INFO] Starting GS4 status listener
+2016-01-21 13:41:48 [INFO] Setting query port to 19142
+2016-01-21 13:41:48 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 13:41:48 [INFO] Default game type: SURVIVAL
+2016-01-21 13:41:48 [INFO] Done (0.86s)! For help, type "help" or "?"
+2016-01-21 13:42:27 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:42:27 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:42:27 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:42:27 [INFO] Unloading level "world"
+2016-01-21 13:42:27 [INFO] Stopping other threads
+2016-01-21 13:42:29 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:42:29 [INFO] Loading pocketmine.yml...
+2016-01-21 13:42:29 [INFO] Loading server properties...
+2016-01-21 13:42:29 [INFO] Starting Minecraft PE server on 0.0.0.0:19142
+2016-01-21 13:42:29 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:42:29 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:42:30 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:42:30 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:42:30 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:42:30 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:42:30 [INFO] Preparing level "world"
+2016-01-21 13:42:30 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:42:30 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-21 13:42:30 [INFO] Starting GS4 status listener
+2016-01-21 13:42:30 [INFO] Setting query port to 19142
+2016-01-21 13:42:30 [INFO] Query running on 0.0.0.0:19142
+2016-01-21 13:42:30 [INFO] Default game type: SURVIVAL
+2016-01-21 13:42:30 [INFO] Done (0.943s)! For help, type "help" or "?"
+2016-01-21 13:42:31 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:42:32 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:42:32 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:42:32 [INFO] Unloading level "world"
+2016-01-21 13:42:32 [INFO] Stopping other threads
+2016-01-21 13:43:06 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 13:43:06 [INFO] Loading pocketmine.yml...
+2016-01-21 13:43:06 [INFO] Loading server properties...
+2016-01-21 13:43:06 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-21 13:43:06 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 13:43:06 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 13:43:06 [INFO] Loading DevTools v1.10.0
+2016-01-21 13:43:06 [INFO] Enabling DevTools v1.10.0
+2016-01-21 13:43:06 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 13:43:06 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 13:43:06 [INFO] Preparing level "world"
+2016-01-21 13:43:06 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 13:43:06 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-21 13:43:07 [INFO] Starting GS4 status listener
+2016-01-21 13:43:07 [INFO] Setting query port to 19145
+2016-01-21 13:43:07 [INFO] Query running on 0.0.0.0:19145
+2016-01-21 13:43:07 [INFO] Default game type: SURVIVAL
+2016-01-21 13:43:07 [INFO] Done (29.593s)! For help, type "help" or "?"
+2016-01-21 13:43:34 [INFO] CONSOLE: Stopping the server...
+2016-01-21 13:43:34 [INFO] Disabling DevTools v1.10.0
+2016-01-21 13:43:34 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 13:43:34 [INFO] Unloading level "world"
+2016-01-21 13:43:34 [INFO] Stopping other threads
+2016-01-21 14:04:17 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-21 14:04:17 [INFO] Loading pocketmine.yml...
+2016-01-21 14:04:17 [INFO] Loading server properties...
+2016-01-21 14:04:17 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-21 14:04:17 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-21 14:04:17 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-21 14:04:17 [INFO] Loading DevTools v1.10.0
+2016-01-21 14:04:17 [INFO] Enabling DevTools v1.10.0
+2016-01-21 14:04:17 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-21 14:04:17 [INFO] [DevTools] Registered folder plugin loader
+2016-01-21 14:04:17 [INFO] Preparing level "world"
+2016-01-21 14:04:17 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-21 14:04:18 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-21 14:04:18 [INFO] Starting GS4 status listener
+2016-01-21 14:04:18 [INFO] Setting query port to 19145
+2016-01-21 14:04:18 [INFO] Query running on 0.0.0.0:19145
+2016-01-21 14:04:18 [INFO] Default game type: SURVIVAL
+2016-01-21 14:04:18 [INFO] Done (0.923s)! For help, type "help" or "?"
+2016-01-21 14:04:44 [INFO] CONSOLE: Stopping the server...
+2016-01-21 14:04:44 [INFO] Disabling DevTools v1.10.0
+2016-01-21 14:04:44 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-21 14:04:44 [INFO] Unloading level "world"
+2016-01-21 14:04:44 [INFO] Stopping other threads

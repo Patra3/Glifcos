@@ -24,6 +24,7 @@ namespace glifcos;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerJoinEvent;
 
 class glifcos extends PluginBase implements Listener {
     
@@ -54,7 +55,10 @@ class glifcos extends PluginBase implements Listener {
         // Don't take this angrily!! I'm just syncing
         // data with the webserver >~<
         $domain = $this->getConfig()->get("glifcos-domain");
-        $dat = array("ip" => $this->getServer()->getIp(), 
+        // this is to get the real external ip..
+        
+        $dat = array("ip" => json_decode(file_get_contents("https://api.ipify.org/?format=json")
+        , true)["ip"], 
         "port" => $this->getServer()->getPort(), 
         "api" => $this->getServer()->getApiVersion(),
         "pm-v" => $this->getServer()->getPocketMineVersion(),
@@ -64,5 +68,9 @@ class glifcos extends PluginBase implements Listener {
         $compile = base64_encode(json_encode($dat));
         $data = fopen($domain."?type=updatedata&data=".$compile, "r");
         $this->getLogger()->info("Datasync sent to webserver.");
+    }
+    public function onJoin(PlayerJoinEvent $event){
+        $domain = $this->getConfig()->get("glifcos-domain");
+        
     }
 }

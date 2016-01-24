@@ -28,7 +28,7 @@ if (isset($_GET["type"])){
         echo "apple";
     }
     elseif ($_GET["type"] === "grudgesync"){
-        $data = json_decode($_GET["grudge"], true);
+        $data = base64_decode($_GET["grudge"]);
         if (is_file("grudge.json")){
             unlink("grudge.json");
         }

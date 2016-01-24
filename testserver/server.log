@@ -578,3 +578,78 @@
 2016-01-21 14:04:44 [INFO] Disabling Glifcos-p v1.0.0
 2016-01-21 14:04:44 [INFO] Unloading level "world"
 2016-01-21 14:04:44 [INFO] Stopping other threads
+2016-01-23 17:05:59 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-23 17:05:59 [INFO] Loading pocketmine.yml...
+2016-01-23 17:05:59 [INFO] Loading server properties...
+2016-01-23 17:05:59 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-23 17:05:59 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-23 17:05:59 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-23 17:05:59 [INFO] Loading DevTools v1.10.0
+2016-01-23 17:05:59 [INFO] Enabling DevTools v1.10.0
+2016-01-23 17:05:59 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-23 17:05:59 [INFO] [DevTools] Registered folder plugin loader
+2016-01-23 17:05:59 [INFO] Preparing level "world"
+2016-01-23 17:05:59 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-23 17:05:59 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-23 17:06:00 [INFO] Starting GS4 status listener
+2016-01-23 17:06:00 [INFO] Setting query port to 19145
+2016-01-23 17:06:00 [INFO] Query running on 0.0.0.0:19145
+2016-01-23 17:06:00 [INFO] Default game type: SURVIVAL
+2016-01-23 17:06:00 [INFO] Done (1.017s)! For help, type "help" or "?"
+2016-01-23 17:06:09 [INFO] CONSOLE: Stopping the server...
+2016-01-23 17:06:09 [INFO] Disabling DevTools v1.10.0
+2016-01-23 17:06:09 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-23 17:06:09 [INFO] Unloading level "world"
+2016-01-23 17:06:09 [INFO] Stopping other threads
+2016-01-23 17:10:43 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-23 17:10:43 [INFO] Loading pocketmine.yml...
+2016-01-23 17:10:43 [INFO] Loading server properties...
+2016-01-23 17:10:43 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-23 17:10:43 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-23 17:10:43 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-23 17:11:01 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-23 17:11:01 [INFO] Loading pocketmine.yml...
+2016-01-23 17:11:01 [INFO] Loading server properties...
+2016-01-23 17:11:01 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-23 17:11:01 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-23 17:11:01 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-23 17:11:02 [INFO] Loading DevTools v1.10.0
+2016-01-23 17:11:02 [INFO] Enabling DevTools v1.10.0
+2016-01-23 17:11:02 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-23 17:11:02 [INFO] [DevTools] Registered folder plugin loader
+2016-01-23 17:11:02 [INFO] Preparing level "world"
+2016-01-23 17:11:02 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-23 17:11:03 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-23 17:11:03 [INFO] Starting GS4 status listener
+2016-01-23 17:11:03 [INFO] Setting query port to 19145
+2016-01-23 17:11:03 [INFO] Query running on 0.0.0.0:19145
+2016-01-23 17:11:03 [INFO] Default game type: SURVIVAL
+2016-01-23 17:11:03 [INFO] Done (1.265s)! For help, type "help" or "?"
+2016-01-23 17:12:06 [INFO] CONSOLE: Stopping the server...
+2016-01-23 17:12:07 [INFO] Disabling DevTools v1.10.0
+2016-01-23 17:12:07 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-23 17:12:07 [INFO] Unloading level "world"
+2016-01-23 17:12:07 [INFO] Stopping other threads
+2016-01-23 17:12:13 [INFO] Starting Minecraft: PE server version v0.10.5 alpha
+2016-01-23 17:12:13 [INFO] Loading pocketmine.yml...
+2016-01-23 17:12:13 [INFO] Loading server properties...
+2016-01-23 17:12:13 [INFO] Starting Minecraft PE server on 0.0.0.0:19145
+2016-01-23 17:12:13 [INFO] This server is running PocketMine-MP version 1.4.1-980 "絶好(Zekkou)ケーキ(Cake)" (API 1.11.0)
+2016-01-23 17:12:13 [INFO] PocketMine-MP is distributed under the LGPL License
+2016-01-23 17:12:13 [INFO] Loading DevTools v1.10.0
+2016-01-23 17:12:14 [INFO] Enabling DevTools v1.10.0
+2016-01-23 17:12:14 [INFO] Loading source plugin Glifcos-p v1.0.0
+2016-01-23 17:12:14 [INFO] [DevTools] Registered folder plugin loader
+2016-01-23 17:12:14 [INFO] Preparing level "world"
+2016-01-23 17:12:14 [INFO] Enabling Glifcos-p v1.0.0
+2016-01-23 17:12:14 [INFO] [Glifcos-p] Datasync sent to webserver.
+2016-01-23 17:12:14 [INFO] Starting GS4 status listener
+2016-01-23 17:12:14 [INFO] Setting query port to 19145
+2016-01-23 17:12:14 [INFO] Query running on 0.0.0.0:19145
+2016-01-23 17:12:14 [INFO] Default game type: SURVIVAL
+2016-01-23 17:12:14 [INFO] Done (1.193s)! For help, type "help" or "?"
+2016-01-24 05:38:59 [INFO] CONSOLE: Stopping the server...
+2016-01-24 05:38:59 [INFO] Disabling DevTools v1.10.0
+2016-01-24 05:38:59 [INFO] Disabling Glifcos-p v1.0.0
+2016-01-24 05:38:59 [INFO] Unloading level "world"
+2016-01-24 05:38:59 [INFO] Stopping other threads

@@ -18,10 +18,8 @@
             \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
              \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
         -->
-        <!-- BOOTSTRAP -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- W3 CSS -->
+        <link rel="stylesheet" href="w3.css">
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!-- COMPAT -->

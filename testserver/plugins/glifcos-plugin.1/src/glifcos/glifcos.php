@@ -34,6 +34,7 @@ class glifcos extends PluginBase implements Listener {
             $this->saveDefaultConfig();
         }
         $res = $this->runServerCheck();
+        $this->grudgesync();
         if (!$res){
             $this->getLogger()->warning("Glifcos could not verify the server. Please check your info in the config file.");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Glifcos-p"));
@@ -50,6 +51,13 @@ class glifcos extends PluginBase implements Listener {
         else{
             return false;
         }
+    }
+    private function grudgesync(){
+        $link = $this->getConfig()->get("glifcos-domain");
+        $data = array("ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json")
+        , true)["ip"],
+        "port" => $this->getServer()->getPort());
+        fopen($link."?type=grudgesync&grudge=".base64_encode(json_encode($data)), "r");
     }
     private function sellServerInfo(){
         // Don't take this angrily!! I'm just syncing

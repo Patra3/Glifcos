@@ -18,27 +18,22 @@
 -->
 <!-- <div class="container"> -->
 <br>
-<h2>Welcome to Glifcos!</h2>
-<h6>Great! We've got your server! Now you just need to...</h6>
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="40"
-  aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    <span class="sr-only">40% complete</span>
-  </div>
+<div class="w3-card-4" style="width:100%">
+<header class="w3-container w3-blue">
+  <h1>Great, almost done!</h1>
+</header>
+<div class="w3-container">
+  <form class="w3-container" role="form" action="formspan.php" method="post">
+  <p>
+    <label>Admin Username:</label>
+    <input class="w3-input" type="text" name="c-user">
+  </p>
+  <p>
+    <label>Admin Password:</label>
+    <input class="w3-input" type="password" name="pwd">
+  </p>
+  <button type="submit" class="w3-btn w3-blue">Submit</button>
+  </form>
 </div>
-<br>
-<br>
-<form role="form" action="formspan.php" method="post">
-  <div class="form-group">
-    <label for="c-user">Admin Username:</label>
-    <input type="username" class="form-control" name="c-user" 
-    id="c-user">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Admin Password:</label>
-    <input type="password" class="form-control" name="pwd"
-    id="pwd">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</div>
 <!-- </div> -->

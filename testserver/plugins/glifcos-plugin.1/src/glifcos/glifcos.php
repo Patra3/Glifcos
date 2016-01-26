@@ -27,7 +27,6 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 
 class glifcos extends PluginBase implements Listener {
-    
     public function onEnable(){
         if (!is_dir($this->getDataFolder())){
             mkdir($this->getDataFolder());

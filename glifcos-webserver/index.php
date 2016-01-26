@@ -38,6 +38,10 @@
             if (isset($_COOKIE["cl"])){
                 setcookie("cl", "", time());
             }
+            if (isset($_COOKIE["Authchain"])){
+                require "library/main/mainstart.php";
+                goto skip;
+            }
             setcookie("cl", getcwd(), NULL, "/"); // sets main directory.
             if (isset($_COOKIE["setup"])){
                 if ($_COOKIE["setup"] === "2"){

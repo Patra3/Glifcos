@@ -1,34 +1,39 @@
-<html>
-    <head>
-        <!--
-        THIS FILE IS PART OF THE GLIFCOS PROJECT BY @HOTFIREYDEATH.
-
-        THIS PROJECT IS LICENSED UNDER THE MIT LICENSE (MIT). A COPY OF 
-        THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
-        
-              ___                                     ___           ___           ___           ___     
-             /\__\                                   /\__\         /\__\         /\  \         /\__\    
-            /:/ _/_                     ___         /:/ _/_       /:/  /        /::\  \       /:/ _/_   
-           /:/ /\  \                   /\__\       /:/ /\__\     /:/  /        /:/\:\  \     /:/ /\  \  
-          /:/ /::\  \   ___     ___   /:/__/      /:/ /:/  /    /:/  /  ___   /:/  \:\  \   /:/ /::\  \ 
-         /:/__\/\:\__\ /\  \   /\__\ /::\  \     /:/_/:/  /    /:/__/  /\__\ /:/__/ \:\__\ /:/_/:/\:\__\
-         \:\  \ /:/  / \:\  \ /:/  / \/\:\  \__  \:\/:/  /     \:\  \ /:/  / \:\  \ /:/  / \:\/:/ /:/  /
-          \:\  /:/  /   \:\  /:/  /   ~~\:\/\__\  \::/__/       \:\  /:/  /   \:\  /:/  /   \::/ /:/  / 
-           \:\/:/  /     \:\/:/  /       \::/  /   \:\  \        \:\/:/  /     \:\/:/  /     \/_/:/  /  
-            \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
-             \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
-        -->
-        <!-- W3 CSS -->
-        <link rel="stylesheet" href="w3.css">
-        <!-- FONT AWESOME -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- COMPAT -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Glifcos</title>
-    </head>
-    <body>
-        
-    </body>
-</html>
+<!-- <div class="w3-container"> -->
+<?php
+if (!isset($_COOKIE["authchain"])){
+    echo '
+    <br>
+    <div class="w3-card-4" style="width:100%">
+    <header class="w3-container w3-blue">
+      <h1>Glifcos Webserver</h1>
+    </header>
+    <div class="w3-container">
+    <br>
+    <center>
+    '.file_get_contents("library/main/modalhacks/dash-login-containerhack.txt").'
+    </center>
+    </div>
+    </div>
+    ';
+}
+?>
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <form class="w3-container" action="library/main/login.php" method="post">
+        <p>
+        <label>Username</label>
+        <input class="w3-input" type="text" name="user">
+        </p>
+        <p>
+        <label>Password</label>
+        <input class="w3-input" type="text" name="pwds">
+        </p>
+        <button type="submit" class="w3-btn w3-blue">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

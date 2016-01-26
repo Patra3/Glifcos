@@ -47,4 +47,24 @@ class usermgr {
         }
         return false;
     }
+    public static function loginUser($username, $password, $base_dir){
+        /**
+         * Logs a user into the webserver.
+         * @param $username Username
+         * @param $password Password
+         * @param $base_dir The webserver base directory
+         **/
+         if (!is_file($base_dir."/users/".$username.".json")){
+             return false;
+         }
+         else{
+             $data = json_decode(file_get_contents($base_dir."/users/".$username.".json"), true);
+             if (password_verify($password, $data["password"])){
+                 return true;
+             }
+             else{
+                 return false;
+             }
+         }
+    }
 }

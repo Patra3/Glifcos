@@ -81,6 +81,10 @@ if (isset($_GET["type"])){
         $coredata["serverdata"]["status"] = "started";
         updateCore($coredata);
     }
+    elseif ($_GET["type"] === "recievedDATA"){
+        require "library/ceoperands/talk.php";
+        talk::resetTalk(getcwd());
+    }
 }
 elseif (isset($_POST["type"])){
     if ($_POST["type"] === "playerq"){
@@ -98,6 +102,10 @@ elseif (isset($_POST["type"])){
         $coredata["console"] = $long;
         updateCore($coredata);
     }
+}
+elseif (isset($_GET["commandinput"])){
+    require "library/ceoperands/talk.php";
+    talk::relayCommand($_GET["commandinput"], getcwd());
 }
 else{
     die("Invalid connection.");

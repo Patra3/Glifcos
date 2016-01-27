@@ -20,6 +20,18 @@ THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
 */
 
 class talk {
+    private static function updateTalk($base_dir, $array){
+        /**
+         * Easy function to update talk. This should not be used outside the talk.php file.
+         * @param $base_dir The webserver base directory
+         **/
+        if (is_file($base_dir."/talk.json")){
+            unlink($base_dir."/talk.json");
+        }
+        $handle = fopen($base_dir."/talk.json", "w+");
+        fwrite($handle, json_encode($array));
+        fclose($handle);
+    }
     public static function createTalk($base_dir){
         /**
          * Creates the server communication file.
@@ -43,5 +55,33 @@ class talk {
          * @param $clientip IP address ($_SERVER['REMOTE_ADDR'])
          * @param $base_dir The webserver base directory
          **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "newsignin";
+         $data["user"] = $username;
+         $data["ip"] = $clientip;
+         self::updateTalk($base_dir, $data);
+    }
+    public static function resetTalk($base_dir){
+        /**
+         * Resets the talk.json file reciever.
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "none";
+         foreach($data as $obt){
+             $key = array_search($obt, $data);
+             if ($key != "task"){
+                 unset($data[$key]);
+             }
+         }
+         self::updateTalk($base_dir, $data);
+    }
+    public static function relayCommand($command, $base_dir){
+        /**
+         * Relay a command to PocketMine (console).
+         * @param $command Command
+         * @param $base_dir The webserver base directory
+         **/
+         
     }
 }

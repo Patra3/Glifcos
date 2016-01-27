@@ -29,6 +29,7 @@ require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
     <br>
     <center>
     <span class="w3-tag w3-sm w3-padding-large w3-blue w3-tooltip"><?php
+    sleep(5);
     echo grabr::getCurrentPlayerAM($_COOKIE["cl"])."/".grabr::getTotalPlayers($_COOKIE["cl"]);
     ?> players online <br>
     <span class="w3-text">[<?php
@@ -136,10 +137,12 @@ elseif ($calc <= "100"){
         ?>
         
       </div>
-      <form class="w3-container">
+      <form class="w3-container" action="<?php
+      echo $_COOKIE["cl"]."/connection.php";
+      ?>" method="get">
         <p> 
         <label class="w3-label">Console Input</label>
-        <input class="w3-input" type="text" name="input"></p>
+        <input class="w3-input" type="text" name="commandinput"></p>
       </form>
     </div>
   </div>

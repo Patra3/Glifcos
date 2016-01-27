@@ -18,6 +18,9 @@
         -->
 <!-- <div class="w3-container"> -->
 <br>
+<?php
+require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
+?>
 <div class="w3-card-4" style="width:100%;">
 <header class="w3-container w3-blue">
   <h1>Status</h1>
@@ -25,10 +28,39 @@
 <div class="w3-container">
     <br>
     <center>
-    <span class="w3-tag w3-sm w3-padding-large w3-blue w3-tooltip">3/20 players online <br>
-    <span class="w3-text">[HotFireyDeath, marique, WolfPlayz]</span></span>
-    <span class="w3-tag w3-sm w3-padding-large w3-green">Server is Online</span>
-    <span class="w3-tag w3-sm w3-padding-large w3-indigo">PocketMine Build 56</span>
+    <span class="w3-tag w3-sm w3-padding-large w3-blue w3-tooltip"><?php
+    echo grabr::getCurrentPlayerAM($_COOKIE["cl"])."/".grabr::getTotalPlayers($_COOKIE["cl"]);
+    ?> players online <br>
+    <span class="w3-text">[<?php
+    if (empty(grabr::getPlayerList($_COOKIE["cl"]))){
+      echo "No players!";
+    }
+    else{
+      foreach (grabr::getPlayerList($_COOKIE["cl"]) as $name){
+        echo $name.", ";
+      }
+    }
+    ?>]</span></span>
+    <span class="w3-tag w3-sm w3-padding-large w3-<?php
+    $serv = grabr::isServerOnline($_COOKIE["cl"]);
+    if (!$serv){
+      echo "red";
+    }
+    else{
+      echo "green";
+    }
+    ?>">Server is <?php
+    $serv = grabr::isServerOnline($_COOKIE["cl"]);
+    if (!$serv){
+      echo "Offline";
+    }
+    else{
+      echo "Online";
+    }
+    ?></span>
+    <span class="w3-tag w3-sm w3-padding-large w3-indigo"><?php
+    echo grabr::getPMBuild($_COOKIE["cl"]);
+    ?></span>
     <span class="w3-tag w3-sm w3-padding-large w3-white"></span>
     </center>
 </div>
@@ -47,13 +79,28 @@
 </div>
 <br>
 <div class="w3-card-4" style="width:100%;">
-<header class="w3-container w3-green">
+<header class="w3-container w3-<?php
+$calc = round(grabr::getCurrentMemory($_COOKIE["cl"])/grabr::getTotalMemory($_COOKIE["cl"]) * 100);
+if ($calc <= "25"){
+  echo "green";
+}
+elseif ($calc <= "75"){
+  echo "yellow";
+}
+elseif ($calc <= "100"){
+  echo "red";
+}
+?>">
   <h1>RAM</h1>
 </header>
 <div class="w3-container">
     <center>
-        <h2>23% usage</h2>
-        <p>256/1024 MB</p>
+        <h2><?php
+        echo round(grabr::getCurrentMemory($_COOKIE["cl"])/grabr::getTotalMemory($_COOKIE["cl"]) * 100);
+        ?>% usage</h2>
+        <p><?php
+        echo grabr::getCurrentMemory($_COOKIE["cl"])."/".grabr::getTotalMemory($_COOKIE["cl"]);
+        ?> MB</p>
     </center>
 </div>
 </div>
@@ -84,7 +131,9 @@
       class="w3-closebtn">&times;</span>
       <div class="w3-code htmlHigh">
 
-        .. HTML code goes here
+        <?php
+        echo str_replace("\n", "<br>", substr(grabr::getConsole($_COOKIE["cl"]), -10000));
+        ?>
         
       </div>
       <form class="w3-container">

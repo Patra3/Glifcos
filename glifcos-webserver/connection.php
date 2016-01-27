@@ -18,6 +18,14 @@ THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
     \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
      \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
 */
+function updateCore($array){
+    if (is_file("core.json")){
+        unlink("core.json");
+    }
+    $handle = fopen("core.json", "w+");
+    fwrite($handle, json_encode($array));
+    fclose($handle);
+}
 if (!is_dir("data/")){
     mkdir("data/");
 }
@@ -50,13 +58,45 @@ if (isset($_GET["type"])){
             $data = file_get_contents("core.json");
             $data = json_decode($data, true);
             $data["serverdata"] = $arrayt;
-            $data = json_encode($data);
-            unlink("core.json");
-            $handle = fopen("core.json", "w+");
-            fwrite($handle, $data);
-            fclose($handle);
+            updateCore($data);
             unlink("data/serverdata.json");
         }
+    }
+    elseif ($_GET["type"] === "memsync"){
+        $current = $_GET["cm"]; // current memory usage.
+        $total = $_GET["tm"]; // total memory limit.
+    
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["currentmemory"] = $current;
+        $coredata["serverdata"]["totalmemory"] = $total;
+        updateCore($coredata);
+    }
+    elseif ($_GET["type"] === "closedown"){
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["status"] = "closed";
+        updateCore($coredata);
+    }
+    elseif ($_GET["type"] === "startup"){
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["status"] = "started";
+        updateCore($coredata);
+    }
+}
+elseif (isset($_POST["type"])){
+    if ($_POST["type"] === "playerq"){
+        $total = $_POST["total"];
+        $current = $_POST["current"];
+        $lis = json_decode(base64_decode($_POST["lis"]), true);
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["playerquery"] = array("total" => $total, "currentamount" => $current,
+        "list" => $lis);
+        updateCore($coredata);
+    }
+    elseif ($_POST["type"] === "console"){
+        $long = base64_decode($_POST["console"]);
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["console"] = $long;
+        updateCore($coredata);
     }
 }
 else{

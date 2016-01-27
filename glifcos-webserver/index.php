@@ -31,6 +31,7 @@
     <body>
         <div class="w3-container">
             <?php
+            require "library/ceoperands/talk.php";
             function normal(){
                 require "library/main/dashboard.php";
                 return true;
@@ -60,6 +61,7 @@
                normal(); 
             }
             skip:
+                talk::createTalk($_COOKIE["cl"]);
             ?>
         </div>
     </body>

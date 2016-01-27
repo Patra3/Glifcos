@@ -29,7 +29,7 @@ if (!isset($_COOKIE["authchain"])){
         </p>
         <p>
         <label>Password</label>
-        <input class="w3-input" type="text" name="pwds">
+        <input class="w3-input" type="password" name="pwds">
         </p>
         <button type="submit" class="w3-btn w3-blue">Login</button>
       </form>

@@ -82,6 +82,31 @@ class talk {
          * @param $command Command
          * @param $base_dir The webserver base directory
          **/
-         
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "command";
+         $data["command"] = $command;
+         self::updateTalk($base_dir, $data);
+    }
+    public static function enablePlugin($plugin, $base_dir){
+        /**
+         * Enable a plugin
+         * @param $plugin String
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "enableplugin";
+         $data["plugin"] = $plugin;
+         self::updateTalk($base_dir, $data);
+    }
+    public static function disablePlugin($plugin, $base_dir){
+        /**
+         * Disable a plugin
+         * @param $plugin String
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "disableplugin";
+         $data["plugin"] = $plugin;
+         self::updateTalk($base_dir, $data);
     }
 }

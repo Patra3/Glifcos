@@ -28,7 +28,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Glifcos</title>
     </head>
-    <body>
+    <body <?php 
+    if (isset($_COOKIE["command_previous"])){
+        if ($_COOKIE["command_previous"] === "yes"){
+            echo 'onload="'.file_get_contents($_COOKIE["cl"].
+            "/library/main/modalhacks/main-console-show.txt")
+            .'"';
+        }
+    }
+    ?>>
         <div class="w3-container">
             <?php
             require "library/ceoperands/talk.php";

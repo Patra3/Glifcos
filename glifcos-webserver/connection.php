@@ -85,6 +85,11 @@ if (isset($_GET["type"])){
         require "library/ceoperands/talk.php";
         talk::resetTalk(getcwd());
     }
+    elseif ($_GET["type"] === "cpu"){
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["currentcpu"] = $_GET["s"];
+        updateCore($coredata);
+    }
 }
 elseif (isset($_POST["type"])){
     if ($_POST["type"] === "playerq"){
@@ -102,10 +107,12 @@ elseif (isset($_POST["type"])){
         $coredata["console"] = $long;
         updateCore($coredata);
     }
-}
-elseif (isset($_GET["commandinput"])){
-    require "library/ceoperands/talk.php";
-    talk::relayCommand($_GET["commandinput"], getcwd());
+    elseif ($_POST["type"] === "pluginsy"){
+        $list = json_decode(base64_decode($_POST["pluginss"]), true);
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["plugins"] = $list;
+        updateCore($coredata);
+    }
 }
 else{
     die("Invalid connection.");

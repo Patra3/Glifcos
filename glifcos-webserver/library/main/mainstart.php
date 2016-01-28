@@ -29,7 +29,6 @@ require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
     <br>
     <center>
     <span class="w3-tag w3-sm w3-padding-large w3-blue w3-tooltip"><?php
-    sleep(5);
     echo grabr::getCurrentPlayerAM($_COOKIE["cl"])."/".grabr::getTotalPlayers($_COOKIE["cl"]);
     ?> players online <br>
     <span class="w3-text">[<?php
@@ -73,8 +72,9 @@ require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
 </header>
 <div class="w3-container">
     <center>
-        <h2>90% usage</h2>
-        <p>900/1024 MB</p>
+        <h2><?php 
+        echo grabr::getCurrentCPU($_COOKIE["cl"]);
+        ?>% usage</h2>
     </center>
 </div>
 </div>
@@ -117,7 +117,7 @@ elseif ($calc <= "100"){
           <button class="w3-btn w3-red">Server</button>
           <div class="w3-dropdown-content w3-border">
             <a onclick="document.getElementById('id01').style.display='block'">Console</a>
-            <a href="#">Link 2</a>
+            <a onclick="document.getElementById('id02').style.display='block'">Plugins</a>
             <a href="#">Link 3</a>
           </div>
         </div>
@@ -126,7 +126,7 @@ elseif ($calc <= "100"){
 </div>
 <!-- SERVER CONSOLE MODAL -->
 <div id="id01" class="w3-modal">
-  <div class="w3-modal-content">
+  <div class="w3-modal-content w3-animate-top">
     <div class="w3-container">
       <span onclick="document.getElementById('id01').style.display='none'" 
       class="w3-closebtn">&times;</span>
@@ -137,13 +137,35 @@ elseif ($calc <= "100"){
         ?>
         
       </div>
-      <form class="w3-container" action="<?php
-      echo $_COOKIE["cl"]."/connection.php";
-      ?>" method="get">
+      <form class="w3-container" action="consolesender.php" method="post">
         <p> 
         <label class="w3-label">Console Input</label>
-        <input class="w3-input" type="text" name="commandinput"></p>
+        <input class="w3-input" type="text" name="input"></p>
       </form>
+    </div>
+  </div>
+</div>
+<!-- PLUGIN MODAL -->
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h4>Manage Your Plugins</h4>
+      <?php
+      foreach(grabr::getPlugins($_COOKIE["cl"]) as $lols){
+        echo '
+        <div class="w3-dropdown-hover">
+          <button class="w3-btn w3-red">'.$lols.'</button>
+          <div class="w3-dropdown-content w3-border">
+            <a href="pluginse.php?trans=disable&plugin='.$lols.'">Disable Plugin</a>
+            <a href="pluginse.php?trans=enable&plugin='.$lols.'">Enable Plugin</a>
+            <a href="#">View Data</a>
+          </div>
+        </div>
+        ';
+      }
+      ?>
     </div>
   </div>
 </div>

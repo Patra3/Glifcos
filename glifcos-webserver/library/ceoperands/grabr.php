@@ -44,14 +44,6 @@ class grabr {
          $data = json_decode(file_get_contents($base_dir."/core.json"), true);
          return $data["serverdata"]["currentcpu"];
     }
-    public static function getTotalCPU($base_dir){
-        /**
-         * Returns total server CPU limit (megabytes).
-         * @param $base_dir The webserver base directory
-         **/
-         $data = json_decode(file_get_contents($base_dir."/core.json"), true);
-         return $data["serverdata"]["totalcpu"];
-    }
     public static function getPMBuild($base_dir){
         /**
          * Returns PocketMine build.
@@ -109,5 +101,13 @@ class grabr {
          **/
         $data = json_decode(file_get_contents($base_dir."/core.json"), true);
         return $data["console"];
+    }
+    public static function getPlugins($base_dir){
+        /**
+         * Returns the list of plugins (name).
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/core.json"), true);
+        return $data["serverdata"]["plugins"];
     }
 }

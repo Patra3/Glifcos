@@ -118,7 +118,7 @@ elseif ($calc <= "100"){
           <div class="w3-dropdown-content w3-border">
             <a onclick="document.getElementById('id01').style.display='block'">Console</a>
             <a onclick="document.getElementById('id02').style.display='block'">Plugins</a>
-            <a href="#">Link 3</a>
+            <a href="filemanager/mainfile.php">File Manager</a>
           </div>
         </div>
     </center>
@@ -130,6 +130,9 @@ elseif ($calc <= "100"){
     <div class="w3-container">
       <span onclick="document.getElementById('id01').style.display='none'" 
       class="w3-closebtn">&times;</span>
+      <br>
+      <a name="outtake"></a>
+      <a class="w3-btn w3-tiny w3-blue" href="#intake">Go to bottom</a>
       <div class="w3-code htmlHigh">
 
         <?php
@@ -137,11 +140,15 @@ elseif ($calc <= "100"){
         ?>
         
       </div>
-      <form class="w3-container" action="consolesender.php" method="post">
+      <a name="intake"></a>
+      <form class="w3-container" 
+      action="consolesender.php" method="post">
         <p> 
         <label class="w3-label">Console Input</label>
         <input class="w3-input" type="text" name="input"></p>
       </form>
+      <br>
+      <a class="w3-btn w3-tiny w3-blue" href="#outtake">Go to top</a>
     </div>
   </div>
 </div>
@@ -154,9 +161,17 @@ elseif ($calc <= "100"){
       <h4>Manage Your Plugins</h4>
       <?php
       foreach(grabr::getPlugins($_COOKIE["cl"]) as $lols){
+        if ((grabr::isPluginEnabled($_COOKIE["cl"], $lols)) === false){
+          $status = "Disabled";
+          $color = "deep-orange";
+        }
+        else{
+          $status = "Enabled";
+          $color = "green";
+        }
         echo '
         <div class="w3-dropdown-hover">
-          <button class="w3-btn w3-red">'.$lols.'</button>
+          <button class="w3-btn w3-red">'.$lols.' <span class="w3-tag w3-'.$color.'">'.$status.'</span></button>
           <div class="w3-dropdown-content w3-border">
             <a href="pluginse.php?trans=disable&plugin='.$lols.'">Disable Plugin</a>
             <a href="pluginse.php?trans=enable&plugin='.$lols.'">Enable Plugin</a>

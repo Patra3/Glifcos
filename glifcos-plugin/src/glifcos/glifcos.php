@@ -24,10 +24,11 @@ namespace glifcos;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\player\PlayerJoinEvent;
+use glifcos\mainw\synctask;
 
 class glifcos extends PluginBase implements Listener {
-    
     public function onEnable(){
         if (!is_dir($this->getDataFolder())){
             mkdir($this->getDataFolder());
@@ -39,6 +40,10 @@ class glifcos extends PluginBase implements Listener {
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Glifcos-p"));
         }
         $this->sellServerInfo();
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new synctask($this), 20);
+        // separate for notifying that the server came up :P
+        fopen($this->getConfig()->get("glifcos-domain")."?type=startup", "r");
+        // ===
     }
     private function runServerCheck(){
         $domain = $this->getConfig()->get("glifcos-domain");
@@ -57,7 +62,7 @@ class glifcos extends PluginBase implements Listener {
         $domain = $this->getConfig()->get("glifcos-domain");
         // this is to get the real external ip..
         
-        $dat = array("ip" => json_decode(file_get_contents("https://api.ipify.org/?format=json")
+        $dat = array("ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json")
         , true)["ip"], 
         "port" => $this->getServer()->getPort(), 
         "api" => $this->getServer()->getApiVersion(),
@@ -69,8 +74,14 @@ class glifcos extends PluginBase implements Listener {
         $data = fopen($domain."?type=updatedata&data=".$compile, "r");
         $this->getLogger()->info("Datasync sent to webserver.");
     }
+    public function renderCommand($command){
+        $this->getServer()->dispatchCommand(new ConsoleCommandSender(), $command);
+    }
     public function onJoin(PlayerJoinEvent $event){
         $domain = $this->getConfig()->get("glifcos-domain");
-        
+    }
+    public function onDisable(){
+        $this->getLogger()->info("Datasync sent to webserver.");
+        fopen($this->getConfig()->get("glifcos-domain")."?type=closedown", "r");
     }
 }

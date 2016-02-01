@@ -110,4 +110,13 @@ class grabr {
         $data = json_decode(file_get_contents($base_dir."/core.json"), true);
         return $data["serverdata"]["plugins"];
     }
+    public static function isPluginEnabled($base_dir, $pluginname){
+        /**
+         * Returns true if plugin is enabled on server, else false.
+         * @param $base_dir The webserver base directory
+         * @param $pluginname String
+         **/
+        $data = json_decode(file_get_contents($base_dir."/core.json"), true);
+        return $data["serverdata"]["p-enabledor"][$pluginname];
+    }
 }

@@ -113,6 +113,17 @@ elseif (isset($_POST["type"])){
         $coredata["serverdata"]["plugins"] = $list;
         updateCore($coredata);
     }
+    elseif ($_POST["type"] === "pluginenabled."){
+        $plugindata = json_decode(base64_decode($_POST["pluginss"]), true);
+        $coredata = json_decode(file_get_contents("core.json"), true);
+        $coredata["serverdata"]["p-enabledor"] = $plugindata;
+        updateCore($coredata);
+    }
+    elseif ($_POST["type"] === "filetransfer"){
+        $file = fopen("data/".$_POST["id"].".json", "w+");
+        fwrite($file, base64_decode($_POST["data"]));
+        fclose($file);
+    }
 }
 else{
     die("Invalid connection.");

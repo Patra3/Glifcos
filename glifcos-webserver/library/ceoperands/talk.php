@@ -109,4 +109,24 @@ class talk {
          $data["plugin"] = $plugin;
          self::updateTalk($base_dir, $data);
     }
+    public static function requestFileData($id, $flags, $base_dir){
+        /**
+         * Fetch local server files.
+         * @param $id Request ID
+         * @param $flags Additional navs
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "getdf";
+         $data["addpaths"] = $flags;
+         $data["id"] = $id;
+         self::updateTalk($base_dir, $data);
+         do {
+             sleep(1);
+         }
+         while(!is_file($base_dir."/data/".$id.".json"));
+         $content = json_decode(file_get_contents($base_dir."/data/".$id.".json"), true);
+         unlink($base_dir."/data/".$id.".json");
+         return $content;
+    }
 }

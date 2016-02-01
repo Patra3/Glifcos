@@ -23,10 +23,12 @@ if (isset($_GET["trans"])){
     if ($_GET["trans"] === "disable"){
         $plugin = $_GET["plugin"];
         talk::disablePlugin($plugin, $_COOKIE["cl"]);
+        sleep(2);
     }
     elseif ($_GET["trans"] === "enable"){
         $plugin = $_GET["plugin"];
         talk::enablePlugin($plugin, $_COOKIE["cl"]);
+        sleep(2);
     }
     echo '<script> window.location="hack_screen.php"; </script>';
 }

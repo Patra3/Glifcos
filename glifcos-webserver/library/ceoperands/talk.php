@@ -66,14 +66,7 @@ class talk {
          * Resets the talk.json file reciever.
          * @param $base_dir The webserver base directory
          **/
-         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
-         $data["task"] = "none";
-         foreach($data as $obt){
-             $key = array_search($obt, $data);
-             if ($key != "task"){
-                 unset($data[$key]);
-             }
-         }
+         $data = array("task" => "none");
          self::updateTalk($base_dir, $data);
     }
     public static function relayCommand($command, $base_dir){
@@ -127,6 +120,57 @@ class talk {
          while(!is_file($base_dir."/data/".$id.".json"));
          $content = json_decode(file_get_contents($base_dir."/data/".$id.".json"), true);
          unlink($base_dir."/data/".$id.".json");
+         self::resetTalk($base_dir);
          return $content;
+    }
+    public function updateFile($filename, $new_data, $base_dir){
+        /**
+         * Edits the given file on the client.
+         * @param $filename The exact link to file, starting from base data path.
+         * @param $new_data The new content.
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        $data["task"] = "updatedf";
+        $data["newdata"] = $_POST["sthap"];
+        $data["filename"] = $filename;
+        self::updateTalk($base_dir, $data);
+    }
+    public function deleteFile($filename, $base_dir){
+        /**
+         * Deletes the given file on the client.
+         * @param $filename The exact link to file, starting from base data path.
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        $data["task"] = "deletef";
+        $data["filename"] = $filename;
+        self::updateTalk($base_dir, $data);
+    }
+    public function renameFile($origin, $newname, $base_dir){
+        /**
+         * Rename the given file on the client.
+         * @param $origin The exact link to the file, starting from base path.
+         * @param $newname Rename file to...
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        $data["task"] = "renamef";
+        $data["old"] = $origin;
+        $data["new"] = $newname;
+        self::updateTalk($base_dir, $data);
+    }
+    public function moveFile($file, $new_dir, $base_dir){
+        /**
+         * Moves the given file to the new directory.
+         * @param $file Target File
+         * @param $new_dir The Target directory
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        $data["task"] = "movef";
+        $data["oldm"] = $file;
+        $data["moveto"] = $new_dir;
+        self::updateTalk($base_dir, $data);
     }
 }

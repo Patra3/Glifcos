@@ -123,6 +123,8 @@ elseif (isset($_POST["type"])){
         $file = fopen("data/".$_POST["id"].".json", "w+");
         fwrite($file, base64_decode($_POST["data"]));
         fclose($file);
+        require "library/ceoperands/talk.php";
+        talk::resetTalk(getcwd());
     }
 }
 else{

@@ -10,7 +10,8 @@ if (!isset($_COOKIE["authchain"])){
     <div class="w3-container">
     <br>
     <center>
-    '.file_get_contents("library/main/modalhacks/dash-login-containerhack.txt").'
+    <button onclick="document.getElementById(\'id01\').style.display=\'block\'"
+class="w3-btn w3-blue">Login</button>
     </center>
     </div>
     </div>

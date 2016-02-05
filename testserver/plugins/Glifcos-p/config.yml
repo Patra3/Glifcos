@@ -1,0 +1,4 @@
+#Glifcos plugin configuration.
+
+#Your directory to your glifcos webserver.
+glifcos-domain: http://www.glifcos-hotfireydeath.c9users.io/glifcos-webserver/connection.php

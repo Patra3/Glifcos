@@ -49,6 +49,16 @@
         elseif ($_GET["rf"] === "filemoved"){
             echo 'onload="document.getElementById(\'filemoved\').style.display=\'block\'"';
         }
+        elseif ($_GET["rf"] === "filecopied"){
+            echo 'onload="document.getElementById(\'filecopied\').style.display=\'block\'"';
+        }
+    }
+    
+    else{
+      if (!isset($_COOKIE["trialt"])){
+        setcookie("trialt", "tb", time() + 1800);
+        echo 'onload="document.getElementById(\'trialnotice\').style.display=\'block\'"';
+      }
     }
     ?>>
         <!-- NOTIFICATIONS FOR FILE PLACEMENTS -->
@@ -85,6 +95,36 @@
               <span onclick="document.getElementById('filemoved').style.display='none'" 
               class="w3-closebtn">&times;</span>
               <p style="color: green;"><i class="fa fa-file-o"></i> File moved successfully!</p>
+            </div>
+          </div>
+        </div>
+         <div id="filecopied" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('filecopied').style.display='none'" 
+              class="w3-closebtn">&times;</span>
+              <p style="color: green;"><i class="fa fa-file-o"></i> File copied successfully!</p>
+            </div>
+          </div>
+        </div>
+        <div id="trialnotice" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('trialnotice').style.display='none'" 
+              class="w3-closebtn">&times;</span>
+              <p>
+                <i class="fa fa-exclamation-triangle"></i><br>
+                Glifcos - File Manager is currently in beta testing.<br>
+                File managing features work successfully, and can be used <br>
+                in a careful manner.
+                <br>
+                Note that large or excessive directories may crash the file <br>
+                manager. The file manager's performance may be sluggish <br>
+                as it connects directly to the client server. <br>
+                <br>
+                Please generally be gentle with the file manager, and you'll <br>
+                have a great experience. Enjoy!
+              </p>
             </div>
           </div>
         </div>
@@ -135,15 +175,22 @@
                             <footer class="w3-container w3-blue">
                                 <a class="w3-btn w3-indigo" href="trsedit.php?addflag='.
                                 $ds["name"].'">Browse</a>
-                                <a class="w3-btn w3-indigo" href="#">Delete</a>
+                                <a class="w3-btn w3-indigo" onclick="
+                                document.getElementById(\''.base64_encode($ds["name"]).
+                                'delete\').style.display=\'block\'">Delete</a>
                                 <a class="w3-btn w3-indigo" onclick="
                                 document.getElementById(\''.base64_encode($ds["name"]).
                                 'rename\').style.display=\'block\'">Rename</a>
-                                <a class="w3-btn w3-indigo" href="#">Move</a>
-                                <a class="w3-btn w3-indigo" href="#">Copy</a>
+                                <a class="w3-btn w3-indigo" onclick="
+                                document.getElementById(\''.base64_encode($ds["name"]).
+                                'move\').style.display=\'block\'">Move</a>
+                                <a class="w3-btn w3-indigo" onclick="
+                                document.getElementById(\''.base64_encode($ds["name"]).
+                                'copy\').style.display=\'block\'">Copy</a>
                             </footer>
                             </div>
                             ';
+                            // === MODAL FOR RENAMING FOLDERS ===
                             echo '
                             <div id="'.base64_encode($ds["name"]).'rename" class="w3-modal">
                               <div class="w3-modal-content">
@@ -154,11 +201,72 @@
                                   class="w3-closebtn">&times;</span>
                                   <form class="w3-container" action="trsedit.php" method="post">
                                     <p>
-                                    <label>Rename File</label>
+                                    <label>Rename Folder</label>
                                     <input class="w3-input" type="text" name="rename"
                                      value="'.$ds["name"].'"></p>
                                     <input type="submit" class="w3-btn w3-blue" value="Rename" onclick="
-                                    document.cookie =\'filenme='.$ds["curflags"].
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
+                                    $ds["name"].';\'">
+                                   </form>
+                                </div>
+                              </div>
+                            </div>
+                            ';
+                            // === MODAL FOR DELETING FOLDERS ===
+                            echo '
+                            <div id="'.base64_encode($ds["name"]).'delete" class="w3-modal">
+                              <div class="w3-modal-content">
+                                <div class="w3-container">
+                                  <span onclick="document.getElementById(\''.
+                                  base64_encode($ds["name"]).
+                                  'delete\').style.display=\'none\'" 
+                                  class="w3-closebtn">&times;</span>
+                                  <p><i class="fa fa-exclamation-circle"></i> <br>
+                                  Are you sure? Deleting a folder is permanent!</p>
+                                  <button class="w3-btn w3-red" onclick=\'quick("'.$_COOKIE["curflags"].
+                                  $ds["name"].'");\'>Delete</button><br>
+                                </div>
+                              </div>
+                            </div>
+                            ';
+                            // === MODAL FOR COPYING FOLDERS ===
+                            echo '
+                            <div id="'.base64_encode($ds["name"]).'copy" class="w3-modal">
+                              <div class="w3-modal-content">
+                                <div class="w3-container">
+                                  <span onclick="document.getElementById(\''.
+                                  base64_encode($ds["name"]).
+                                  'copy\').style.display=\'none\'" 
+                                  class="w3-closebtn">&times;</span>
+                                  <form class="w3-container" action="trsedit.php" method="post">
+                                    <p>
+                                    <label>Copy to directory</label>
+                                    <input class="w3-input" type="text" name="copydir"
+                                     value="/"></p>
+                                    <input type="submit" class="w3-btn w3-blue" value="Copy" onclick="
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
+                                    $ds["name"].';\'">
+                                   </form>
+                                </div>
+                              </div>
+                            </div>
+                            ';
+                            // === MODAL FOR MOVING FOLDERS ===
+                            echo '
+                            <div id="'.base64_encode($ds["name"]).'move" class="w3-modal">
+                              <div class="w3-modal-content">
+                                <div class="w3-container">
+                                  <span onclick="document.getElementById(\''.
+                                  base64_encode($ds["name"]).
+                                  'move\').style.display=\'none\'" 
+                                  class="w3-closebtn">&times;</span>
+                                  <form class="w3-container" action="trsedit.php" method="post">
+                                    <p>
+                                    <label>Move to directory</label>
+                                    <input class="w3-input" type="text" name="movedir"
+                                     value="/"></p>
+                                    <input type="submit" class="w3-btn w3-blue" value="Move" onclick="
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
                                     $ds["name"].';\'">
                                    </form>
                                 </div>
@@ -193,7 +301,9 @@
                                 <a class="w3-btn w3-indigo" onclick="
                                 document.getElementById(\''.base64_encode($ds["instantname"]).
                                 'move\').style.display=\'block\'">Move</a>
-                                <a class="w3-btn w3-indigo" href="#">Copy</a>
+                                <a class="w3-btn w3-indigo" onclick="
+                                document.getElementById(\''.base64_encode($ds["instantname"]).
+                                'copy\').style.display=\'block\'">Copy</a>
                             </footer>
                             </div>
                             ';
@@ -229,7 +339,7 @@
                                     </textarea>
                                     </p>
                                     <input type="submit" class="w3-btn w3-blue" value="Save" onclick="
-                                    document.cookie =\'filenme='.$ds["curflags"].
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
                                     $ds["instantname"].';\'">
                                   </form>
                                 </div>
@@ -247,7 +357,7 @@
                                   class="w3-closebtn">&times;</span>
                                   <p><i class="fa fa-exclamation-circle"></i> <br>
                                   Are you sure? Deleting a file is permanent!</p>
-                                  <button class="w3-btn w3-red" onclick=\'quick("'.$_ds["curflags"].
+                                  <button class="w3-btn w3-red" onclick=\'quick("'.$_COOKIE["curflags"].
                                   $ds["instantname"].'");\'>Delete</button>
                                 </div>
                               </div>
@@ -268,7 +378,7 @@
                                     <input class="w3-input" type="text" name="rename"
                                      value="'.$ds["instantname"].'"></p>
                                     <input type="submit" class="w3-btn w3-blue" value="Rename" onclick="
-                                    document.cookie =\'filenme='.$ds["curflags"].
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
                                     $ds["instantname"].';\'">
                                    </form>
                                 </div>
@@ -290,7 +400,29 @@
                                     <input class="w3-input" type="text" name="movedir"
                                      value="/"></p>
                                     <input type="submit" class="w3-btn w3-blue" value="Move" onclick="
-                                    document.cookie =\'filenme='.$ds["curflags"].
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
+                                    $ds["instantname"].';\'">
+                                   </form>
+                                </div>
+                              </div>
+                            </div>
+                            ';
+                            // === MODAL FOR COPYING FILES ===
+                            echo '
+                            <div id="'.base64_encode($ds["instantname"]).'copy" class="w3-modal">
+                              <div class="w3-modal-content">
+                                <div class="w3-container">
+                                  <span onclick="document.getElementById(\''.
+                                  base64_encode($ds["instantname"]).
+                                  'copy\').style.display=\'none\'" 
+                                  class="w3-closebtn">&times;</span>
+                                  <form class="w3-container" action="trsedit.php" method="post">
+                                    <p>
+                                    <label>Copy to directory</label>
+                                    <input class="w3-input" type="text" name="copydir"
+                                     value="/"></p>
+                                    <input type="submit" class="w3-btn w3-blue" value="Move" onclick="
+                                    document.cookie =\'filenme='.$_COOKIE["curflags"].
                                     $ds["instantname"].';\'">
                                    </form>
                                 </div>

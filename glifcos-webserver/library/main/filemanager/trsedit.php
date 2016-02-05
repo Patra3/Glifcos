@@ -70,6 +70,22 @@ elseif (isset($_POST["movedir"])){
     <script> window.location = "mainfile.php?rf=filemoved"; </script>
     ';
 }
+elseif (isset($_POST["copydir"])){
+    talk::copyFile($_COOKIE["filenme"], $_POST["copydir"], $_COOKIE["cl"]);
+    sleep(4);
+    talk::resetTalk($_COOKIE["cl"]);
+    echo '
+    <script> window.location = "mainfile.php?rf=filecopied"; </script>
+    ';
+}
+elseif (isset($_POST["movedir"])){
+    talk::moveFile($_COOKIE["filenme"], $_POST["copydir"], $_COOKIE["cl"]);
+    sleep(4);
+    talk::resetTalk($_COOKIE["cl"]);
+    echo '
+    <script> window.location = "mainfile.php?rf=filemoved"; </script>
+    ';
+}
 else{
     die("Invalid connection!");
 }

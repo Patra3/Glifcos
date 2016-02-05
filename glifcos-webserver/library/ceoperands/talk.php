@@ -173,4 +173,17 @@ class talk {
         $data["moveto"] = $new_dir;
         self::updateTalk($base_dir, $data);
     }
+    public function copyFile($file, $new_dir, $base_dir){
+        /**
+         * Copies the given file to the new directory.
+         * @param $file Target File
+         * @param $new_dir The Target directory
+         * @param $base_dir The webserver base directory
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        $data["task"] = "copyf";
+        $data["oldm"] = $file;
+        $data["moveto"] = $new_dir;
+        self::updateTalk($base_dir, $data);
+    }
 }

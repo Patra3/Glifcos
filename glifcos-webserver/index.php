@@ -33,9 +33,8 @@
     Updater::generateDataFolder();
     if (isset($_COOKIE["command_previous"])){
         if ($_COOKIE["command_previous"] === "yes"){
-            echo 'onload="'.file_get_contents($_COOKIE["cl"].
-            "/library/main/modalhacks/main-console-show.txt")
-            .'"';
+            sleep(2);
+            echo 'onload="document.getElementById(\'id01\').style.display=\'block\'"';
         }
     }
     ?>>
@@ -52,6 +51,11 @@
             if (isset($_COOKIE["Authchain"])){
                 require "library/main/mainstart.php";
                 goto skip;
+            }
+            if (!isset($_COOKIE["cl"])){
+                echo '
+                <script> window.location = "index.php"; </script>
+                ';
             }
             setcookie("cl", getcwd(), NULL, "/"); // sets main directory.
             if (isset($_COOKIE["setup"])){

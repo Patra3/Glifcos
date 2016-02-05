@@ -1,2 +1,0 @@
-<button onclick="document.getElementById('id01').style.display='block'"
-class="w3-btn w3-blue">Login</button>

@@ -20,6 +20,7 @@
 <br>
 <?php
 require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
+require $_COOKIE["cl"]."/library/main/guardian.php";
 ?>
 <div class="w3-card-4" style="width:100%;">
 <header class="w3-container w3-blue">
@@ -106,6 +107,7 @@ elseif ($calc <= "100"){
 </div>
 </div>
 <br>
+<!-- MANAGEMENT OPTIONS BUTTON -->
 <div class="w3-card-4" style="width:100%;">
 <header class="w3-container w3-deep-purple">
   <h1>Management Actions</h1>
@@ -119,6 +121,8 @@ elseif ($calc <= "100"){
             <a onclick="document.getElementById('id01').style.display='block'">Console</a>
             <a onclick="document.getElementById('id02').style.display='block'">Plugins</a>
             <a href="filemanager/mainfile.php">File Manager</a>
+            <a href="CONTROL.php?task=stop">Stop</a>
+            <a href="CONTROL.php?task=reload">Reload</a>
           </div>
         </div>
     </center>

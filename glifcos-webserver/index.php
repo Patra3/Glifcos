@@ -53,9 +53,11 @@
                 goto skip;
             }
             if (!isset($_COOKIE["cl"])){
-                echo '
-                <script> window.location = "index.php"; </script>
-                ';
+                if (is_file("core.json")){
+                    echo '
+                    <script> window.location = "index.php"; </script>
+                    ';
+                }
             }
             setcookie("cl", getcwd(), NULL, "/"); // sets main directory.
             if (isset($_COOKIE["setup"])){

@@ -36,6 +36,9 @@
         <title>Glifcos - File Manager</title>
     </head>
     <body <?php 
+    
+    require $_COOKIE["cl"]."/library/main/guardian.php";
+    
     if (isset($_GET["rf"])){
         if ($_GET["rf"] === "filechanged"){
             echo 'onload="document.getElementById(\'filechanged\').style.display=\'block\'"';
@@ -52,8 +55,10 @@
         elseif ($_GET["rf"] === "filecopied"){
             echo 'onload="document.getElementById(\'filecopied\').style.display=\'block\'"';
         }
+        elseif ($_GET["rf"] === "creationac"){
+            echo 'onload="document.getElementById(\'creationac\').style.display=\'block\'"';
+        }
     }
-    
     else{
       if (!isset($_COOKIE["trialt"])){
         setcookie("trialt", "tb", time() + 1800);
@@ -128,7 +133,45 @@
             </div>
           </div>
         </div>
+         <div id="creationac" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('creationac').style.display='none'" 
+              class="w3-closebtn">&times;</span>
+              <p style="color: green;"><i class="fa fa-file-o"></i> Successfully created!</p>
+            </div>
+          </div>
+        </div>
         <!-- END OF DAT -->
+        
+        <!-- FOR NEW FOLDER & FILES -->
+        <div id="newfile" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('newfile').style.display='none'" 
+              class="w3-closebtn">&times;</span>
+              <form class="w3-container" action="trsedit.php" method="post">
+                <p>
+                <label>Name of File</label>
+                <input class="w3-input" type="text" name="finame"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="newfolder" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('newfolder').style.display='none'" 
+              class="w3-closebtn">&times;</span>
+              <form class="w3-container" action="trsedit.php" method="post">
+                <p>
+                <label>Name of Folder</label>
+                <input class="w3-input" type="text" name="fname"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- END OF DAT TOO -->
         
         <div class="w3-container">
             <br>
@@ -149,6 +192,16 @@
                             ';
                         }
                     }
+                    echo '
+                    <br>
+                    <button class="w3-btn w3-blue" style="display: inline-block;" 
+                    onclick="document.getElementById(\'newfile\').style.display=\'block\'"
+                    >New File</button>
+                    <button class="w3-btn w3-blue" style="display: inline-block;" 
+                    onclick="document.getElementById(\'newfolder\').style.display=\'block\'"
+                    >New Folder</button>
+                    <br>
+                    ';
                     if (empty($_COOKIE["curflags"])){
                         setcookie("curflags", "/");
                     }
@@ -284,6 +337,9 @@
                             </header>
                             <div class="w3-container">
                             <p>Name: '.$ds["instantname"].'</p>
+                            <p>Last Modified: '.$ds["lastmodded"].'</p>
+                            <p>Extension: '.$ds["ext"].'</p>
+                            <p>Size: '.$ds["size"].' bytes</p>
                             </div>
                             <footer class="w3-container w3-blue">
                                 <a class="w3-btn w3-indigo" onclick="
@@ -435,6 +491,7 @@
                 </div>
             </div>
         </div>
+        <br>
     </body>
 </html>
 <?php ob_end_flush(); ?>

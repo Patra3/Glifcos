@@ -22,7 +22,10 @@ THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
 class talk {
     private static function updateTalk($base_dir, $array){
         /**
-         * Easy function to update talk. This should not be used outside the talk.php file.
+         * Easy function to update talk. This function should not be used outside.
+         * This is a private debugable function to update the talk online client.
+         * Support for developers usage may be added in the future..
+         * 
          * @param $base_dir The webserver base directory
          **/
         if (is_file($base_dir."/talk.json")){
@@ -123,7 +126,7 @@ class talk {
          self::resetTalk($base_dir);
          return $content;
     }
-    public function updateFile($filename, $new_data, $base_dir){
+    public static function updateFile($filename, $new_data, $base_dir){
         /**
          * Edits the given file on the client.
          * @param $filename The exact link to file, starting from base data path.
@@ -136,9 +139,9 @@ class talk {
         $data["filename"] = $filename;
         self::updateTalk($base_dir, $data);
     }
-    public function deleteFile($filename, $base_dir){
+    public static function deleteFile($filename, $base_dir){
         /**
-         * Deletes the given file on the client.
+         * Deletes the given file on the client. Shared with folder as well.
          * @param $filename The exact link to file, starting from base data path.
          * @param $base_dir The webserver base directory
          **/
@@ -147,9 +150,9 @@ class talk {
         $data["filename"] = $filename;
         self::updateTalk($base_dir, $data);
     }
-    public function renameFile($origin, $newname, $base_dir){
+    public static function renameFile($origin, $newname, $base_dir){
         /**
-         * Rename the given file on the client.
+         * Rename the given file on the client. Shared with folder as well.
          * @param $origin The exact link to the file, starting from base path.
          * @param $newname Rename file to...
          * @param $base_dir The webserver base directory
@@ -160,9 +163,9 @@ class talk {
         $data["new"] = $newname;
         self::updateTalk($base_dir, $data);
     }
-    public function moveFile($file, $new_dir, $base_dir){
+    public static function moveFile($file, $new_dir, $base_dir){
         /**
-         * Moves the given file to the new directory.
+         * Moves the given file to the new directory. Shared with folder as well.
          * @param $file Target File
          * @param $new_dir The Target directory
          * @param $base_dir The webserver base directory
@@ -173,9 +176,9 @@ class talk {
         $data["moveto"] = $new_dir;
         self::updateTalk($base_dir, $data);
     }
-    public function copyFile($file, $new_dir, $base_dir){
+    public static function copyFile($file, $new_dir, $base_dir){
         /**
-         * Copies the given file to the new directory.
+         * Copies the given file to the new directory. Shared with folder as well.
          * @param $file Target File
          * @param $new_dir The Target directory
          * @param $base_dir The webserver base directory
@@ -185,5 +188,47 @@ class talk {
         $data["oldm"] = $file;
         $data["moveto"] = $new_dir;
         self::updateTalk($base_dir, $data);
+    }
+    public static function makeNewFile($filename, $directory, $base_dir, $folder){
+        /**
+         * Makes a new file. Shared with folder creation as well.
+         * @param $filename File
+         * @param $directory Creation directory
+         * @param $base_dir The webserver base directory
+         * @param $folder Is it a folder? Default = false.
+         **/
+        $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+        if (!$folder){
+            // FILE
+            $data["task"] = "makefile";
+            $data["name"] = $filename;
+            $data["directory"] = $directory;
+            self::updateTalk($base_dir, $data);
+        }
+        else{
+            // FOLDER
+            $data["task"] = "makefolder";
+            $data["name"] = $filename;
+            $data["directory"] = $directory;
+            self::updateTalk($base_dir, $data);
+        }
+    }
+    public static function stopServer($base_dir){
+        /**
+         * Stops the server.
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "stop";
+         self::updateTalk($base_dir, $data);
+    }
+    public static function reloadServer($base_dir){
+        /**
+         * Reloads the server.
+         * @param $base_dir The webserver base directory
+         **/
+         $data = json_decode(file_get_contents($base_dir."/talk.json"), true);
+         $data["task"] = "reload";
+         self::updateTalk($base_dir, $data);
     }
 }

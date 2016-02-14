@@ -26,6 +26,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- CUSTOM RALEWAY FONT -->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
         <title>Glifcos</title>
     </head>
     <body <?php 
@@ -37,7 +39,7 @@
             echo 'onload="document.getElementById(\'id01\').style.display=\'block\'"';
         }
     }
-    ?>>
+    ?> style="font-family: Raleway, Serif;">
         <div class="w3-container">
             <?php
             require "library/ceoperands/talk.php";

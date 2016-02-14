@@ -15,6 +15,11 @@ class memorybroadcast extends PluginTask {
     }
     public function onRun($ticks){
         if ($this->start){
+            if (empty(memory_get_usage())){
+                $this->getLogger()->error("Memory usage detection is blocked.");
+                $t = fopen($this->plugin->getConfig()->get("glifcos-domain")."?type=memsync&cm=1"
+                ."&tm=".$cf, "r");
+            }
             $cf = new Config($this->plugin->getServer()->getDataPath()."/server.properties", 
             Config::PROPERTIES);
             $cf = str_replace("M", "", $cf->get("memory-limit"));

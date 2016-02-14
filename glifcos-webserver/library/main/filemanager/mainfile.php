@@ -33,6 +33,8 @@
                 window.location = "trsedit.php?rf=delete";
             }
         </script>
+        <!-- CUSTOM RALEWAY FONT -->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
         <title>Glifcos - File Manager</title>
     </head>
     <body <?php 
@@ -65,7 +67,7 @@
         echo 'onload="document.getElementById(\'trialnotice\').style.display=\'block\'"';
       }
     }
-    ?>>
+    ?> style="font-family: Raleway, Serif">
         <!-- NOTIFICATIONS FOR FILE PLACEMENTS -->
         <div id="filechanged" class="w3-modal">
           <div class="w3-modal-content">
@@ -177,7 +179,7 @@
             <br>
             <div class="w3-card-4" style="width:100%">
                 <header class="w3-container w3-purple">
-                  <h1>Glifcos - File Manager</h1>
+                  <h1 style="font-family: Raleway, Serif;">Glifcos - File Manager</h1>
                 </header>
                 <div class="w3-container">
                     <?php
@@ -201,7 +203,11 @@
                     onclick="document.getElementById(\'newfolder\').style.display=\'block\'"
                     >New Folder</button>
                     <br>
-                    ';
+                    <br>
+                    <a href="'.$_COOKIE["origin-point"].'" 
+                    class="w3-btn w3-blue">
+                    Back to Glifcos</a>
+                    <br>';
                     if (empty($_COOKIE["curflags"])){
                         setcookie("curflags", "/");
                     }
@@ -220,7 +226,7 @@
                             <br>
                             <div class="w3-card-4" style="width:100%">
                             <header class="w3-container w3-blue">
-                                <h1><i class="fa fa-folder-o"></i> Folder</h1>
+                                <h1 style="font-family: Raleway, Serif;"><i class="fa fa-folder-o"></i> Folder</h1>
                             </header>
                             <div class="w3-container">
                             <p>Name: '.$ds["name"].'</p>
@@ -333,7 +339,7 @@
                             <br>
                             <div class="w3-card-4" style="width:100%">
                             <header class="w3-container w3-blue">
-                                <h1><i class="fa fa-file"></i> File</h1>
+                                <h1 style="font-family: Raleway, Serif;"><i class="fa fa-file"></i> File</h1>
                             </header>
                             <div class="w3-container">
                             <p>Name: '.$ds["instantname"].'</p>

@@ -26,6 +26,12 @@ if (isset($_POST["input"])){
     sleep(2);
     echo '<script> window.location = "hack_screen.php"; </script>';
 }
+elseif (isset($_GET["ref"])){
+    if ($_GET["ref"] === "reload"){
+        setcookie("command_previous", "yes", time() + 3);
+        echo '<script> window.location = "hack_screen.php"; </script>';
+    }
+}
 else{
     die("Invalid connection!");
 }

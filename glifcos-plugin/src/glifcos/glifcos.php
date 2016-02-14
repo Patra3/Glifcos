@@ -52,7 +52,11 @@ class glifcos extends PluginBase implements Listener {
             return true;
         }
         $this->sellServerInfo();
-        
+        if (filesize($this->getServer()->getDataPath()."/server.log") > 10000000){
+            $this->getLogger()->warning("Your server.log file is larger than 10MB.");
+            $this->getLogger()->warning("PHP file read may cause your server to crash, depending
+             on your server's RAM.");
+        }
         /*
         REFERENCE:
         use glifcos\maintasks\memorybroadcast;

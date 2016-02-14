@@ -148,7 +148,7 @@ class webserverinput extends PluginTask {
                     unset($base);
                 }
                 elseif ($data["task"] === "stop"){
-                    $this->plugin->getServer()->stop();
+                    $this->plugin->getServer()->shutdown();
                 }
                 elseif ($data["task"] === "reload"){
                     $this->plugin->getServer()->reload();

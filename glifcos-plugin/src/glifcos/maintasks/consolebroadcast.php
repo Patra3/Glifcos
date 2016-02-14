@@ -15,11 +15,13 @@ class consolebroadcast extends PluginTask {
     }
     public function onRun($ticks){
         if ($this->start){
-            $auf = array("type" => "console", "console" => base64_encode(file_get_contents($this->plugin->getServer()->
-            getDataPath()."/server.log")));
+            $contents = file_get_contents($this->plugin->getServer()->getDataPath()."/server.log");
+            $auf = array("type" => "console", "console" => base64_encode($contents));
             $t = Utils::postURL($this->plugin->getConfig()->get("glifcos-domain"), $auf);
             unset($t);
             unset($auf);
+            unset($contents);
+            unset($data);
             gc_collect_cycles();
         }
         else{

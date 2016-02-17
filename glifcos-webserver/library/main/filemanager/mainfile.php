@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php 
+require $_COOKIE["cl"]."/library/main/guardian.php";
+ob_start(); ?>
 <html>
     <head>
         <!--
@@ -38,8 +40,6 @@
         <title>Glifcos - File Manager</title>
     </head>
     <body <?php 
-    
-    require $_COOKIE["cl"]."/library/main/guardian.php";
     
     if (isset($_GET["rf"])){
         if ($_GET["rf"] === "filechanged"){
@@ -396,7 +396,8 @@
                                   <br>
                                   <form class="w3-container" action="trsedit.php" method="post">
                                     <p>
-                                    <textarea rows="20" cols="80" name="sthap">
+                                    <textarea class="w3-input" 
+                                    rows="20" cols="80" name="sthap">
                                     '.$ds["data"].'
                                     </textarea>
                                     </p>

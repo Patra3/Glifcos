@@ -1,3 +1,31 @@
+<?php
+function curtPageURL() {
+   // Solution found on webcheatsheet.com
+   // http://webcheatsheet.com/php/get_current_page_url.php
+   
+   /*
+   To be honest, I actually knew how to do this already,
+   just that I didn't really want to scramble brainpower.
+   Also, this is sorta a "hacky" thing, but... eh. 
+   */
+   $pageURL = 'http';
+   if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+   $pageURL .= "://";
+   if ($_SERVER["SERVER_PORT"] != "80") {
+    $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+   } else {
+    $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+   }
+   return $pageURL;
+}
+if (isset($_GET["logout"])){
+    setcookie("Authchain", "", time() - 1);
+    $_COOKIE["Authchain"] = "";
+    echo '
+    <script> window.location = "'.$_COOKIE["indexd"].'"; </script>
+    ';
+}
+?>
 <html>
     <head>
         <!--
@@ -30,7 +58,7 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
         <title>Glifcos</title>
     </head>
-    <body <?php 
+    <body <?php
     require "updater.php";
     Updater::generateDataFolder();
     if (isset($_COOKIE["command_previous"])){
@@ -40,6 +68,22 @@
         }
     }
     ?> style="font-family: Raleway, Serif;">
+    <?php
+    if (!empty($_COOKIE["Authchain"])){
+        echo '
+        <nav class="w3-topnav w3-green">
+            <h2 style="font-family: Raleway, Serif;">
+                Hi, 
+                '.json_decode(base64_decode($_COOKIE["Authchain"]), true)["user"].'
+                !
+            </h2>
+            <a href="'.$_COOKIE["indexd"].'?logout=" class="w3-right">
+                Logout
+            </a>
+        </nav>
+        ';
+    }
+    ?>
         <div class="w3-container">
             <?php
             require "library/ceoperands/talk.php";
@@ -82,5 +126,6 @@
                 talk::createTalk($_COOKIE["cl"]);
             ?>
         </div>
+        
     </body>
 </html>

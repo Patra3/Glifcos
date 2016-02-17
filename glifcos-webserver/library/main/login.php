@@ -10,6 +10,11 @@ if (isset($_POST["user"])){
         talk::broadcastNewSignIn($_POST["user"], $_SERVER['REMOTE_ADDR'], $_COOKIE["cl"]);
         setcookie("Authchain", base64_encode(json_encode(array("user" =>
         $_POST["user"], "pass" => $_POST["pwds"], "authed" => "yas"))));
+        
+        $_COOKIE["Authchain"] = base64_encode(json_encode(array("user" =>
+        $_POST["user"], "pass" => $_POST["pwds"], "authed" => "yas")));
+        // sweet hack to fix cookie related bugs
+        
         setcookie("setup", "", time());
         echo '<script>
         window.location = "hack_screen.php";

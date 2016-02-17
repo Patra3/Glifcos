@@ -22,25 +22,6 @@
 require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
 require $_COOKIE["cl"]."/library/main/guardian.php";
 
-function curtPageURL() {
-   // Solution found on webcheatsheet.com
-   // http://webcheatsheet.com/php/get_current_page_url.php
-   
-   /*
-   To be honest, I actually knew how to do this already,
-   just that I didn't really want to scramble brainpower.
-   Also, this is sorta a "hacky" thing, but... eh. 
-   */
-   $pageURL = 'http';
-   if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-   $pageURL .= "://";
-   if ($_SERVER["SERVER_PORT"] != "80") {
-    $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-   } else {
-    $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-   }
-   return $pageURL;
-}
 setcookie("origin-point", curtPageURL());
 ?>
 <div class="w3-card-4" style="width:100%;">
@@ -113,7 +94,12 @@ setcookie("origin-point", curtPageURL());
 <br>
 <div class="w3-card-4" style="width:100%;">
 <header class="w3-container w3-<?php
+if (empty(grabr::getTotalMemory($_COOKIE["cl"]))){
+  $calc = "0";
+  goto tagt;
+}
 $calc = round(grabr::getCurrentMemory($_COOKIE["cl"])/grabr::getTotalMemory($_COOKIE["cl"]) * 100);
+tagt:
 if ($calc <= "25"){
   echo "green";
 }
@@ -130,18 +116,13 @@ elseif ($calc <= "100"){
     <center>
         <h2 style="font-family: Raleway, Serif;"><?php
         // Short hack to fix information grab issues.
-        if (empty(grabr::getCurrentMemory($_COOKIE["cl"]))){
-          echo '
-          <script>location.reload();</script>
-          ';
-        }
         if (empty(grabr::getTotalMemory($_COOKIE["cl"]))){
-          echo '
-          <script>location.reload();</script>
-          ';
+          echo "Error: Memory Usage Detection Failed!";
+          goto tagt2;
         }
-        echo round(grabr::getCurrentMemory($_COOKIE["cl"])/grabr::getTotalMemory($_COOKIE["cl"]) * 100);
-        ?>% usage</h2>
+        echo round(grabr::getCurrentMemory($_COOKIE["cl"])/grabr::getTotalMemory($_COOKIE["cl"]) * 100)."% usage";
+        tagt2:
+        ?></h2>
         <p><?php
         echo grabr::getCurrentMemory($_COOKIE["cl"])."/".grabr::getTotalMemory($_COOKIE["cl"]);
         ?> MB</p>
@@ -179,6 +160,57 @@ elseif ($calc <= "100"){
             <a href="CONTROL.php?task=reload">
               <i class="fa fa-backward"></i> 
               Reload
+            </a>
+          </div>
+        </div>
+        <div class="w3-dropdown-hover">
+          <button class="w3-btn w3-red">Players</button>
+          <div class="w3-dropdown-content w3-border">
+            <a onclick="">
+              <i class="fa fa-search"></i> 
+              Search Player
+            </a>
+            <a onclick="">
+              <i class="fa fa-sitemap"></i> 
+              Connected Players
+            </a>
+            <a onclick="">
+              <i class="fa fa-user"></i> 
+              Player List
+            </a>
+          </div>
+        </div>
+        <div class="w3-dropdown-hover">
+          <button class="w3-btn w3-red">Misc.</button>
+          <div class="w3-dropdown-content w3-border">
+            <a onclick="">
+              <i class="fa fa-globe"></i> 
+              World Manager
+            </a>
+            <a onclick="">
+              <i class="fa fa-floppy-o"></i> 
+              Backup Manager
+            </a>
+          </div>
+        </div>
+        <div class="w3-dropdown-hover">
+          <button class="w3-btn w3-red">Settings</button>
+          <div class="w3-dropdown-content w3-border">
+            <a onclick="">
+              View Users
+            </a>
+            <a onclick="">
+              Updates
+            </a>
+            <a onclick="">
+              About
+            </a>
+            <a onclick="document.getElementById('bugreport').style.display='block'">
+              <i class="fa fa-bug"></i> 
+              Report a Bug
+            </a>
+            <a style="color: yellow; background-color: black;">
+              Glifcos v0.0.1-ALPHA
             </a>
           </div>
         </div>
@@ -249,6 +281,53 @@ elseif ($calc <= "100"){
     </div>
   </div>
 </div>
+<!-- REPORT BUG MODAL -->
+<div id="bugreport" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-purple"> 
+      <span onclick="document.getElementById('bugreport').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h2>Report a Bug</h2>
+    </header>
+    <div class="w3-container">
+      <p>
+        Thank you in your interest to make Glifcos better!
+        By reporting a bug, you are helping me improve Glifcos with
+        future updates to fix reported bugs!
+      </p>
+      <p>
+        <strong>Option 1: Report on Github</strong><br>
+        You may report bugs on the Glifcos bug report page on Github. <br>
+        <a href="https://github.com/HotFireyDeath/Glifcos">
+          Click me to go to Glifcos bug report page on Github.
+        </a>
+      </p>
+      <p>
+        <strong>Option 2: Submit below</strong><br>
+        Glifcos features a built-in bug reporting system, to make your life
+        more easy. For this to work, PHP must allow external file contact.<br>
+        [Auto Check]: <?php
+        if (ini_get('allow_url_fopen')){
+          echo "PHP external file contact is enabled!";
+        }
+        else{
+          echo "PHP external file contact is not enabled!";
+        }
+        ?>
+      </p>
+      <form class="w3-container">
+        <p>
+        <label>Name of Bug</label>
+        <input class="w3-input" type="text"></p>
+        <p>
+        <label>Description</label><br>
+        <textarea class="w3-input" 
+        rows="20" cols="80" name="description"></textarea>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <br>
@@ -257,4 +336,5 @@ elseif ($calc <= "100"){
 <br>
 <br>
 <br>
+
 <!-- </div> -->

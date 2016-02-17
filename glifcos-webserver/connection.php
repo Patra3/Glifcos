@@ -90,6 +90,12 @@ if (isset($_GET["type"])){
         $coredata["serverdata"]["currentcpu"] = $_GET["s"];
         updateCore($coredata);
     }
+    elseif ($_GET["type"] === "newuser"){
+        $username = urldecode($_GET["user"]);
+        $password = urldecode($_GET["pswd"]);
+        require "library/ceoperands/usermgr.php";
+        usermgr::registerUser($username, $password, getcwd());
+    }
 }
 elseif (isset($_POST["type"])){
     if ($_POST["type"] === "playerq"){

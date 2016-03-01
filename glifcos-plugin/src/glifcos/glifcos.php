@@ -106,7 +106,6 @@ class glifcos extends PluginBase implements Listener {
         "port" => $this->getServer()->getPort(), 
         "api" => $this->getServer()->getApiVersion(),
         "pm-v" => $this->getServer()->getPocketMineVersion(),
-        "servern" => $this->getServer()->getServerName(),
         "motd" => $this->getServer()->getMotd(),
         );
         $compile = base64_encode(json_encode($dat));

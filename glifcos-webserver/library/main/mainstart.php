@@ -196,13 +196,13 @@ elseif ($calc <= "100"){
         <div class="w3-dropdown-hover">
           <button class="w3-btn w3-red">Settings</button>
           <div class="w3-dropdown-content w3-border">
-            <a onclick="">
+            <a href="userviewers/usermain.php">
               View Users
             </a>
             <a onclick="">
               Updates
             </a>
-            <a onclick="">
+            <a onclick="document.getElementById('aboutmodal').style.display='block'">
               About
             </a>
             <a onclick="document.getElementById('bugreport').style.display='block'">
@@ -283,7 +283,7 @@ elseif ($calc <= "100"){
 </div>
 <!-- REPORT BUG MODAL -->
 <div id="bugreport" class="w3-modal">
-  <div class="w3-modal-content">
+  <div class="w3-modal-content w3-animate-top">
     <header class="w3-container w3-purple"> 
       <span onclick="document.getElementById('bugreport').style.display='none'" 
       class="w3-closebtn">&times;</span>
@@ -298,7 +298,7 @@ elseif ($calc <= "100"){
       <p>
         <strong>Option 1: Report on Github</strong><br>
         You may report bugs on the Glifcos bug report page on Github. <br>
-        <a href="https://github.com/HotFireyDeath/Glifcos">
+        <a href="https://github.com/HotFireyDeath/Glifcos/issues">
           Click me to go to Glifcos bug report page on Github.
         </a>
       </p>
@@ -326,6 +326,25 @@ elseif ($calc <= "100"){
         </p>
       </form>
     </div>
+  </div>
+</div>
+<!-- ABOUT MODAL -->
+<div id="aboutmodal" class="w3-modal">
+  <div class="w3-modal-content w3-card-8 w3-animate-top">
+    <header class="w3-container w3-teal"> 
+      <span onclick="document.getElementById('aboutmodal').style.display='none'" 
+      class="w3-closebtn">×</span>
+      <h2>About your Glifcos..</h2>
+    </header>
+    <div class="w3-container">
+      <br>
+      Version: 0.0.1-ALPHA <br>
+      Changelog:
+      <ul>
+        <li> Alpha early test release</li>
+      </ul>
+    </div>
+    <br>
   </div>
 </div>
 <br>

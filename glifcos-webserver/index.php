@@ -19,8 +19,7 @@ function curtPageURL() {
    return $pageURL;
 }
 if (isset($_GET["logout"])){
-    setcookie("Authchain", "", time() - 1);
-    $_COOKIE["Authchain"] = "";
+    setcookie("Authchain", "", time() + 2);
     echo '
     <script> window.location = "'.$_COOKIE["indexd"].'"; </script>
     ';
@@ -74,8 +73,7 @@ if (isset($_GET["logout"])){
         <nav class="w3-topnav w3-green">
             <h2 style="font-family: Raleway, Serif;">
                 Hi, 
-                '.json_decode(base64_decode($_COOKIE["Authchain"]), true)["user"].'
-                !
+                '.json_decode(base64_decode($_COOKIE["Authchain"]), true)["user"].'!
             </h2>
             <a href="'.$_COOKIE["indexd"].'?logout=" class="w3-right">
                 Logout

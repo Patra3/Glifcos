@@ -1,0 +1,276 @@
+<?php
+
+/*
+THIS FILE IS PART OF THE GLIFCOS PROJECT BY @HOTFIREYDEATH.
+
+THIS PROJECT IS LICENSED UNDER THE MIT LICENSE (MIT). A COPY OF 
+THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
+
+      ___                                     ___           ___           ___           ___     
+     /\__\                                   /\__\         /\__\         /\  \         /\__\    
+    /:/ _/_                     ___         /:/ _/_       /:/  /        /::\  \       /:/ _/_   
+   /:/ /\  \                   /\__\       /:/ /\__\     /:/  /        /:/\:\  \     /:/ /\  \  
+  /:/ /::\  \   ___     ___   /:/__/      /:/ /:/  /    /:/  /  ___   /:/  \:\  \   /:/ /::\  \ 
+ /:/__\/\:\__\ /\  \   /\__\ /::\  \     /:/_/:/  /    /:/__/  /\__\ /:/__/ \:\__\ /:/_/:/\:\__\
+ \:\  \ /:/  / \:\  \ /:/  / \/\:\  \__  \:\/:/  /     \:\  \ /:/  / \:\  \ /:/  / \:\/:/ /:/  /
+  \:\  /:/  /   \:\  /:/  /   ~~\:\/\__\  \::/__/       \:\  /:/  /   \:\  /:/  /   \::/ /:/  / 
+   \:\/:/  /     \:\/:/  /       \::/  /   \:\  \        \:\/:/  /     \:\/:/  /     \/_/:/  /  
+    \::/  /       \::/  /        /:/  /     \:\__\        \::/  /       \::/  /        /:/  /   
+     \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
+*/
+
+
+namespace glifcos;
+
+// POCKETMINE NAMESPACES
+use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+use pocketmine\command\ConsoleCommandSender;
+use pocketmine\Player;
+use pocketmine\utils\TextFormat;
+use pocketmine\event\player\PlayerJoinEvent;
+
+// GLIFCOS NAMESPACES
+use glifcos\maintasks\memorybroadcast;
+use glifcos\maintasks\playerquery;
+use glifcos\maintasks\consolebroadcast;
+use glifcos\maintasks\webserverinput;
+use glifcos\maintasks\cpubroadcast;
+use glifcos\maintasks\pluginbroadcast;
+use glifcos\maintasks\enabledplugin;
+
+class glifcos extends PluginBase implements Listener {
+    public $direct;
+    public function onEnable(){
+        if (!is_dir($this->getDataFolder())){
+            mkdir($this->getDataFolder());
+            $this->saveDefaultConfig();
+        }
+        $res = $this->runServerCheck();
+        if (!$res){
+            $this->getLogger()->warning("Glifcos could not verify the server. Please check your info in the config file.");
+            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Glifcos-p"));
+            return true;
+        }
+        $this->sellServerInfo();
+        if (filesize($this->getServer()->getDataPath()."/server.log") > 10000000){
+            $this->getLogger()->warning("Your server.log file is larger than 10MB.");
+            $this->getLogger()->warning("PHP file read may cause your server to crash, depending
+             on your server's RAM.");
+        }
+        /*
+        REFERENCE:
+        use glifcos\maintasks\memorybroadcast;
+        use glifcos\maintasks\playerquery;
+        use glifcos\maintasks\consolebroadcast;
+        use glifcos\maintasks\webserverinput;
+        use glifcos\maintasks\cpubroadcast;
+        use glifcos\maintasks\pluginbroadcast;
+        use glifcos\maintasks\enabledplugin;
+        */
+        //start all sync tasks.
+        $tasktime = 20;
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new memorybroadcast($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new playerquery($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new consolebroadcast($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new webserverinput($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new cpubroadcast($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new pluginbroadcast($this), $tasktime);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new enabledplugin($this), $tasktime);
+        // ===
+    }
+    private function runServerCheck(){
+        $domain = $this->getConfig()->get("glifcos-domain");
+        $result = $this->url_exists($domain);
+        if ($result === false){
+            return false;
+        }
+        else{
+            $data = fopen($domain."?type=ping", "r");
+            $data2 = fread($data, 5);
+            if ($data2 == "apple"){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    private function sellServerInfo(){
+        // Don't take this angrily!! I'm just syncing
+        // data with the webserver >~<
+        $domain = $this->getConfig()->get("glifcos-domain");
+        // this is to get the real external ip..
+        
+        $dat = array("ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json")
+        , true)["ip"], 
+        "port" => $this->getServer()->getPort(), 
+        "api" => $this->getServer()->getApiVersion(),
+        "pm-v" => $this->getServer()->getPocketMineVersion(),
+        "motd" => $this->getServer()->getMotd(),
+        );
+        $compile = base64_encode(json_encode($dat));
+        $data = fopen($domain."?type=updatedata&data=".$compile, "r");
+        $this->getLogger()->info(TextFormat::BLUE.TextFormat::BOLD.
+        "Datasync sent to webserver.");
+    }
+    public function renderCommand($command){
+        $this->getServer()->dispatchCommand(new ConsoleCommandSender(), $command);
+    }
+    public function onJoin(PlayerJoinEvent $event){
+        $domain = $this->getConfig()->get("glifcos-domain");
+    }
+    public function onDisable(){
+        /*
+        if (!file_exists($this->getConfig()->get("glifcos-domain"))){
+            return true;
+        }
+        */
+        fopen($this->getConfig()->get("glifcos-domain")."?type=closedown", "r");
+        $this->getLogger()->info(TextFormat::BLUE.TextFormat::BOLD.
+        "Datasync sent to webserver.");
+    }
+    public function scanDirectory($base){
+        $entire = array();
+        foreach(scandir($base) as $stuff){
+                if (is_file($base."/".$stuff)){
+                    /*
+                    Just for notability, if anyone wants to access the file array,
+                    here is a small list of accessible keys:
+                    - type
+                    - lastmodded
+                    - ext (extension)
+                    - instantname
+                    - data (content)
+                    - size
+                    */
+                    $entire[$base."/".$stuff] = array("type" => "file", "lastmodded" =>
+                    date("F d, Y H:i:s", filemtime($base."/".$stuff)), "ext" => pathinfo($base."/".$stuff, 
+                    PATHINFO_EXTENSION), "instantname" => $stuff, "data" => 
+                    mb_convert_encoding(file_get_contents($base."/".$stuff), "UTF-8", "UTF-8"),
+                    "size" => filesize($base."/".$stuff));
+                    if ($entire[$base."/".$stuff]["ext"] === "phar"){
+                        unset($entire[$base."/".$stuff]["data"]);
+                    }
+                }
+                elseif (is_dir($base."/".$stuff)){
+                    $entire[$base."/".$stuff] = array("type" => "dir", "name" => $stuff);
+                    $pointer = $base."/".$stuff;
+                }
+        }
+        return $entire;
+    }
+    public function FolderRm($path){
+        // RESOURCE FOUND AT STACKOVERFLOW.
+        if (is_dir($path) === true){
+            $files = array_diff(scandir($path), array('.', '..'));
+            foreach ($files as $file){
+                $this->FolderRm(realpath($path) . '/' . $file);
+            }
+            return rmdir($path);
+        }
+        else if (is_file($path) === true){
+            return unlink($path);
+        }
+        return false;
+    }
+    public function FolderCp($src, $dst) { 
+        // RESOURCE FOUND AT STACKOVERFLOW.
+        $dir = opendir($src); 
+        @mkdir($dst); 
+        while(false !== ( $file = readdir($dir)) ) { 
+            if (( $file != '.' ) && ( $file != '..' )) { 
+                if ( is_dir($src . '/' . $file) ) { 
+                    $this->FolderCp($src . '/' . $file,$dst . '/' . $file); 
+                } 
+                else { 
+                    copy($src . '/' . $file,$dst . '/' . $file); 
+                }
+            } 
+        } 
+        closedir($dir); 
+    } 
+    public function url_exists($url){
+        // RESOURCE FOUND AT PHP.NET
+        // http://php.net/manual/en/function.file-exists.php#78656
+        $url = str_replace("http://", "", $url);
+        if (strstr($url, "/")) {
+            $url = explode("/", $url, 2);
+            $url[1] = "/".$url[1];
+        } else {
+            $url = array($url, "/");
+        }
+
+        $fh = fsockopen($url[0], 80);
+        if ($fh) {
+            fputs($fh,"GET ".$url[1]." HTTP/1.1\nHost:".$url[0]."\n\n");
+            if (fread($fh, 22) == "HTTP/1.1 404 Not Found") { return false; }
+            else { return true;    }
+
+        } else { return false;}
+    }
+    public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+        if(strtolower($command->getName()) === "glifcos"){
+            if ($sender instanceof Player){
+                $sender->sendMessage(TextFormat::RED.
+                "Glifcos can only be modified via console.");
+                return true;
+            }
+            if (!isset($args[0])){
+                $this->getLogger()->info("Enter 'glifcos help' for all commands.");
+                return true;
+            }
+            elseif ($args[0] === "help"){
+                $c_data = array(
+                    "glifcos newuser <username> <password>" =>
+                    "Registers a new user into Glifcos.",
+                    "glifcos detectwebserver" => 
+                    "Pings the webserver (as a test)"
+                    );
+                $this->getLogger()->info(TextFormat::GREEN."Glifcos commands: ");
+                foreach($c_data as $des){
+                    $this->getLogger()->info("- ".array_search($des, $c_data)." : "
+                    .$des);
+                }
+                return true;
+            }
+            elseif ($args[0] === "detectwebserver"){
+                $time = microtime(true);
+                $rs = $this->runServerCheck();
+                if ($rs){
+                    $this->getLogger()->info(TextFormat::GREEN.
+                    "Ping successful! Response: ".
+                    (microtime(true) - $time)."ms");
+                }
+                else{
+                    $this->getLogger()->info(TextFormat::RED."Ping failed.");
+                }
+                unset($rs);
+                unset($time);
+                gc_collect_cycles();
+                return true;
+            }
+            elseif ($args[0] === "newuser"){
+                if (!isset($args[1])){
+                    $sender->sendMessage("glifcos newuser <username> <password>");
+                    return true;
+                }
+                elseif (!isset($args[2])){
+                    $sender->sendMessage("glifcos newuser <username> <password>");
+                    return true;
+                }
+                else{
+                    $d = fopen($this->getConfig()->get("glifcos-domain")."?type=newuser".
+                    "&user=".urlencode($args[1])."&pswd=".urlencode($args[2]), "r");
+                    $this->getLogger()->info(TextFormat::GREEN."New user '".$args[1]."' 
+                    registered to Glifcos!");
+                    unset($d);
+                    gc_collect_cycles();
+                }
+                return true;
+            }
+        }
+    }
+}

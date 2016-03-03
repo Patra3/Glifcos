@@ -224,7 +224,7 @@ ob_start(); ?>
                             // === MODAL FOR FOLDERS ===
                             echo '
                             <br>
-                            <div class="w3-card-4" style="width:100%">
+                            <div class="w3-card" style="width:100%">
                             <header class="w3-container w3-blue">
                                 <h1 style="font-family: Raleway, Serif;"><i class="fa fa-folder-o"></i> Folder</h1>
                             </header>
@@ -337,7 +337,7 @@ ob_start(); ?>
                             // === MODAL FOR DISPLAYING FILE CARD ===
                             echo '
                             <br>
-                            <div class="w3-card-4" style="width:100%">
+                            <div class="w3-card" style="width:100%">
                             <header class="w3-container w3-blue">
                                 <h1 style="font-family: Raleway, Serif;"><i class="fa fa-file"></i> File</h1>
                             </header>
@@ -413,15 +413,20 @@ ob_start(); ?>
                             echo '
                             <div id="'.base64_encode($ds["instantname"]).'delete" class="w3-modal">
                               <div class="w3-modal-content">
-                                <div class="w3-container">
+                                <header class="w3-container w3-red">
                                   <span onclick="document.getElementById(\''.
                                   base64_encode($ds["instantname"]).
                                   'delete\').style.display=\'none\'" 
-                                  class="w3-closebtn">&times;</span>
-                                  <p><i class="fa fa-exclamation-circle"></i> <br>
-                                  Are you sure? Deleting a file is permanent!</p>
+                                  class="w3-closebtn">&times;
+                                  </span>
+                                  <p><i class="fa fa-exclamation-circle"></i> Are you sure? Deleting a file is permanent!</p>
+                                </header>
+                                <div class="w3-container">
+                                  <br>
                                   <button class="w3-btn w3-red" onclick=\'quick("'.$_COOKIE["curflags"].
                                   $ds["instantname"].'");\'>Delete</button>
+                                  <br>
+                                  <br>
                                 </div>
                               </div>
                             </div>

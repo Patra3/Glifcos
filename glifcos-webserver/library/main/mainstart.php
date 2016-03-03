@@ -330,7 +330,7 @@ elseif ($calc <= "100"){
 </div>
 <!-- ABOUT MODAL -->
 <div id="aboutmodal" class="w3-modal">
-  <div class="w3-modal-content w3-card-8 w3-animate-top">
+  <div class="w3-modal-content w3-card w3-animate-top">
     <header class="w3-container w3-teal"> 
       <span onclick="document.getElementById('aboutmodal').style.display='none'" 
       class="w3-closebtn">×</span>
@@ -338,7 +338,7 @@ elseif ($calc <= "100"){
     </header>
     <div class="w3-container">
       <br>
-      Version: 0.0.1-ALPHA <br>
+      Version: 0.0.2-ALPHA <br>
       Changelog:
       <ul>
         <li> Alpha early test release</li>

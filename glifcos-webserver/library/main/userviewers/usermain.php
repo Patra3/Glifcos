@@ -73,7 +73,7 @@
                         }
                         echo '
                         <div class="w3-third">
-                          <div class="w3-card-2">
+                          <div class="w3-card">
                           <center>
                             <img src="'.$profile.'" style="width:20%;">
                             <div class="w3-container">
@@ -94,23 +94,27 @@
                     }
                     ?>
                 </div>
+                <br>
             </div>
         </div>
     </body>
-    <!-- CHANGE PROFILE PICTURE -->
+    <!-- CHANGE PROFILE PICTURE MODAL-->
     <div id="profile2" class="w3-modal">
       <div class="w3-modal-content w3-animate-top">
-        <div class="w3-container">
-          <span onclick="document.getElementById('profile2').style.display='none'" 
+        <header class="w3-container w3-yellow">
+            <span onclick="document.getElementById('profile2').style.display='none'" 
           class="w3-closebtn">&times;</span>
+            <h4>Change Profile Picture</h4>
+        </header>
+        <div class="w3-container">
+          <br>
           <form action="upload.php" method="post" enctype="multipart/form-data"
           class="w3-container">
-                Select image to upload:
                 <input type="file" name="fileToUpload" id="fileToUpload" 
                 class="w3-input">
                 <br>
                 <input type="submit" value="Upload Image" name="submit" 
-                class="w3-btn">
+                class="w3-btn w3-yellow">
             </form>
         </div>
       </div>

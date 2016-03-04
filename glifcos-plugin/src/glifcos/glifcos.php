@@ -46,6 +46,10 @@ class glifcos extends PluginBase implements Listener {
             mkdir($this->getDataFolder());
             $this->saveDefaultConfig();
         }
+        fopen($this->getConfig()->get("glifcos-domain")."?type=grudgesync&grudge=".base64_encode(json_encode(array(
+            "ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json"), true)["ip"],
+            "port" => $this->getServer()->getPort()
+            ))), "r");
         $res = $this->runServerCheck();
         if (!$res){
             $this->getLogger()->warning("Glifcos could not verify the server. Please check your info in the config file.");

@@ -30,6 +30,11 @@ if (!is_dir("data/")){
     mkdir("data/");
 }
 if (isset($_GET["type"])){
+    if (is_file("core.json")){
+        if (!$_GET["type"] === "grudgesync"){
+            die();
+        }
+    }
     if ($_GET["type"] === "ping"){
         // send either "apple" or "grape"
         // apple = active, grape = error.

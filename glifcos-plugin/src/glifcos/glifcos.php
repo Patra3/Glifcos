@@ -28,6 +28,7 @@ use pocketmine\event\Listener;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
 
 // GLIFCOS NAMESPACES
 use glifcos\maintasks\memorybroadcast;
@@ -77,6 +78,7 @@ class glifcos extends PluginBase implements Listener {
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new pluginbroadcast($this), $tasktime);
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new enabledplugin($this), $tasktime);
         // ===
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     private function runServerCheck(){
         $domain = $this->getConfig()->get("glifcos-domain");
@@ -118,6 +120,9 @@ class glifcos extends PluginBase implements Listener {
     }
     public function onJoin(PlayerJoinEvent $event){
         $domain = $this->getConfig()->get("glifcos-domain");
+        $t = fopen($domain."?type=playerloggedin&name=".$event->getPlayer()->getName()."&ip=".$event->getPlayer()->getAddress(), "r");
+        unset($t);
+        gc_collect_cycles();
     }
     public function onDisable(){
         /*
@@ -128,6 +133,12 @@ class glifcos extends PluginBase implements Listener {
         fopen($this->getConfig()->get("glifcos-domain")."?type=closedown", "r");
         $this->getLogger()->info(TextFormat::BLUE.TextFormat::BOLD.
         "Datasync sent to webserver.");
+    }
+    public function onDisconnect(PlayerQuitEvent $event){
+        $domain = $this->getConfig()->get("glifcos-domain");
+        $t = fopen($domain."?type=playerdisconnected&name=".$event->getPlayer()->getName(), "r");
+        unset($t);
+        gc_collect_cycles();
     }
     public function scanDirectory($base){
         $entire = array();

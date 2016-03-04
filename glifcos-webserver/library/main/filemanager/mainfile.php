@@ -275,15 +275,20 @@ ob_start(); ?>
                             echo '
                             <div id="'.base64_encode($ds["name"]).'delete" class="w3-modal">
                               <div class="w3-modal-content">
-                                <div class="w3-container">
+                                <header class="w3-container w3-red">
                                   <span onclick="document.getElementById(\''.
                                   base64_encode($ds["name"]).
                                   'delete\').style.display=\'none\'" 
-                                  class="w3-closebtn">&times;</span>
-                                  <p><i class="fa fa-exclamation-circle"></i> <br>
-                                  Are you sure? Deleting a folder is permanent!</p>
+                                  class="w3-closebtn">&times;
+                                  </span>
+                                  <p><i class="fa fa-exclamation-circle"></i> Are you sure? Deleting a folder is permanent!</p>
+                                </header>
+                                <div class="w3-container">
+                                  <br>
                                   <button class="w3-btn w3-red" onclick=\'quick("'.$_COOKIE["curflags"].
-                                  $ds["name"].'");\'>Delete</button><br>
+                                  $ds["name"].'");\'>Delete</button>
+                                  <br>
+                                  <br>
                                 </div>
                               </div>
                             </div>

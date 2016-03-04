@@ -23,6 +23,7 @@ require $_COOKIE["cl"]."/library/ceoperands/grabr.php";
 require $_COOKIE["cl"]."/library/main/guardian.php";
 
 setcookie("origin-point", curtPageURL());
+require "player.php";
 ?>
 <div class="w3-card-4" style="width:100%;">
 <header class="w3-container w3-blue">
@@ -166,30 +167,13 @@ elseif ($calc <= "100"){
         <div class="w3-dropdown-hover">
           <button class="w3-btn w3-red">Players</button>
           <div class="w3-dropdown-content w3-border">
-            <a onclick="">
+            <a onclick="document.getElementById('_searchp').style.display='block'">
               <i class="fa fa-search"></i> 
               Search Player
             </a>
-            <a onclick="">
-              <i class="fa fa-sitemap"></i> 
-              Connected Players
-            </a>
-            <a onclick="">
+            <a onclick="document.getElementById('_list').style.display='block'">
               <i class="fa fa-user"></i> 
               Player List
-            </a>
-          </div>
-        </div>
-        <div class="w3-dropdown-hover">
-          <button class="w3-btn w3-red">Misc.</button>
-          <div class="w3-dropdown-content w3-border">
-            <a onclick="">
-              <i class="fa fa-globe"></i> 
-              World Manager
-            </a>
-            <a onclick="">
-              <i class="fa fa-floppy-o"></i> 
-              Backup Manager
             </a>
           </div>
         </div>
@@ -199,9 +183,6 @@ elseif ($calc <= "100"){
             <a href="userviewers/usermain.php">
               View Users
             </a>
-            <a onclick="">
-              Updates
-            </a>
             <a onclick="document.getElementById('aboutmodal').style.display='block'">
               About
             </a>
@@ -210,7 +191,7 @@ elseif ($calc <= "100"){
               Report a Bug
             </a>
             <a style="color: yellow; background-color: black;">
-              Glifcos v0.0.1-ALPHA
+              Glifcos v0.0.1-BETA
             </a>
           </div>
         </div>
@@ -249,13 +230,56 @@ elseif ($calc <= "100"){
     </div>
   </div>
 </div>
+<!-- PLAYER LIST MODAL -->
+<div id="_list" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top">
+    <header class="w3-container w3-green">
+      <span onclick="document.getElementById('_list').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h3>Player List</h3>
+    </header>
+    <div class="w3-container">
+      <p>List of your server's players: </p>
+      <ul class="w3-ul w3-hoverable">
+        <?php
+        foreach(PlayerData::getPlayerList($_COOKIE["cl"]) as $files){
+          echo '
+          <li><a href="player.php?_search='.$files.'">'.$files.'</a></li>
+          ';
+        }
+        ?>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- SEARCH PLAYER MODAL -->
+<div id="_searchp" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top">
+    <header class="w3-container w3-green">
+      <span onclick="document.getElementById('_searchp').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h4 style="font-family: Raleway;">Search Player</h4>
+    </header>
+    <div class="w3-container">
+      <form class="w3-container" method="get" action="player.php">
+        <p>
+          <input type="text" name="_search" class="w3-input">
+        </p>
+        <input type="submit" class="w3-btn w3-green" value="Search">
+      </form>
+    </div>
+  </div>
+</div>
 <!-- PLUGIN MODAL -->
 <div id="id02" class="w3-modal">
   <div class="w3-modal-content w3-animate-top">
-    <div class="w3-container">
+    <header class="w3-container w3-green">
       <span onclick="document.getElementById('id02').style.display='none'" 
       class="w3-closebtn">&times;</span>
-      <h4 style="font-family: Raleway, Serif;">Manage Your Plugins</h4>
+      <h4 style="font-family: Raleway, Serif">Manage Your Plugins</h4>
+    </header>
+    <div class="w3-container">
+      <br>
       <?php
       foreach(grabr::getPlugins($_COOKIE["cl"]) as $lols){
         if ((grabr::isPluginEnabled($_COOKIE["cl"], $lols)) === false){
@@ -272,12 +296,13 @@ elseif ($calc <= "100"){
           <div class="w3-dropdown-content w3-border">
             <a href="pluginse.php?trans=disable&plugin='.$lols.'">Disable Plugin</a>
             <a href="pluginse.php?trans=enable&plugin='.$lols.'">Enable Plugin</a>
-            <a href="#">View Data</a>
           </div>
         </div>
         ';
       }
       ?>
+      <br>
+      <br>
     </div>
   </div>
 </div>
@@ -296,35 +321,12 @@ elseif ($calc <= "100"){
         future updates to fix reported bugs!
       </p>
       <p>
-        <strong>Option 1: Report on Github</strong><br>
+        <strong>Option: Report on Github</strong><br>
         You may report bugs on the Glifcos bug report page on Github. <br>
         <a href="https://github.com/HotFireyDeath/Glifcos/issues">
           Click me to go to Glifcos bug report page on Github.
         </a>
       </p>
-      <p>
-        <strong>Option 2: Submit below</strong><br>
-        Glifcos features a built-in bug reporting system, to make your life
-        more easy. For this to work, PHP must allow external file contact.<br>
-        [Auto Check]: <?php
-        if (ini_get('allow_url_fopen')){
-          echo "PHP external file contact is enabled!";
-        }
-        else{
-          echo "PHP external file contact is not enabled!";
-        }
-        ?>
-      </p>
-      <form class="w3-container">
-        <p>
-        <label>Name of Bug</label>
-        <input class="w3-input" type="text"></p>
-        <p>
-        <label>Description</label><br>
-        <textarea class="w3-input" 
-        rows="20" cols="80" name="description"></textarea>
-        </p>
-      </form>
     </div>
   </div>
 </div>
@@ -338,7 +340,7 @@ elseif ($calc <= "100"){
     </header>
     <div class="w3-container">
       <br>
-      Version: 0.0.2-ALPHA <br>
+      Version: 0.0.1-BETA <br>
       Changelog:
       <ul>
         <li> Alpha early test release</li>

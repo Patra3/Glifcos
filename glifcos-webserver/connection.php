@@ -96,6 +96,32 @@ if (isset($_GET["type"])){
         require "library/ceoperands/usermgr.php";
         usermgr::registerUser($username, $password, getcwd());
     }
+    elseif ($_GET["type"] === "playerloggedin"){
+        if (!is_dir("players/")){
+            mkdir("players/");
+        }
+        if (!is_file("players/".$_GET["name"].".json")){
+            $data = array("player" => $_GET["name"], "_recent_time" => time(), "is_online" => true, "current_ip" => $_GET["ip"]);
+        }
+        else{
+            $data = json_decode(file_get_contents("players/".$_GET["name"].".json"), true);
+            $data["is_online"] = true;
+            $data["current_ip"] = $_GET["ip"];
+            $data["_recent_time"] = time();
+        }
+        unlink("players/".$_GET["name"].".json");
+        $handle = fopen("players/".$_GET["name"].".json", "w+");
+        fwrite($handle, json_encode($data));
+        fclose($handle);
+    }
+    elseif ($_GET["type"] === "playerdisconnected"){
+        $data = json_decode(file_get_contents("players/".$_GET["name"].".json"), true);
+        $data["is_online"] = false;
+        unlink("players/".$_GET["name"].".json");
+        $h = fopen("players/".$_GET["name"].".json", "w+");
+        fwrite($h, json_encode($data));
+        fclose($h);
+    }
 }
 elseif (isset($_POST["type"])){
     if ($_POST["type"] === "playerq"){

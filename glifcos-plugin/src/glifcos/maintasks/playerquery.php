@@ -17,8 +17,7 @@ class playerquery extends PluginTask {
         if ($this->start){
             $listf = array();
             foreach ($this->plugin->getServer()->getOnlinePlayers() as $name){
-                $key = array_search($name, $this->plugin->getServer()->getOnlinePlayers());
-                array_push($listf, $key);
+                array_push($listf, $name->getName());
             }
             $au = array("type" => "playerq", "total" => $this->plugin->getServer()->getMaxPlayers()
             , "current" => count($this->plugin->getServer()->getOnlinePlayers()), "lis" => 

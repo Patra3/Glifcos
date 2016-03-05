@@ -29,7 +29,6 @@ if (isset($_GET["logout"])){
     <head>
         <!--
         THIS FILE IS PART OF THE GLIFCOS PROJECT BY @HOTFIREYDEATH.
-
         THIS PROJECT IS LICENSED UNDER THE MIT LICENSE (MIT). A COPY OF 
         THE LICENSE IS AVAILABLE WITH YOUR DOWNLOAD (LICENSE.txt).
         
@@ -58,7 +57,6 @@ if (isset($_GET["logout"])){
         <title>Glifcos</title>
     </head>
     <body <?php
-    setcookie("cl", getcwd(), NULL, "/"); // sets main directory.
     require "updater.php";
     Updater::generateDataFolder();
     if (isset($_COOKIE["command_previous"])){
@@ -90,10 +88,21 @@ if (isset($_GET["logout"])){
                 require "library/main/dashboard.php";
                 return true;
             }
+            if (isset($_COOKIE["cl"])){
+                setcookie("cl", "", time());
+            }
             if (isset($_COOKIE["Authchain"])){
                 require "library/main/mainstart.php";
                 goto skip;
             }
+            if (!isset($_COOKIE["cl"])){
+                if (is_file("core.json")){
+                    echo '
+                    <script> window.location = "index.php"; </script>
+                    ';
+                }
+            }
+            setcookie("cl", __DIR__, NULL, "/"); // sets main directory.
             if (isset($_COOKIE["setup"])){
                 if ($_COOKIE["setup"] === "2"){
                     require 'library/setupc/setup2.php';

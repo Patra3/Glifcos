@@ -30,11 +30,6 @@ if (!is_dir("data/")){
     mkdir("data/");
 }
 if (isset($_GET["type"])){
-    if (is_file("core.json")){
-        if (!$_GET["type"] === "grudgesync"){
-            die();
-        }
-    }
     if ($_GET["type"] === "ping"){
         // send either "apple" or "grape"
         // apple = active, grape = error.
@@ -88,7 +83,7 @@ if (isset($_GET["type"])){
     }
     elseif ($_GET["type"] === "recievedDATA"){
         require "library/ceoperands/talk.php";
-        talk::resetTalk(getcwd());
+        talk::resetTalk(__DIR__);
     }
     elseif ($_GET["type"] === "cpu"){
         $coredata = json_decode(file_get_contents("core.json"), true);
@@ -99,7 +94,7 @@ if (isset($_GET["type"])){
         $username = urldecode($_GET["user"]);
         $password = urldecode($_GET["pswd"]);
         require "library/ceoperands/usermgr.php";
-        usermgr::registerUser($username, $password, getcwd());
+        usermgr::registerUser($username, $password, __DIR__);
     }
     elseif ($_GET["type"] === "playerloggedin"){
         if (!is_dir("players/")){
@@ -161,7 +156,7 @@ elseif (isset($_POST["type"])){
         fwrite($file, base64_decode($_POST["data"]));
         fclose($file);
         require "library/ceoperands/talk.php";
-        talk::resetTalk(getcwd());
+        talk::resetTalk(__DIR__);
     }
 }
 else{

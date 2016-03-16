@@ -57,8 +57,6 @@ if (isset($_GET["logout"])){
         <title>Glifcos</title>
     </head>
     <body <?php
-    require "updater.php";
-    Updater::generateDataFolder();
     if (isset($_COOKIE["command_previous"])){
         if ($_COOKIE["command_previous"] === "yes"){
             sleep(2);

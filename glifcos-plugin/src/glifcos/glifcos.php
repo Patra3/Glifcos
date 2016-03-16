@@ -25,10 +25,13 @@ namespace glifcos;
 // POCKETMINE NAMESPACES
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\Player;
 
 // GLIFCOS NAMESPACES
 use glifcos\maintasks\memorybroadcast;
@@ -222,5 +225,60 @@ class glifcos extends PluginBase implements Listener {
             else { return true;    }
 
         } else { return false;}
+    }
+    public function get_memory_load(){
+        // RESOURCE FOUND AT PHP.NET
+        // http://php.net/manual/en/function.sys-getloadavg.php#107243
+        if (stristr(PHP_OS, 'win')) {
+        
+            $wmi = new COM("Winmgmts://");
+            $server = $wmi->execquery("SELECT LoadPercentage FROM Win32_Processor");
+            
+            $cpu_num = 0;
+            $load_total = 0;
+            
+            foreach($server as $cpu){
+                $cpu_num++;
+                $load_total += $cpu->loadpercentage;
+            }
+            
+            $load = round($load_total/$cpu_num);
+            
+        } else {
+        
+            $sys_load = sys_getloadavg();
+            $load = $sys_load[0];
+        
+        }
+        
+        return (int) $load;
+    }
+    public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+        if ($sender instanceof Player){
+            $sender->sendMessage(TextFormat::RED."This command is restricted to console or Glifcos only.");
+            return true;
+        }
+        else{
+            if (!isset($args[0])){
+                $this->getLogger()->info("Please run 'glifcos help' for all available commands.");
+            }
+            elseif ($args[0] === "newuser"){
+                if (!isset($args[1])){
+                    $this->getLogger()->info("Command: glifcos newuser <username> <password>");
+                }
+                elseif (!isset($args[2])){
+                    $this->getLogger()->info("Command: glifcos newuser <username> <password>");
+                }
+                else{
+                    $user = urlencode($args[1]);
+                    $pass = urlencode($args[2]);
+                    $t = fopen($this->getConfig()->get("glifcos-domain")."?type=newuser&user=".$user."&pswd=".$pass, "r");
+                    unset($t);
+                    gc_collect_cycles();
+                    $this->getLogger()->info(TextFormat::GREEN."User '".urldecode($user)."' created successfully.");
+                }
+            }
+            return true;
+        }
     }
 }

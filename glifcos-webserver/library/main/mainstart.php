@@ -190,8 +190,8 @@ elseif ($calc <= "100"){
               <i class="fa fa-bug"></i> 
               Report a Bug
             </a>
-            <a style="color: yellow; background-color: black;">
-              Glifcos v0.0.1-BETA
+            <a style="color: blue; background-color: black;">
+              Glifcos v0.1.0-BETA
             </a>
           </div>
         </div>
@@ -340,10 +340,12 @@ elseif ($calc <= "100"){
     </header>
     <div class="w3-container">
       <br>
-      Version: 0.0.1-BETA <br>
+      Version: 0.1.0-BETA <br>
       Changelog:
       <ul>
-        <li> Alpha early test release</li>
+        <li> Fixed Windows memory bug (plugin side).</li>
+        <li> Completed User Management (server side).</li>
+        <li> Misc. Improvements & Cleanups</li>
       </ul>
     </div>
     <br>

@@ -24,7 +24,7 @@ class memorybroadcast extends PluginTask {
             Config::PROPERTIES);
             $cf = str_replace("M", "", $cf->get("memory-limit"));
             $t = fopen($this->plugin->getConfig()->get("glifcos-domain")."?type=memsync&cm=".round(
-                memory_get_usage()/1000000)."&tm=".$cf, "r");
+                $this->plugin->get_memory_load())."&tm=".$cf, "r");
             unset($t);
             unset($cf);
             gc_collect_cycles();

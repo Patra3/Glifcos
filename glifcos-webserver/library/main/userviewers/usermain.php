@@ -31,6 +31,15 @@
         <title>Glifcos - View Users</title>
     </head>
     <body style="font-family: Raleway, Serif;">
+        <?php
+            if ($_GET["_reason"] === "aW52YWxpZGltYWdl"){
+                echo '<div class="w3-container w3-green">
+                <h2>Profile Picture updated!</h2>
+                <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
+                </div>
+                ';
+            }
+            ?>
         <div class="w3-container">
             <br>
             <div class="w3-card-4" style="width:100%">
@@ -68,7 +77,7 @@
                         }
                         else{
                             $options = '
-                            <a href="#" class="w3-red">Delete User</a>
+                            <a onclick="document.getElementById(\'deletemodal\').style.display=\'block\'" class="w3-red">Delete User</a>
                             ';
                         }
                         echo '
@@ -118,5 +127,12 @@
             </form>
         </div>
       </div>
+    </div>
+    <div id="deletemodal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top">
+            <header class="w3-container w3-red">
+                <h4>Delete User?</h4>
+            </header>
+        </div>
     </div>
 </html>

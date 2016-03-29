@@ -33,9 +33,38 @@
     <body style="font-family: Raleway, Serif;">
         <?php
             if ($_GET["_reason"] === "aW52YWxpZGltYWdl"){
-                echo '<div class="w3-container w3-green">
-                <h2>Profile Picture updated!</h2>
-                <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
+                // Profile Changed
+                echo '
+                <div class="w3-container w3-green">
+                    <h2>Profile Picture updated!</h2>
+                    <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
+                </div>
+                ';
+            }
+            elseif ($_GET["_reason"] === "ZGVsZXRlZGF1c2Vy"){
+                // User Deleted
+                echo '
+                <div class="w3-container w3-red">
+                    <h2>User Deleted!</h2>
+                    <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
+                </div>
+                ';
+            }
+            elseif ($_GET["_reason"] === "sub"){
+                // Username change
+                echo '
+                <div class="w3-container w3-red">
+                    <h2>Username Changed!</h2>
+                    <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
+                </div>
+                ';
+            }
+            elseif ($_GET["_reason"] === "sub1"){
+                // Password change
+                echo '
+                <div class="w3-container w3-red">
+                    <h2>Password Changed!</h2>
+                    <span onclick="this.parentElement.style.display=\'none\'" class="w3-closebtn">x</span>
                 </div>
                 ';
             }
@@ -59,6 +88,7 @@
                     unset($u[array_search(".", $u)]);
                     unset($u[array_search("..", $u)]);
                     chdir($_COOKIE["cl"]."/users");
+                    
                     foreach($u as $data){
                         $data = json_decode(file_get_contents($data), true);
                         if (!isset($data["profile"])){
@@ -70,14 +100,14 @@
                         if ($data["user"] === json_decode(base64_decode($_COOKIE["Authchain"]), true)["user"]){
                             $options = '
                             <a onclick="document.getElementById(\'profile2\').style.display=\'block\'">Change Picture</a>
-                            <a href="#">Change Password</a>
-                            <a href="#">Change Username</a>
+                            <a onclick="document.getElementById(\'passchange\').style.display=\'block\'">Change Password</a>
+                            <a onclick="document.getElementById(\'usrchange\').style.display=\'block\'">Change Username</a>
                             <a disabled class="w3-green">This is you!</a>
                             ';
                         }
                         else{
                             $options = '
-                            <a onclick="document.getElementById(\'deletemodal\').style.display=\'block\'" class="w3-red">Delete User</a>
+                            <a onclick="document.getElementById(\'deletemodalff.'.$data["user"].'\').style.display=\'block\'" class="w3-red">Delete User</a>
                             ';
                         }
                         echo '
@@ -128,11 +158,65 @@
         </div>
       </div>
     </div>
-    <div id="deletemodal" class="w3-modal">
+    <?php
+    $u = scandir(getcwd());
+    //remove weird .. things :P
+    unset($u[array_search(".", $u)]);
+    unset($u[array_search("..", $u)]);
+    
+    foreach ($u as $data){
+        $data = str_replace(".json", "", $data);
+        echo '
+        <!-- DELETE USER MODAL -->
+        <div id="deletemodalff.'.$data.'" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top">
+                <header class="w3-container w3-red">
+                    <h4>Delete User?</h4>
+                </header>
+                <div class="w3-container">
+                    <p>Are you sure? This will forever delete the selected user!</p>
+                    <a href="actions.php?delete='.$data.'" class="w3-btn w3-red">Delete User</a>
+                </div>
+                <br>
+            </div>
+        </div>
+        ';
+    }
+    ?>
+    <div id="passchange" class="w3-modal">
         <div class="w3-modal-content w3-animate-top">
-            <header class="w3-container w3-red">
-                <h4>Delete User?</h4>
+            <header class="w3-container w3-yellow">
+                <span onclick="document.getElementById('passchange').style.display='none'" 
+          class="w3-closebtn">&times;</span>
+                <h4>Change Password</h4>
             </header>
+            <div class="w3-container">
+                <br>
+                <form class="w3-container" action="actions.php">
+                    <label>New Password</label>
+                    <input class="w3-input" type="password" name="pswdnew_">
+                    <br>
+                    <input type="submit" value="Set Password" class="w3-btn w3-yellow">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="usrchange" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top">
+            <header class="w3-container w3-yellow">
+                <span onclick="document.getElementById('usrchange').style.display='none'" 
+          class="w3-closebtn">&times;</span>
+                <h4>Change Username</h4>
+            </header>
+            <div class="w3-container">
+                <br>
+                <form class="w3-container" action="actions.php" method="get">
+                    <label>New Username</label>
+                    <input class="w3-input" type="text" name="usernew_">
+                    <br>
+                    <input type="submit" value="Set Username" class="w3-btn w3-yellow">
+                </form>
+            </div>
         </div>
     </div>
 </html>

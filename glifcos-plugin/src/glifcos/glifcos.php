@@ -229,28 +229,21 @@ class glifcos extends PluginBase implements Listener {
     public function get_memory_load(){
         // RESOURCE FOUND AT PHP.NET
         // http://php.net/manual/en/function.sys-getloadavg.php#107243
-        if (stristr(PHP_OS, 'win')) {
-        
-            $wmi = new COM("Winmgmts://");
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $wmi = new \COM("Winmgmts://");
             $server = $wmi->execquery("SELECT LoadPercentage FROM Win32_Processor");
-            
             $cpu_num = 0;
             $load_total = 0;
-            
             foreach($server as $cpu){
                 $cpu_num++;
                 $load_total += $cpu->loadpercentage;
             }
-            
             $load = round($load_total/$cpu_num);
-            
-        } else {
-        
+        }
+        else{
             $sys_load = sys_getloadavg();
             $load = $sys_load[0];
-        
         }
-        
         return (int) $load;
     }
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){

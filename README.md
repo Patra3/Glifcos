@@ -1,7 +1,7 @@
 # Glifcos
 PocketMine-MP server manager run on webserver.  
 
-** NOTE: There is currently some issues running on Windows machine. Linux/Mac works fine. **  
+** NOTE: Glifcos will now work on all systems! Have fun! **  
 
 ### Introduction  
 Hi, thank you for viewing Glifcos. Glifcos is a PocketMine control panel, hosted easily on your webserver.  
@@ -37,7 +37,7 @@ You need a webserver, a PocketMine server, and the server.log file to be enabled
 ##### What are some bugs or errors?  
 Glifcos varies on performance. There are bugs specific to your host, configuration, and enviornment.  
 Don't think that Glifcos is completely unstable and a 'failed' project. I've put it on an Apache instance  
-and it was stable. If you put it on Windows, there will defintely be some memory related leaks.  
+and it was stable. If you put it on Windows, there will no longer be memory leaks...  
 
 If you use a stable Apache web host, and a Unix PocketMine server... it will work just fine...  
 

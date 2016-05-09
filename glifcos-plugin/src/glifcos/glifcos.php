@@ -43,7 +43,9 @@ use glifcos\maintasks\pluginbroadcast;
 use glifcos\maintasks\enabledplugin;
 
 class glifcos extends PluginBase implements Listener {
+    
     public $direct;
+    
     public function onEnable(){
         if (!is_dir($this->getDataFolder())){
             mkdir($this->getDataFolder());
@@ -105,11 +107,13 @@ class glifcos extends PluginBase implements Listener {
         }
     }
     private function sellServerInfo(){
-        // Don't take this angrily!! I'm just syncing
-        // data with the webserver >~<
         $domain = $this->getConfig()->get("glifcos-domain");
         // this is to get the real external ip..
-        
+        if (method_exists($this->getServer(), "getCodename")){
+            if ($this->getServer()->getCodename() === "Ikaros"){
+                $genisys = true;
+            }
+        }
         $dat = array("ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json")
         , true)["ip"], 
         "port" => $this->getServer()->getPort(), 
@@ -117,6 +121,8 @@ class glifcos extends PluginBase implements Listener {
         "pm-v" => $this->getServer()->getPocketMineVersion(),
         "motd" => $this->getServer()->getMotd(),
         );
+        $dat["genisys"] = $genisys;
+        $dat["pm-v"] = $this->getServer()->getVersion();
         $compile = base64_encode(json_encode($dat));
         $data = fopen($domain."?type=updatedata&data=".$compile, "r");
         $this->getLogger()->info(TextFormat::BLUE.TextFormat::BOLD.
@@ -227,18 +233,9 @@ class glifcos extends PluginBase implements Listener {
         } else { return false;}
     }
     public function get_memory_load(){
-        // RESOURCE FOUND AT PHP.NET
-        // http://php.net/manual/en/function.sys-getloadavg.php#107243
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            $wmi = new \COM("Winmgmts://");
-            $server = $wmi->execquery("SELECT LoadPercentage FROM Win32_Processor");
-            $cpu_num = 0;
-            $load_total = 0;
-            foreach($server as $cpu){
-                $cpu_num++;
-                $load_total += $cpu->loadpercentage;
-            }
-            $load = round($load_total/$cpu_num);
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'){
+            exec('wmic memorychip get capacity', $totalMemory);
+            $load = array_sum($totalMemory) / 1024 / 1024;
         }
         else{
             $sys_load = sys_getloadavg();

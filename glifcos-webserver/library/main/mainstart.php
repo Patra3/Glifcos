@@ -190,8 +190,8 @@ elseif ($calc <= "100"){
               <i class="fa fa-bug"></i> 
               Report a Bug
             </a>
-            <a style="color: blue; background-color: black;">
-              Glifcos v0.1.0-BETA
+            <a style="color: green; background-color: black;">
+              Glifcos v0.1.2-BETA
             </a>
           </div>
         </div>
@@ -340,12 +340,12 @@ elseif ($calc <= "100"){
     </header>
     <div class="w3-container">
       <br>
-      Version: 0.1.0-BETA <br>
+      Version: 0.1.2-BETA <br>
       Changelog:
       <ul>
-        <li> Fixed Windows memory bug (plugin side).</li>
-        <li> Completed User Management (server side).</li>
-        <li> Misc. Improvements & Cleanups</li>
+        <li>- Truly fixed CPU statistics/errors on Windows!</li>
+        <li>- General cleanup.</li>
+        <li>- Added support for Genisys.</li>
       </ul>
     </div>
     <br>

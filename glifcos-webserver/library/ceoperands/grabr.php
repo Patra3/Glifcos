@@ -53,6 +53,9 @@ class grabr {
          if ($data["serverdata"]["pm-v"] === "1.0dev"){
              return "ImagicalMine v1.0dev";
          }
+         elseif ($data["serverdata"]["genisys"]){
+             return "Genisys ".$data["serverdata"]["pm-v"];
+         }
          else{
              return "PocketMine v".$data["serverdata"]["pm-v"];
          }

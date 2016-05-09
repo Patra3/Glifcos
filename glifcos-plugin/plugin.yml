@@ -1,6 +1,6 @@
 name: Glifcos-p
 main: glifcos\glifcos
-version: 0.1.1
+version: 0.1.2
 api: [2.0.0, 1.0.0]
 author: HotFireyDeath\Chopstick Software
 

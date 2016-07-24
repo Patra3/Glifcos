@@ -1,6 +1,8 @@
 # Glifcos
 PocketMine-MP server manager run on webserver.  
 
+** FULL STEAM AHEAD, Glifcos 2.0 FULL REWRITE IS IN DEVELOPMENT, AND IT'S STABLE. **
+
 ** NOTE: Glifcos will now work on all systems! Have fun! **  
 
 ### Introduction  

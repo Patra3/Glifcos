@@ -1,0 +1,69 @@
+<!--
+ _______  ___      ___   _______  _______  _______  _______ 
+|       ||   |    |   | |       ||       ||       ||       |
+|    ___||   |    |   | |    ___||       ||   _   ||  _____|
+|   | __ |   |    |   | |   |___ |       ||  | |  || |_____ 
+|   ||  ||   |___ |   | |    ___||      _||  |_|  ||_____  |
+|   |_| ||       ||   | |   |    |     |_ |       | _____| |
+|_______||_______||___| |___|    |_______||_______||_______|
+Glifcos - Easy to use PocketMine control panel on a webserver.
+Developed by @HotFireyDeath.
+
+This project is open-source, and is licensed under the MIT license.
+A copy of the license is included with this package, as well as it 
+being available inside the Glifcos software at all times.
+-->
+<html>
+    <head>
+        <title>Glifcos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script src="assets/js/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <div id="setup-content" style="display: none;">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Welcome to Glifcos!</div>
+                    <div class="panel-body">
+                        Hi, thanks for using Glifcos! Don't worry, you'll soon be able to manage your Pocket
+                        Edition server like a professional, and setup will only take a few seconds.
+                        <br><br>
+                        Now, I need you to help me do something. To setup Glifcos, you will need to run the command:
+                        <br>
+                        <kbd id="setup-content-command"></kbd>
+                        <br>
+                        and Glifcos will finish the setup process.
+                    </div>
+                    <div class="panel-footer">
+                        <div id="setup-content-status" style="color: red;">Server not connected.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    var connector_url = "http://" + window.location.hostname + window.location.pathname.replace("index.html", "server.php");
+        $.ajax({
+            url: "server.php",
+            method: "POST", 
+            data: {
+                request: "getGlifcosState"
+            },
+            success: function(data){
+                if (data == 1){
+                    $("#setup-content").show();
+                    document.title = "Glifcos - Welcome";
+                }
+                else{
+                    
+                }
+            }
+        });
+        $("#setup-content-command").text("/glifcos setup " + window.btoa(connector_url));
+    </script>
+</html>

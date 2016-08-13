@@ -18,15 +18,28 @@ being available inside the Glifcos software at all times.
         <title>Glifcos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <script src="assets/js/jquery.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <script src="assets/jquery/jquery.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/jstorage/jstorage.js"></script>
+        <script src="assets/glifcos.js"></script>
         
+        <script>
+            $.jStorage.set("GetPingGlifcos", null);
+            function Setup_AddAdminAccount(){
+                if ($.jStorage.get("GetPingGlifcos").length < 1){
+                    alert("Warning: Server not connected.");
+                    return;
+                }
+                glifcos_utils.AddAdminAccount($("#admin_username_register").val(), $("#admin_password_register").val());
+                location.reload();
+            }
+        </script>
     </head>
     <body>
         <div class="container">
             <br>
-            <div id="setup-content" style="display: none;">
+            <div id="setup_content" style="display: none;">
                 <div class="panel panel-success">
                     <div class="panel-heading">Welcome to Glifcos!</div>
                     <div class="panel-body">
@@ -35,19 +48,61 @@ being available inside the Glifcos software at all times.
                         <br><br>
                         Now, I need you to help me do something. To setup Glifcos, you will need to run the command:
                         <br>
-                        <kbd id="setup-content-command"></kbd>
+                        <kbd id="setup_content_command"></kbd>
                         <br>
                         and Glifcos will finish the setup process.
+                        <br>
                     </div>
                     <div class="panel-footer">
-                        <div id="setup-content-status" style="color: red;">Server not connected.</div>
+                        <div id="setup_content_status" style="color: red;">Server not connected.</div>
+                    </div>
+                </div>
+            </div>
+            <div id="configuration_setup" style="display: none;">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Setup your Glifcos!</div>
+                    <div class="panel-body">
+                        I've detected no prior setup information, please make your login account below!
+                        <br>
+                        <hr>
+                        <form role="form" action="javascript:void(0);" onsubmit="Setup_AddAdminAccount()">
+                            <div class="form-group">
+                                <label for="admin_username_register">Admin Username</label>
+                                <input id="admin_username_register" class="form-control" type="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin_password_register">Admin Password</label>
+                                <input id="admin_password_register" class="form-control" type="password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Let's go!</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </body>
     <script>
-    var connector_url = "http://" + window.location.hostname + window.location.pathname.replace("index.html", "server.php");
+    
+    window.setInterval(function(){
+        $.ajax({
+            url: "server.php",
+            method: "POST",
+            data: {
+                request: "GetPingGlifcos"
+            },
+            success: function(data){
+                if ($.jStorage.get("getGlifcosState") == 1){
+                    $("#configuration_setup").show();
+                }
+                $.jStorage.set("GetPingGlifcos", data);
+                var data = JSON.parse(data);
+                var scs = document.getElementById("setup_content_status");
+                scs.style.color = "green";
+                scs.innerHTML = "Server Connected: " + data["name"] + " | " + data["ip"] + ":" + data["port"];
+            }
+        });
+    }, 2000);
+    var connector_url = "http://www." + window.location.hostname + window.location.pathname.replace("index.html", "server.php");
         $.ajax({
             url: "server.php",
             method: "POST", 
@@ -55,8 +110,9 @@ being available inside the Glifcos software at all times.
                 request: "getGlifcosState"
             },
             success: function(data){
+                $.jStorage.set("getGlifcosState", data);
                 if (data == 1){
-                    $("#setup-content").show();
+                    $("#setup_content").show();
                     document.title = "Glifcos - Welcome";
                 }
                 else{
@@ -64,6 +120,6 @@ being available inside the Glifcos software at all times.
                 }
             }
         });
-        $("#setup-content-command").text("/glifcos setup " + window.btoa(connector_url));
+        $("#setup_content_command").text("/glifcos setup " + window.btoa(connector_url));
     </script>
 </html>

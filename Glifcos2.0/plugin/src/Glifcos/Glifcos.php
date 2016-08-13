@@ -8,6 +8,9 @@ use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Utils;
 
+use Glifcos\tasks\AsyncDataSender;
+use Glifcos\tasks\RamBroadcastTask;
+
 class Glifcos extends PluginBase {
     
     public $webserver;
@@ -22,15 +25,15 @@ class Glifcos extends PluginBase {
             $this->webserver = base64_decode(file_get_contents($this->getDataFolder()."/data.txt"));
         }
         $this->pingGlifcos();
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new RamBroadcastTask($this), 100);
     }
     
     /**
      * Ping Glifcos webserver, sending data and a flare.
-     * @return boolean
+     * @return void
      * */
     public function pingGlifcos(){
-        
-        return Utils::postURL($this->webserver, array(
+        $this->sendData(array(
             "request" => "SimplePingGlifcos",
             "ip" => json_decode(file_get_contents("http://api.ipify.org/?format=json"), true)["ip"],
             "port" => $this->getServer()->getPort(),
@@ -39,7 +42,16 @@ class Glifcos extends PluginBase {
             "maxplayers" => $this->getServer()->getMaxPlayers(),
             "name" => $this->getServer()->getServerName(),
             "motd" => $this->getServer()->getMotd()
-            ));
+        ));
+    }
+    
+    /**
+     * Sends a data batch to Glifcos.
+     * @param $data Array[]
+     * @return void
+     * */
+    public function sendData($data){
+        return $this->getServer()->getScheduler()->scheduleAsyncTask(new AsyncDataSender(json_encode($data), $this->webserver));
     }
     
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){

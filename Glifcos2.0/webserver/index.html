@@ -22,19 +22,66 @@ being available inside the Glifcos software at all times.
         <script src="assets/jquery/jquery.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/jstorage/jstorage.js"></script>
-        <script src="assets/glifcos.js"></script>
         
         <script>
+        
+            if ($.jStorage.get("ACCESS_TOKEN").length > 6){
+                // ACCESS_TOKEN available, try to go to dashboard.
+                // If expired login, dashboard will resolve issues.
+                window.location = "main.html";
+            }
+        
             $.jStorage.set("GetPingGlifcos", null);
             function Setup_AddAdminAccount(){
                 if ($.jStorage.get("GetPingGlifcos").length < 1){
                     alert("Warning: Server not connected.");
                     return;
                 }
-                glifcos_utils.AddAdminAccount($("#admin_username_register").val(), $("#admin_password_register").val());
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "AddAdminAccount",
+                        username: $("#admin_username_register").val(),
+                        password: $("#admin_password_register").val()
+                    }
+                });
                 location.reload();
             }
+            function userLogin(){
+                if ($("#admin_password_login").val().length < 1 || $("#admin_username_login").val().length < 1){
+                    alert("Warning: Invalid login.");
+                    return;
+                }
+                else{
+                    var username = $("#admin_username_login").val();
+                    var password = $("#admin_password_login").val();
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "LoginAdminAccount",
+                            username: username,
+                            password: password
+                        },
+                        success: function(data){
+                            var data = JSON.parse(data);
+                            if (data["correct"]){
+                                $.jStorage.set("ACCESS_TOKEN", data["ACCESS_TOKEN"]);
+                                $.jStorage.set("ACCESS_USERNAME", data["username"]);
+                                window.location = "main.html";
+                                return;
+                            }
+                            else{
+                                alert("Warning: Incorrect login.");
+                                return;
+                            }
+                        }
+                    });
+                }
+            }
         </script>
+        
     </head>
     <body>
         <div class="container">
@@ -79,6 +126,23 @@ being available inside the Glifcos software at all times.
                     </div>
                 </div>
             </div>
+            <div id="login_content" style="display: none;">
+                <h1>Welcome to Glifcos!</h1>
+                <h5>Please login below to continue.</h5>
+                <br>
+                <hr>
+                <form role="form" action="javascript:void(0);" onsubmit="userLogin()">
+                    <div class="form-group">
+                        <label for="admin_username_login">Username</label>
+                        <input id="admin_username_login" class="form-control" type="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin_password_login">Password</label>
+                        <input id="admin_password_login" class="form-control" type="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                </form>
+            </div>
         </div>
     </body>
     <script>
@@ -116,7 +180,7 @@ being available inside the Glifcos software at all times.
                     document.title = "Glifcos - Welcome";
                 }
                 else{
-                    
+                    $("#login_content").show();
                 }
             }
         });

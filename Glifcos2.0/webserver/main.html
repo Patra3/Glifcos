@@ -1,0 +1,144 @@
+<!--
+ _______  ___      ___   _______  _______  _______  _______ 
+|       ||   |    |   | |       ||       ||       ||       |
+|    ___||   |    |   | |    ___||       ||   _   ||  _____|
+|   | __ |   |    |   | |   |___ |       ||  | |  || |_____ 
+|   ||  ||   |___ |   | |    ___||      _||  |_|  ||_____  |
+|   |_| ||       ||   | |   |    |     |_ |       | _____| |
+|_______||_______||___| |___|    |_______||_______||_______|
+Glifcos - Easy to use PocketMine control panel on a webserver.
+Developed by @HotFireyDeath.
+
+This project is open-source, and is licensed under the MIT license.
+A copy of the license is included with this package, as well as it 
+being available inside the Glifcos software at all times.
+-->
+<html>
+    <head>
+        <title>Glifcos - Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <script src="assets/jquery/jquery.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/jstorage/jstorage.js"></script>
+        
+        <script>
+            
+            function logout(){
+                $.jStorage.set("ACCESS_TOKEN", null);
+                $.jStorage.set("ACCESS_USERNAME", null);
+                window.location = "index.html";
+            }
+            
+            // Check the client's access token (ACCESS_TOKEN).
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "VerifyAccessToken",
+                    token: $.jStorage.get("ACCESS_TOKEN")
+                },
+                success: function(data){
+                    if (!data){
+                        // Invalid access token.
+                        logout();
+                    }
+                }
+            });
+            
+        </script>
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <!-- begin with page padding at the top -->
+            <br>
+            
+            <!-- header, shows username and logout button -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Hello, <script>document.write($.jStorage.get("ACCESS_USERNAME"));</script>.</h1>
+                </div>
+                <div class="col-sm-6">
+                    <br>
+                    <button type="button" class="btn btn-warning btn-block" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <!-- padding and line rule -->
+            <br>
+            <hr>
+            
+            <!-- body, show panel with ram usage and player listing -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">RAM Usage</div>
+                        <div class="panel-body">
+                            <center>
+                                <h2 id="ram_percent_usage">0% Usage</h2>
+                                <h5 id="ram_raw_usage">0/0 MB</h5>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Players Online</div>
+                        <div class="panel-body">
+                            <center>
+                                <h2>3/20 Online</h2>
+                                <h5 style="color: green; cursor: pointer;" data-toggle="modal" data-target="#player_list_modal">Player List</h5>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </body>
+    
+    <!-- player list modal -->
+    <div id="player_list_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Player List</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">HotFireyDeath</li>
+                        <li class="list-group-item">Devil49531</li>
+                        <li class="list-group-item">XleopardgamingX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        window.setInterval(function(){
+            // Get updated RAM data, and update page with RAM data.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetRAMGlifcos"
+                },
+                success: function(data){
+                    $.jStorage.set("SERVER_RAM_DATA", data);
+                    var data = JSON.parse(data);
+                    var percent = Math.round((data["current_ram_usage"]/data["max_ram_limit"]) * 100) + "%";
+                    var raw = data["current_ram_usage"] + "/" + data["max_ram_limit"] + " MB";
+                    document.getElementById("ram_percent_usage").innerHTML = percent;
+                    document.getElementById("ram_raw_usage").innerHTML = raw;
+                }
+            });
+        }, 3000);
+    </script>
+    
+</html>

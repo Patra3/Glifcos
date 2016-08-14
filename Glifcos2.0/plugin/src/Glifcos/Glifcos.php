@@ -10,6 +10,9 @@ use pocketmine\utils\Utils;
 
 use Glifcos\tasks\AsyncDataSender;
 use Glifcos\tasks\RamBroadcastTask;
+use Glifcos\tasks\ConsoleBroadcastTask;
+use Glifcos\tasks\ConsoleCommandTask;
+use Glifcos\tasks\PlayerBroadcastTask;
 
 class Glifcos extends PluginBase {
     
@@ -26,6 +29,9 @@ class Glifcos extends PluginBase {
         }
         $this->pingGlifcos();
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new RamBroadcastTask($this), 100);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new ConsoleBroadcastTask($this), 50);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new ConsoleCommandTask($this), 100);
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new PlayerBroadcastTask($this), 100);
     }
     
     /**

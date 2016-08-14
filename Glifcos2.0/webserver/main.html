@@ -31,6 +31,20 @@ being available inside the Glifcos software at all times.
                 window.location = "index.html";
             }
             
+            function sendCommand(){
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "AddConsoleCommand",
+                        command: $("#console_command").val()
+                    },
+                    success: function(data){
+                        document.getElementById("console_command_form").reset();
+                    }
+                });
+            }
+            
             // Check the client's access token (ACCESS_TOKEN).
             $.ajax({
                 url: "server.php",
@@ -60,6 +74,7 @@ being available inside the Glifcos software at all times.
             <div class="row">
                 <div class="col-sm-6">
                     <h1>Hello, <script>document.write($.jStorage.get("ACCESS_USERNAME"));</script>.</h1>
+                    <h5 id="server_status"></h5>
                 </div>
                 <div class="col-sm-6">
                     <br>
@@ -78,8 +93,8 @@ being available inside the Glifcos software at all times.
                         <div class="panel-heading">RAM Usage</div>
                         <div class="panel-body">
                             <center>
-                                <h2 id="ram_percent_usage">0% Usage</h2>
-                                <h5 id="ram_raw_usage">0/0 MB</h5>
+                                <h2 id="ram_percent_usage">Loading RAM...</h2>
+                                <h5 id="ram_raw_usage">Please wait...</h5>
                             </center>
                         </div>
                     </div>
@@ -97,7 +112,37 @@ being available inside the Glifcos software at all times.
                 </div>
             </div>
             
+            <!-- body, show navigation menu below -->
+            <center>
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#console_modal">Console</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Plugins</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Players</button>
+                    </div>
+                </div>
+                <br>
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Files</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Worlds</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Settings</button>
+                    </div>
+                </div>
+            </center>
+            
         </div>
+        
+        <!-- page padding -->
+        <br>
         
     </body>
     
@@ -120,8 +165,54 @@ being available inside the Glifcos software at all times.
         </div>
     </div>
     
+    <!-- console modal -->
+    <div id="console_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Console</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning" id="console_nonlog_alert" style="display: none;">
+                        <strong>Uh oh.</strong>
+                        Seems your server.log file could not be found. Please enable server.log file to use the console feature.
+                    </div>
+                    <div id="console_regular_display">
+                        <pre id="console_display_area"></pre>
+                        <form role="form" id="console_command_form" action="javascript:void(0);" onsubmit="sendCommand()">
+                            <div class="form-group">
+                                <label for="console_command">Console Input</label>
+                                <input type="text" id="console_command" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         window.setInterval(function(){
+            
+            // Gets server online/offline data, and update page.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetServerOnline"
+                },
+                success: function(data){
+                    var stat_dom = document.getElementById("server_status");
+                    if (data){
+                        stat_dom.innerHTML = "Your server is <a style='color: green; text-decoration: none;'>online</a>.";
+                    }
+                    else{
+                        stat_dom.innerHTML = "Your server is <a style='color: red; text-decoration: none;'>offline</a>.";
+                    }
+                }
+            });
+            
             // Get updated RAM data, and update page with RAM data.
             $.ajax({
                 url: "server.php",
@@ -138,7 +229,29 @@ being available inside the Glifcos software at all times.
                     document.getElementById("ram_raw_usage").innerHTML = raw;
                 }
             });
-        }, 3000);
+            
+            // Gets updated console data, and updates page with console data.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetConsoleGlifcos"
+                },
+                success: function(data){
+                    var data = JSON.parse(data);
+                    if (!data["data"]){
+                        $("#console_nonlog_alert").show();
+                        $("#console_regular_display").hide();
+                    }
+                    else{
+                        $("#console_nonlog_alert").hide();
+                        $("#console_regular_display").show();
+                        document.getElementById("console_display_area").innerHTML = data["data"];
+                    }
+                }
+            });
+            
+        }, 1000);
     </script>
     
 </html>

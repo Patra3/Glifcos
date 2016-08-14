@@ -25,6 +25,11 @@ being available inside the Glifcos software at all times.
         
         <script>
         
+            if (!window.location.href.includes("index.html")){
+                // Enforces index.html in the URL, as that can mess up the setup
+                // wizard command otherwise.
+                window.location = "index.html";
+            }
             if ($.jStorage.get("ACCESS_TOKEN").length > 6){
                 // ACCESS_TOKEN available, try to go to dashboard.
                 // If expired login, dashboard will resolve issues.

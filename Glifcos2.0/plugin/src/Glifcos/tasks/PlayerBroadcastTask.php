@@ -13,9 +13,13 @@ class PlayerBroadcastTask extends PluginTask {
         parent::__construct($plugin);
     }
     public function onRun($ticks){
+        $player_names = array();
+        foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
+            array_push($player_names, $players->getName());
+        }
         $this->plugin->sendData(array(
             "request" => "SimplePlayerGlifcos",
-            "playerlist" => $this->plugin->getServer()->getOnlinePlayers()
+            "playerlist" => base64_encode(json_encode($player_names))
             ));
     }
     

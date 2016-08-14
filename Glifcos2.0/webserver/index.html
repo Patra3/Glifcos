@@ -72,9 +72,32 @@ being available inside the Glifcos software at all times.
                         success: function(data){
                             var data = JSON.parse(data);
                             if (data["correct"]){
-                                $.jStorage.set("ACCESS_TOKEN", data["ACCESS_TOKEN"]);
-                                $.jStorage.set("ACCESS_USERNAME", data["username"]);
-                                window.location = "main.html";
+                                $.ajax({
+                                    url: "server.php",
+                                    method: "POST",
+                                    data: {
+                                        request: "IsAccessReady"
+                                    },
+                                    success: function(datas){
+                                        if (datas){
+                                            $.jStorage.set("ACCESS_TOKEN", data["ACCESS_TOKEN"]);
+                                            $.jStorage.set("ACCESS_USERNAME", data["username"]);
+                                            window.location = "main.html";
+                                        }
+                                        else{
+                                            $.ajax({
+                                                url: "server.php",
+                                                method: "POST",
+                                                data: {
+                                                    request: "KillAccessToken",
+                                                    token: data["ACCESS_TOKEN"]
+                                                }
+                                            });
+                                            $("#login_content").hide();
+                                            $("#warning_notaccess").show();
+                                        }
+                                    }
+                                });
                                 return;
                             }
                             else{
@@ -132,7 +155,7 @@ being available inside the Glifcos software at all times.
                 </div>
             </div>
             <div id="login_content" style="display: none;">
-                <h1>Welcome to Glifcos!</h1>
+                <h1 style="color: green;">Welcome to Glifcos!</h1>
                 <h5>Please login below to continue.</h5>
                 <br>
                 <hr>
@@ -147,6 +170,14 @@ being available inside the Glifcos software at all times.
                     </div>
                     <button type="submit" class="btn btn-success">Login</button>
                 </form>
+            </div>
+            <div id="warning_notaccess" style="display: none;">
+                <h1 style="color: red;">Uh oh.</h1>
+                <p>
+                    Another user is currently logged into Glifcos. Glifcos is designed for
+                    single-user sessions, so please try again later.
+                </p>
+                <button style="cursor: pointer;" type="button" class="btn btn-danger" onclick="$('#warning_notaccess').hide();$('#login_content').show();">Got it</button>
             </div>
         </div>
     </body>

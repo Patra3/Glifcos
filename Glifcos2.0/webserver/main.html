@@ -26,9 +26,34 @@ being available inside the Glifcos software at all times.
         <script>
             
             function logout(){
+                var token = $.jStorage.get("ACCESS_TOKEN");
                 $.jStorage.set("ACCESS_TOKEN", null);
                 $.jStorage.set("ACCESS_USERNAME", null);
-                window.location = "index.html";
+                $.jStorage.set("ping_data", null);
+                $.jStorage.set("filemgr_setpath", "/");
+                $.jStorage.set("filemgr_layers", 0);
+                $.jStorage.set("filemgr_isviewingfile", false);
+                $.jStorage.set("filemgr_filename", null);
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "KillAccessToken",
+                        token: token
+                    },
+                    success: function(data){
+                        $.ajax({
+                            url: "server.php",
+                            method: "POST",
+                            data: {
+                                request: "INSTANT_FILE_SUBMIT_RM"
+                            },
+                            success: function(data){
+                                window.location = "index.html";
+                            }
+                        });
+                    }
+                });
             }
             
             function sendCommand(){
@@ -41,6 +66,179 @@ being available inside the Glifcos software at all times.
                     },
                     success: function(data){
                         document.getElementById("console_command_form").reset();
+                    }
+                });
+            }
+            
+            function enablePlugin(){
+                var plugin = prompt("Plugin to enable:");
+                if (plugin.length > 1){
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "AddConsoleCommand",
+                            command: "glifcos enableplugin " + plugin
+                        }
+                    });
+                    $("#plugin_modal").modal("hide");
+                    $("#console_modal").modal("show");
+                }
+            }
+            
+            function disablePlugin(){
+                var plugin = prompt("Plugin to disable:");
+                if (plugin.length > 1){
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "AddConsoleCommand",
+                            command: "glifcos disableplugin " + plugin
+                        }
+                    });
+                    $("#plugin_modal").modal("hide");
+                    $("#console_modal").modal("show");
+                }
+            }
+            
+            function kickPlayer(){
+                var player = prompt("Player to kick:");
+                if (player.length > 1){
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "AddConsoleCommand",
+                            command: "kick " + player
+                        }
+                    });
+                    $("#player_modal").modal("hide");
+                    $("#console_modal").modal("show");
+                }
+            }
+            
+            function banPlayer(){
+                var player = prompt("Player to ban:");
+                if (player.length > 1){
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "AddConsoleCommand",
+                            command: "ban " + player
+                        }
+                    });
+                    $("#player_modal").modal("hide");
+                    $("#console_modal").modal("show");
+                }
+            }
+            
+            function banIPPlayer(){
+                var player = prompt("Player/IP Address to ip-ban:");
+                if (player.length > 1){
+                    $.ajax({
+                        url: "server.php",
+                        method: "POST",
+                        data: {
+                            request: "AddConsoleCommand",
+                            command: "ban-ip " + player
+                        }
+                    });
+                    $("#player_modal").modal("hide");
+                    $("#console_modal").modal("show");
+                }
+            }
+            
+            function addDirectoryLayer(name){
+                if (name == "../"){
+                    if ($.jStorage.get("filemgr_isviewingfile")){
+                        $.ajax({
+                            url: "server.php",
+                            method: "POST",
+                            data: {
+                                request: "INSTANT_FILE_SUBMIT_RM"
+                            }
+                        });
+                        $.jStorage.set("filemgr_setpath", $.jStorage.get("filemgr_setpath").replace("/" + $.jStorage.get("filemgr_filename"), ""));
+                        $.jStorage.set("filemgr_layers", $.jStorage.get("filemgr_layers") - 1);
+                        $.jStorage.set("filemgr_isviewingfile", false);
+                        $.jStorage.set("filemgr_filename", null);
+                    }
+                    if (($.jStorage.get("filemgr_layers") - 1) < 0){
+                        return;
+                    }
+                    else{
+                        $.jStorage.set("filemgr_layers", $.jStorage.get("filemgr_layers") - 1);
+                    }
+                }
+                else{
+                    $.jStorage.set("filemgr_layers", $.jStorage.get("filemgr_layers") + 1);
+                }
+                
+                var re = /(?:\.([^.]+))?$/;
+                var es = re.exec(name)[1];
+                if (typeof es != "undefined"){
+                    $.jStorage.set("filemgr_isviewingfile", true);
+                    $.jStorage.set("filemgr_filename", name);
+                    $("#files_list").hide();
+                }
+                
+                $.jStorage.set("filemgr_setpath", $.jStorage.get("filemgr_setpath") + "/" + name);
+                return false;
+            }
+            
+            function saveFile(){
+                var filecontent = $("#file_editor_content").val();
+                document.getElementById("file_editor_content").value = "Please wait...";
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "AddConsoleCommand",
+                        command: "glifcos savecachedfile " + window.btoa(filecontent)
+                    },
+                    success: function(data){
+                        // setTimeout hack gives the server enough time to render new file.
+                        window.setTimeout(function(){
+                            addDirectoryLayer("../");
+                        }, 2000);
+                    }
+                });
+            }
+            
+            function deleteFile(){
+                document.getElementById("file_editor_content").value = "Please wait...";
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "AddConsoleCommand",
+                        command: "glifcos deletecachedfile"
+                    },
+                    success: function(data){
+                        // setTimeout hack gives the server enough time to render new file.
+                        window.setTimeout(function(){
+                            addDirectoryLayer("../");
+                        }, 2000);
+                    }
+                });
+            }
+            
+            function renameFile(){
+                var newname = prompt("New file name:");
+                $.ajax({
+                    url: "server.php",
+                    method: "POST",
+                    data: {
+                        request: "AddConsoleCommand",
+                        command: "glifcos renamecachedfile " + window.btoa(newname)
+                    },
+                    success: function(data){
+                        // setTimeout hack gives the server enough time to render new file.
+                        window.setTimeout(function(){
+                            addDirectoryLayer("../");
+                        }, 2000);
                     }
                 });
             }
@@ -104,7 +302,7 @@ being available inside the Glifcos software at all times.
                         <div class="panel-heading">Players Online</div>
                         <div class="panel-body">
                             <center>
-                                <h2>3/20 Online</h2>
+                                <h2 id="player_raw_online">Loading Players...</h2>
                                 <h5 style="color: green; cursor: pointer;" data-toggle="modal" data-target="#player_list_modal">Player List</h5>
                             </center>
                         </div>
@@ -119,16 +317,16 @@ being available inside the Glifcos software at all times.
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#console_modal">Console</button>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default">Plugins</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#plugin_modal">Plugins</button>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default">Players</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#player_modal">Players</button>
                     </div>
                 </div>
                 <br>
                 <div class="btn-group btn-group-justified">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default">Files</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#file_modal">Files</button>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-default">Worlds</button>
@@ -155,11 +353,7 @@ being available inside the Glifcos software at all times.
                     <h4 class="modal-title">Player List</h4>
                 </div>
                 <div class="modal-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">HotFireyDeath</li>
-                        <li class="list-group-item">Devil49531</li>
-                        <li class="list-group-item">XleopardgamingX</li>
-                    </ul>
+                    <ul class="list-group" id="player_list"></ul>
                 </div>
             </div>
         </div>
@@ -192,8 +386,114 @@ being available inside the Glifcos software at all times.
         </div>
     </div>
     
+    <!-- plugins modal -->
+    <div id="plugin_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Plugins</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="plugins_list"></ul>
+                    <div class="btn-group btn-group-justified" id="plugins_list_menu">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="enablePlugin()">Enable Plugin</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="disablePlugin()">Disable Plugin</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- players modal -->
+    <div id="player_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Players</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="kickPlayer()">Kick Player</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="banPlayer()">Ban Player</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="banIPPlayer()">IP-Ban Player</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- files modal -->
+    <div id="file_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Files</h4>
+                    <small><em>Note: Data updates are slow, please wait.</em></small>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="files_list"></ul>
+                    <div id="file_editor">
+                        <p id="file_editor_file"></p>
+                        <textarea id="file_editor_content" class="form-control" style="height: 60%;"></textarea>
+                        <br>
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" onclick="saveFile()">Save</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" onclick="deleteFile()">Delete</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" onclick="renameFile()">Rename</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" onclick="addDirectoryLayer('../');">Exit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
+    
+            // Store the ping data locally, it's resourceful information.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetPingGlifcos"
+                },
+                success: function(data){
+                    $.jStorage.set("ping_data", JSON.parse(data));
+                }
+            });
+            
         window.setInterval(function(){
+            
+            // Small script for repetitive updating of file library.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "SetFileGlifcosPointer",
+                    path: $.jStorage.get("filemgr_setpath")
+                }
+            });
             
             // Gets server online/offline data, and update page.
             $.ajax({
@@ -251,7 +551,127 @@ being available inside the Glifcos software at all times.
                 }
             });
             
+            // Gets updated player data, and updates page with player data.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetPlayerGlifcos"
+                },
+                success: function(data){
+                    $("#player_list").empty();
+                    var data = JSON.parse(data);
+                    var playerlist = JSON.parse(window.atob(data["playerlist"]));
+                    document.getElementById("player_raw_online").innerHTML = playerlist.length + "/" + $.jStorage.get("ping_data")["maxplayers"] + " Online";
+                    playerlist.forEach(function(item, index){
+                        var li = document.createElement("LI");
+                        li.appendChild(document.createTextNode(item));
+                        li.className = "list-group-item";
+                        document.getElementById("player_list").appendChild(li);
+                    });
+                }
+            });
+            
+            // Gets updated plugin data, and updates page with plugin data.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetPluginGlifcos"
+                },
+                success: function(data){
+                    $("#plugins_list").empty();
+                    var data = JSON.parse(data);
+                    var pluginlist = JSON.parse(window.atob(data["plugindata"]));
+                    for (var key in pluginlist){
+                        var li = document.createElement("LI");
+                        var span = document.createElement("SPAN");
+                        span.className = "badge";
+                        if (!pluginlist[key]["enabled"]){
+                            span.innerHTML = "Disabled";
+                        }
+                        else{
+                            span.innerHTML = "Enabled";
+                        }
+                        li.innerHTML = key;
+                        li.appendChild(span);
+                        li.className = "list-group-item";
+                        document.getElementById("plugins_list").appendChild(li);
+                    }
+                }
+            });
+            
+            // Gets updated files data, and updates page with file data.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "GetFileGlifcos"
+                },
+                success: function(data){
+                    $("#files_list").empty();
+                    var data = JSON.parse(data);
+                    var filelist = JSON.parse(window.atob(data["filedata"]));
+                    if ($.jStorage.get("filemgr_layers") > 0){
+                        var li = document.createElement("A");
+                        li.innerHTML = "< Back";
+                        li.style.cursor = "pointer";
+                        li.className = "list-group-item";
+                        li.href = "javascript:addDirectoryLayer('../');";
+                        document.getElementById("files_list").appendChild(li);
+                    }
+                    filelist.forEach(function(item, index){
+                        if (item != "." && item != ".."){
+                            var span = document.createElement("SPAN");
+                            var re = /(?:\.([^.]+))?$/;
+                            var es = re.exec(item)[1];
+                            if (typeof es != "undefined"){
+                                span.className = "glyphicon glyphicon-file";
+                            }
+                            else{
+                                span.className = "glyphicon glyphicon-folder-open";
+                            }
+                            var li = document.createElement("A");
+                            li.className = "list-group-item";
+                            li.innerHTML = item + " ";
+                            li.style.cursor = "pointer";
+                            li.href="javascript:addDirectoryLayer('" + item + "');" ;
+                            li.appendChild(span);
+                            document.getElementById("files_list").appendChild(li);
+                        }
+                    });
+                }
+            });
+            
+            // Checks for viewable files.
+            $.ajax({
+                url: "server.php",
+                method: "POST",
+                data: {
+                    request: "INSTANT_FILE_SUBMIT_VIEW"
+                },
+                success: function(data){
+                    if (data == "empty"){
+                        if (!$.jStorage.get("filemgr_isviewingfile")){
+                            $("#file_editor").hide();
+                            $("#files_list").show();
+                        }
+                    }
+                    else{
+                        if (!$("#file_editor").is(":visible")){
+                            var data = JSON.parse(data);
+                            var filecontent = window.atob(data["filecontent"]);
+                            document.getElementById("file_editor_content").value = filecontent;
+                            document.getElementById("file_editor_file").innerHTML = $.jStorage.get("filemgr_filename");
+                            $("#files_list").hide();
+                            $("#file_editor").show();
+                        }
+                    }
+                }
+            });
+            
         }, 1000);
+        
     </script>
     
 </html>

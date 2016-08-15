@@ -1,0 +1,753 @@
+2016-08-15 [00:59:44] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [00:59:44] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [00:59:44] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [00:59:44] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [00:59:44] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [00:59:44] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:00:17] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:00:17] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:00:17] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:00:17] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:00:17] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:00:17] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:00:17] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:00:19] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:00:19] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:00:19] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:00:19] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:00:19] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:00:19] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:00:20] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:00:20] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:00:20] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:00:20] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:00:20] [Server thread/INFO]: Done (2.824s)! For help, type "help" or "?"
+2016-08-15 [01:03:19] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:03:19] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:03:19] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [01:03:19] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [01:03:19] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [01:03:19] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:03:23] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:03:23] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:03:23] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:03:23] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:03:23] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:03:23] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:03:23] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:03:26] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:03:26] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:03:26] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:03:26] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:03:26] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:03:26] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:03:26] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:03:26] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:03:26] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:03:26] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:03:26] [Server thread/INFO]: Done (3.236s)! For help, type "help" or "?"
+2016-08-15 [01:14:10] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:14:10] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:14:10] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [01:14:10] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [01:14:10] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [01:14:11] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:14:14] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:14:14] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:14:14] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:14:15] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:14:15] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:14:15] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:14:15] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:14:17] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:14:17] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:14:17] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:14:17] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:14:18] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:14:18] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:14:18] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:14:18] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:14:18] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:14:18] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:14:18] [Server thread/INFO]: Done (3.364s)! For help, type "help" or "?"
+2016-08-15 [01:15:45] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:15:45] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:15:45] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [01:15:45] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [01:15:45] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [01:15:46] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:15:49] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:15:49] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:15:49] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:15:49] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:15:49] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:15:49] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:15:49] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:15:52] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:15:52] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:15:52] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:15:52] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:15:52] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:15:52] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:15:52] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:15:52] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:15:52] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:15:52] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:15:52] [Server thread/INFO]: Done (3.61s)! For help, type "help" or "?"
+2016-08-15 [01:30:49] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:30:49] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:30:49] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [01:30:49] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [01:30:49] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [01:30:49] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:30:52] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:30:52] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:30:52] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:30:52] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:30:52] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:30:52] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:30:52] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:30:56] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:30:56] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:30:56] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:30:56] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:30:56] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:30:56] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:30:56] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:30:56] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:30:56] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:30:56] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:30:56] [Server thread/INFO]: Done (4.131s)! For help, type "help" or "?"
+2016-08-15 [01:32:44] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:32:44] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:32:44] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [01:32:44] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [01:32:44] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [01:32:44] [Server thread/INFO]: Stopping other threads
+2016-08-15 [01:34:47] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [01:34:47] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [01:34:47] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [01:34:47] [Server thread/INFO]: Loading server properties...
+2016-08-15 [01:34:47] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [01:34:47] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [01:34:47] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [01:34:48] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [01:34:48] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [01:34:48] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [01:34:48] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [01:34:48] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:34:48] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [01:34:49] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [01:34:49] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [01:34:49] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [01:34:49] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [01:34:49] [Server thread/INFO]: Done (2.515s)! For help, type "help" or "?"
+2016-08-15 [01:37:09] [Server thread/INFO]: [Server] test message
+2016-08-15 [01:37:29] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [01:37:29] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [01:37:29] [Server thread/INFO]: [Glifcos] Plugin 'SheepFix' disabled.
+2016-08-15 [01:37:44] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [01:37:44] [Server thread/INFO]: [Glifcos] Plugin 'SheepFix' enabled.
+2016-08-15 [01:38:04] [Server thread/INFO]: [CONSOLE: Banned player Steve]
+2016-08-15 [03:20:15] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [03:20:15] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [03:20:15] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [03:20:15] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [03:20:15] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [03:20:15] [Server thread/INFO]: Stopping other threads
+2016-08-15 [03:20:21] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [03:20:21] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [03:20:21] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [03:20:21] [Server thread/INFO]: Loading server properties...
+2016-08-15 [03:20:21] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [03:20:21] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [03:20:21] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [03:20:23] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [03:20:23] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [03:20:23] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [03:20:23] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [03:20:23] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [03:20:23] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [03:20:23] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [03:20:23] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [03:20:23] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [03:20:23] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [03:20:23] [Server thread/INFO]: Done (2.623s)! For help, type "help" or "?"
+2016-08-15 [03:30:33] [Server thread/INFO]: [Server] hey
+2016-08-15 [03:53:59] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [03:53:59] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [03:53:59] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [03:53:59] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [03:53:59] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [03:54:04] [Server thread/INFO]: Stopping other threads
+2016-08-15 [03:54:07] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [03:54:07] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [03:54:07] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [03:54:07] [Server thread/INFO]: Loading server properties...
+2016-08-15 [03:54:07] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [03:54:07] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [03:54:07] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [03:54:10] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [03:54:10] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [03:54:10] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [03:54:10] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [03:54:10] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [03:54:10] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [03:54:10] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [03:54:10] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [03:54:10] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [03:54:11] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [03:54:11] [Server thread/INFO]: Done (3.614s)! For help, type "help" or "?"
+2016-08-15 [03:56:21] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+2016-08-15 [04:00:01] [Server thread/INFO]: That player cannot be found
+2016-08-15 [04:00:26] [Server thread/INFO]: That player cannot be found
+2016-08-15 [04:01:06] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [04:01:06] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [04:01:06] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [04:01:06] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [04:01:06] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [04:01:07] [Server thread/INFO]: Stopping other threads
+2016-08-15 [04:01:10] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [04:01:10] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [04:01:10] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [04:01:10] [Server thread/INFO]: Loading server properties...
+2016-08-15 [04:01:10] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [04:01:11] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [04:01:11] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [04:01:13] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [04:01:13] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [04:01:13] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [04:01:13] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [04:01:13] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [04:01:13] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [04:01:14] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [04:01:14] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [04:01:14] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [04:01:14] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [04:01:14] [Server thread/INFO]: Done (3.713s)! For help, type "help" or "?"
+2016-08-15 [04:01:24] [Server thread/INFO]: [Server] hi
+2016-08-15 [04:01:39] [Server thread/INFO]: Usage: /weather <level-name weather|weather (rain|sunny|clear)>
+2016-08-15 [04:01:47] [Server thread/INFO]: [Server] hi
+2016-08-15 [04:01:49] [Server thread/INFO]: [Server] hello
+2016-08-15 [04:02:27] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [04:02:27] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [04:02:27] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [04:02:27] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [04:02:27] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [04:02:27] [Server thread/INFO]: Stopping other threads
+2016-08-15 [04:02:32] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [04:02:32] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [04:02:32] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [04:02:32] [Server thread/INFO]: Loading server properties...
+2016-08-15 [04:02:32] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [04:02:32] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [04:02:32] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [04:02:33] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [04:02:33] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [04:02:33] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [04:02:33] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [04:02:33] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [04:02:33] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [04:02:36] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [04:02:36] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [04:02:36] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [04:02:36] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [04:02:36] [Server thread/INFO]: Done (3.905s)! For help, type "help" or "?"
+2016-08-15 [04:05:27] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [04:05:27] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [04:05:27] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [04:05:27] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [04:05:27] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [04:05:27] [Server thread/INFO]: Stopping other threads
+2016-08-15 [13:46:54] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [13:46:54] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [13:46:54] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [13:46:54] [Server thread/INFO]: Loading server properties...
+2016-08-15 [13:46:54] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [13:46:54] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [13:46:54] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [13:46:58] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [13:46:58] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [13:46:58] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [13:46:58] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [13:46:58] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [13:46:58] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [13:46:58] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [13:46:58] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [13:46:58] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [13:46:58] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [13:46:58] [Server thread/INFO]: Done (4.506s)! For help, type "help" or "?"
+2016-08-15 [14:07:14] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [14:07:14] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [14:07:14] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [14:07:14] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [14:07:14] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [14:07:14] [Server thread/INFO]: Stopping other threads
+2016-08-15 [14:07:18] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [14:07:18] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [14:07:18] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [14:07:18] [Server thread/INFO]: Loading server properties...
+2016-08-15 [14:07:18] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [14:07:18] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [14:07:18] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [14:07:21] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [14:07:21] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [14:07:21] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [14:07:21] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [14:07:21] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [14:07:21] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [14:07:21] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [14:07:21] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [14:07:21] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [14:07:21] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [14:07:21] [Server thread/INFO]: Done (3.326s)! For help, type "help" or "?"
+2016-08-15 [14:18:16] [Server thread/INFO]: [Server] hello
+2016-08-15 [14:18:21] [Server thread/INFO]: Usage: /kick <player> [reason ...]
+2016-08-15 [14:22:09] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [14:22:09] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [14:22:09] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [14:22:09] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [14:22:09] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [14:22:09] [Server thread/INFO]: Stopping other threads
+2016-08-15 [14:22:12] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [14:22:12] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [14:22:12] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [14:22:12] [Server thread/INFO]: Loading server properties...
+2016-08-15 [14:22:12] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [14:22:12] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [14:22:12] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [14:22:15] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [14:22:15] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [14:22:15] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [14:22:15] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [14:22:15] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [14:22:15] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [14:22:15] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [14:22:15] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [14:22:15] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [14:22:15] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [14:22:15] [Server thread/INFO]: Done (2.874s)! For help, type "help" or "?"
+2016-08-15 [14:22:44] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [14:22:44] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [14:22:44] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [14:22:44] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [14:22:44] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [14:22:45] [Server thread/INFO]: Stopping other threads
+2016-08-15 [14:22:48] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [14:22:48] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [14:22:48] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [14:22:48] [Server thread/INFO]: Loading server properties...
+2016-08-15 [14:22:48] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [14:22:48] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [14:22:48] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [14:22:50] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [14:22:50] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [14:22:50] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [14:22:50] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [14:22:50] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [14:22:50] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [14:22:50] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [14:22:50] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [14:22:50] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [14:22:50] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [14:22:50] [Server thread/INFO]: Done (2.812s)! For help, type "help" or "?"
+2016-08-15 [14:24:36] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [14:24:36] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [14:24:36] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [14:24:36] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [14:24:36] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [14:24:36] [Server thread/INFO]: Stopping other threads
+2016-08-15 [14:24:38] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [14:24:38] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [14:24:38] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [14:24:38] [Server thread/INFO]: Loading server properties...
+2016-08-15 [14:24:38] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [14:24:38] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [14:24:38] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [14:24:40] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [14:24:40] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [14:24:41] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [14:24:41] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [14:24:41] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [14:24:41] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [14:24:41] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [14:24:41] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [14:24:41] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [14:24:41] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [14:24:41] [Server thread/INFO]: Done (3.131s)! For help, type "help" or "?"
+2016-08-15 [14:24:51] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+2016-08-15 [14:26:30] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [14:26:30] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [14:26:30] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [14:26:30] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [14:26:30] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [14:26:31] [Server thread/INFO]: Stopping other threads
+2016-08-15 [14:26:33] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [14:26:33] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [14:26:33] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [14:26:33] [Server thread/INFO]: Loading server properties...
+2016-08-15 [14:26:33] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [14:26:33] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [14:26:33] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [14:26:35] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [14:26:35] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [14:26:35] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [14:26:35] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [14:26:35] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [14:26:35] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [14:26:36] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [14:26:36] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [14:26:36] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [14:26:36] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [14:26:36] [Server thread/INFO]: Done (2.988s)! For help, type "help" or "?"
+2016-08-15 [16:03:56] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+2016-08-15 [16:04:11] [Server thread/INFO]: --- Showing help page 1 of 1 (/help <page>) ---
+2016-08-15 [16:04:11] [Server thread/INFO]: /ban: Prevents the specified player from using this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /ban-ip: Prevents the specified IP address from using this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /bancid: Prevents the specified CID from using this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /bancidbyname: Prevents the specified CID by name from using this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /banipbyname: Prevents the specified IP address by name from using this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /banlist: View all players banned from this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /biome: Change the biome of the area.(To change snow or rain)
+2016-08-15 [16:04:11] [Server thread/INFO]: /cave: Generate a cave
+2016-08-15 [16:04:11] [Server thread/INFO]: /chunkinfo: Gets the information of a chunk or regenerate a chunk
+2016-08-15 [16:04:11] [Server thread/INFO]: /defaultgamemode: Set the default gamemode
+2016-08-15 [16:04:11] [Server thread/INFO]: /deop: Takes the specified player's operator status
+2016-08-15 [16:04:11] [Server thread/INFO]: /difficulty: Sets the game difficulty
+2016-08-15 [16:04:11] [Server thread/INFO]: /effect: Adds/Removes effects on players
+2016-08-15 [16:04:11] [Server thread/INFO]: /enchant: Adds enchantments on items
+2016-08-15 [16:04:11] [Server thread/INFO]: /fill: fills a specific selection with blocks
+2016-08-15 [16:04:11] [Server thread/INFO]: /gamemode: Changes the player to a specific game mode
+2016-08-15 [16:04:11] [Server thread/INFO]: /give: Gives the specified player a certain amount of items
+2016-08-15 [16:04:11] [Server thread/INFO]: /glifcos: Glifcos.
+2016-08-15 [16:04:11] [Server thread/INFO]: /help: Shows the help menu
+2016-08-15 [16:04:11] [Server thread/INFO]: /kick: Removes the specified player from the server
+2016-08-15 [16:04:11] [Server thread/INFO]: /kill: Commit suicide or kill other players
+2016-08-15 [16:04:11] [Server thread/INFO]: /list: Lists all online players
+2016-08-15 [16:04:11] [Server thread/INFO]: /lvdat: Change properties of a map.
+2016-08-15 [16:04:11] [Server thread/INFO]: /me: Performs the specified action in chat
+2016-08-15 [16:04:11] [Server thread/INFO]: /op: Gives the specified player operator status
+2016-08-15 [16:04:11] [Server thread/INFO]: /pardon: Allows the specified player to use this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /pardon-ip: Allows the specified IP address to use this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /pardoncid: Allows the specified CID to use this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /particle: Adds particles to a world
+2016-08-15 [16:04:11] [Server thread/INFO]: /plugins: Gets a list of plugins running on the server
+2016-08-15 [16:04:11] [Server thread/INFO]: /reload: Reloads the server configuration and plugins
+2016-08-15 [16:04:11] [Server thread/INFO]: /save-all: Saves the server to disk
+2016-08-15 [16:04:11] [Server thread/INFO]: /save-off: Disables server autosaving
+2016-08-15 [16:04:11] [Server thread/INFO]: /save-on: Enables server autosaving
+2016-08-15 [16:04:11] [Server thread/INFO]: /say: Broadcasts the given message as the sender
+2016-08-15 [16:04:11] [Server thread/INFO]: /seed: Shows the world seed
+2016-08-15 [16:04:11] [Server thread/INFO]: /setblock: Changes a block to another block
+2016-08-15 [16:04:11] [Server thread/INFO]: /setworldspawn: Sets a worlds's spawn point. If no coordinates are specified, the player's coordinates will be used.
+2016-08-15 [16:04:11] [Server thread/INFO]: /spawnpoint: Sets a player's spawn point
+2016-08-15 [16:04:11] [Server thread/INFO]: /stop: Stops the server
+2016-08-15 [16:04:11] [Server thread/INFO]: /summon: Summons a entity at the player's location or a specific location
+2016-08-15 [16:04:11] [Server thread/INFO]: /tell: Sends a private message to the given player
+2016-08-15 [16:04:11] [Server thread/INFO]: /time: Changes the time on each world
+2016-08-15 [16:04:11] [Server thread/INFO]: /timings: Records timings to see performance of the server.
+2016-08-15 [16:04:11] [Server thread/INFO]: /tp: Teleports the given player (or yourself) to another player or coordinates
+2016-08-15 [16:04:11] [Server thread/INFO]: /version: Gets the version of this server including any plugins in use
+2016-08-15 [16:04:11] [Server thread/INFO]: /weather: Set weather for level
+2016-08-15 [16:04:11] [Server thread/INFO]: /whitelist: Manages the list of players allowed to use this server
+2016-08-15 [16:04:11] [Server thread/INFO]: /xp: Add experience or experience level to the given player
+2016-08-15 [19:22:54] [Server thread/INFO]: [CONSOLE: Reloading server...]
+2016-08-15 [19:22:54] [Server thread/INFO]: Saving levels...
+2016-08-15 [19:22:54] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:22:54] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:22:54] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [19:22:54] [Server thread/INFO]: Reloading properties...
+2016-08-15 [19:22:54] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:22:54] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [19:22:54] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:22:54] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [19:22:54] [Server thread/INFO]: [CONSOLE: Reload complete.]
+2016-08-15 [19:22:59] [Server thread/INFO]: [CONSOLE: Stopping the server]
+2016-08-15 [19:22:59] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:22:59] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:22:59] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [19:22:59] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:22:59] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:22:59] [Server thread/INFO]: Stopping other threads
+2016-08-15 [19:23:21] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [19:23:21] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [19:23:21] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [19:23:21] [Server thread/INFO]: Loading server properties...
+2016-08-15 [19:23:21] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [19:23:21] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [19:23:21] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [19:23:24] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:23:24] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [19:23:24] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [19:23:24] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [19:23:24] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:23:24] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [19:23:25] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [19:23:25] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [19:23:25] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [19:23:25] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [19:23:25] [Server thread/INFO]: Done (4.055s)! For help, type "help" or "?"
+2016-08-15 [19:23:30] [Server thread/INFO]: [CONSOLE: Reloading server...]
+2016-08-15 [19:23:30] [Server thread/INFO]: Saving levels...
+2016-08-15 [19:23:30] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:23:30] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: Reloading properties...
+2016-08-15 [19:23:30] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: [CONSOLE: Reload complete.]
+2016-08-15 [19:23:30] [Server thread/INFO]: [CONSOLE: Reloading server...]
+2016-08-15 [19:23:30] [Server thread/INFO]: Saving levels...
+2016-08-15 [19:23:30] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:23:30] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: Reloading properties...
+2016-08-15 [19:23:30] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:23:30] [Server thread/INFO]: Enabling Glifcos v2.0.0
+2016-08-15 [19:23:30] [Server thread/INFO]: [CONSOLE: Reload complete.]
+2016-08-15 [19:40:47] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:40:47] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:40:47] [Server thread/INFO]: Disabling Glifcos v2.0.0
+2016-08-15 [19:40:47] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:40:47] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:40:52] [Server thread/INFO]: Stopping other threads
+2016-08-15 [19:41:04] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [19:41:04] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [19:41:04] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [19:41:04] [Server thread/INFO]: Loading server properties...
+2016-08-15 [19:41:04] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [19:41:04] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [19:41:04] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [19:41:06] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:41:06] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0-b1
+2016-08-15 [19:41:06] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [19:41:06] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [19:41:06] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:41:06] [Server thread/INFO]: Enabling Glifcos v2.0.0-b1
+2016-08-15 [19:41:06] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [19:41:06] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [19:41:06] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [19:41:06] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [19:41:06] [Server thread/INFO]: Done (1.766s)! For help, type "help" or "?"
+2016-08-15 [19:47:30] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:47:30] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:47:30] [Server thread/INFO]: Disabling Glifcos v2.0.0-b1
+2016-08-15 [19:47:30] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:47:30] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:47:31] [Server thread/INFO]: Stopping other threads
+2016-08-15 [19:47:32] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [19:47:32] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [19:47:32] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [19:47:32] [Server thread/INFO]: Loading server properties...
+2016-08-15 [19:47:32] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [19:47:32] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [19:47:32] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [19:47:32] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:47:32] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0-b1
+2016-08-15 [19:47:32] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [19:47:32] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [19:47:32] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:47:32] [Server thread/INFO]: Enabling Glifcos v2.0.0-b1
+2016-08-15 [19:47:32] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [19:47:32] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [19:47:32] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [19:47:32] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [19:47:32] [Server thread/INFO]: Done (0.623s)! For help, type "help" or "?"
+2016-08-15 [19:48:00] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:48:00] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:48:00] [Server thread/INFO]: Disabling Glifcos v2.0.0-b1
+2016-08-15 [19:48:00] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:48:00] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:48:01] [Server thread/INFO]: Stopping other threads
+2016-08-15 [19:48:02] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [19:48:02] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [19:48:02] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [19:48:02] [Server thread/INFO]: Loading server properties...
+2016-08-15 [19:48:02] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [19:48:02] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [19:48:02] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [19:48:02] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:48:02] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0-b1
+2016-08-15 [19:48:02] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [19:48:02] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [19:48:02] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:48:02] [Server thread/INFO]: Enabling Glifcos v2.0.0-b1
+2016-08-15 [19:48:02] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [19:48:02] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [19:48:02] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [19:48:02] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [19:48:02] [Server thread/INFO]: Done (0.485s)! For help, type "help" or "?"
+2016-08-15 [19:56:21] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:56:21] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:56:21] [Server thread/INFO]: Disabling Glifcos v2.0.0-b1
+2016-08-15 [19:56:21] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:56:21] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:56:22] [Server thread/INFO]: Stopping other threads
+2016-08-15 [19:57:05] [Server thread/INFO]: 
+
+	Genisys is a fork of PocketMine-MP, made by iTX Technologies LLC
+	Version: 1.2dev-24_c19e850
+	Target client version: v0.15.4 alpha
+	Source code: https://github.com/iTXTech/Genisys
+	
+2016-08-15 [19:57:05] [Server thread/DEBUG]: Loading pocketmine.yml...
+2016-08-15 [19:57:05] [Server thread/DEBUG]: Loading genisys.yml...
+2016-08-15 [19:57:05] [Server thread/INFO]: Loading server properties...
+2016-08-15 [19:57:05] [Server thread/INFO]: Selected English (eng) as the base language
+2016-08-15 [19:57:05] [Server thread/INFO]: Opening server on 0.0.0.0:19145
+2016-08-15 [19:57:05] [Server thread/INFO]: Genisys is distributed under the GPL License version 3 and later
+2016-08-15 [19:57:05] [Server thread/INFO]: Loading SheepFix v1.0.1
+2016-08-15 [19:57:05] [Server thread/INFO]: Loading Genisys-DevTools v1
+2016-08-15 [19:57:05] [Server thread/INFO]: Loading source plugin Glifcos v2.0.0-b1
+2016-08-15 [19:57:05] [Server thread/INFO]: Enabling Genisys-DevTools v1
+2016-08-15 [19:57:05] [Server thread/INFO]: Preparing level "world"
+2016-08-15 [19:57:05] [Server thread/INFO]: Preparing level "nether"
+2016-08-15 [19:57:05] [Server thread/INFO]: Enabling SheepFix v1.0.1
+2016-08-15 [19:57:05] [Server thread/INFO]: Enabling Glifcos v2.0.0-b1
+2016-08-15 [19:57:06] [Server thread/INFO]: Starting GS4 status listener
+2016-08-15 [19:57:06] [Server thread/INFO]: Setting query port to 19145
+2016-08-15 [19:57:06] [Server thread/INFO]: Query running on 0.0.0.0:19145
+2016-08-15 [19:57:06] [Server thread/INFO]: Default game type: Survival Mode
+2016-08-15 [19:57:06] [Server thread/INFO]: Done (0.546s)! For help, type "help" or "?"
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/Glifcos.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/ConsoleCommandTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/AsyncDataSender.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/RamBroadcastTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/PluginBroadcastTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/PlayerBroadcastTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/ConsoleBroadcastTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding src/Glifcos/tasks/FileBroadcastTask.php
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding data.txt
+2016-08-15 [19:58:43] [Server thread/INFO]: [DevTools] Adding plugin.yml
+2016-08-15 [19:58:43] [Server thread/INFO]: Phar plugin Glifcos v2.0.0-b1 has been created in /home/ubuntu/workspace/testserver/plugins/Genisys-DevTools_OUTPUT/Glifcos_v2.0.0-b1_2016-08-15_07-58-43.phar
+2016-08-15 [19:58:47] [Server thread/INFO]: Disabling SheepFix v1.0.1
+2016-08-15 [19:58:47] [Server thread/INFO]: [SheepFix] Sheep cooldowns reset!
+2016-08-15 [19:58:47] [Server thread/INFO]: Disabling Genisys-DevTools v1
+2016-08-15 [19:58:47] [Server thread/INFO]: Disabling Glifcos v2.0.0-b1
+2016-08-15 [19:58:47] [Server thread/INFO]: Unloading level "world"
+2016-08-15 [19:58:47] [Server thread/INFO]: Unloading level "nether"
+2016-08-15 [19:58:47] [Server thread/INFO]: Stopping other threads

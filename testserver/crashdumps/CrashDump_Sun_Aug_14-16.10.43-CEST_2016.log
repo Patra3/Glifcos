@@ -1,0 +1,53 @@
+Genisys Crash Dump Sun Aug 14 16:10:43 CEST 2016
+
+Error: Call to undefined method pocketmine\Server::getUpdater()
+File: /Specter-master/src/specter/network/SpecterPlayer
+Line: 59
+Type: notice
+
+THIS CRASH WAS CAUSED BY A PLUGIN
+BAD PLUGIN : Specter v0.4
+
+Code:
+[50]             $this->inventory->sendArmorContents($this);
+[51] 
+[52]             $this->server->getPluginManager()->callEvent($ev = new PlayerJoinEvent($this, TextFormat::YELLOW . $this->getName() . " joined the game"));
+[53]             if(strlen(trim($ev->getJoinMessage())) > 0){
+[54]                 $this->server->broadcastMessage($ev->getJoinMessage());
+[55]             }
+[56] 
+[57]             $this->spawnToAll();
+[58] 
+[59]             if($this->server->getUpdater()->hasUpdate() and $this->hasPermission(Server::BROADCAST_CHANNEL_ADMINISTRATIVE)){
+[60]                 $this->server->getUpdater()->showPlayerUpdate($this);
+[61]             }
+[62]         }
+[63]     }
+[64] }
+[65] 
+[66] 
+[67] 
+[68] 
+[69] 
+
+Backtrace:
+#0 /src/pocketmine/Server(2976): pocketmine\Player->checkNetwork(boolean)
+#1 /src/pocketmine/Server(2668): pocketmine\Server->tick(boolean)
+#2 /src/pocketmine/Server(2546): pocketmine\Server->tickProcessor(boolean)
+#3 /src/pocketmine/Server(2111): pocketmine\Server->start(boolean)
+#4 /src/pocketmine/PocketMine(467): pocketmine\Server->__construct(pocketmine\CompatibleClassLoader object, pocketmine\utils\MainLogger object, string phar:///home/ubuntu/workspace/testserver/PocketMine-MP.phar/, string /home/ubuntu/workspace/testserver/, string /home/ubuntu/workspace/testserver/plugins/, string unknown)
+#5 (1): require_once(string phar:///home/ubuntu/workspace/testserver/PocketMine-MP.phar/src/pocketmine/PocketMine.php)
+
+Genisys version: 0000000000000000000000000000000000000000 [Protocol 82; API 2.0.0]
+uname -a: Linux hotfireydeath-glifcos-2393220 4.2.0-c9 #1 SMP Wed Sep 30 16:14:37 UTC 2015 x86_64
+PHP version: 7.0.2
+Zend version: 3.0.0
+OS : Linux, linux
+
+Server uptime: 11 seconds
+Number of loaded worlds: 2
+Players online: 1/5
+
+Loaded plugins:
+Glifcos 2 by HotFireyDeath/Chopstick Software for API(s) 2.0.0
+Specter 0.4 by Falkirks for API(s) 1.13.0, 2.0.0

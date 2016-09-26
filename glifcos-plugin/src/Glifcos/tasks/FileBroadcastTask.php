@@ -13,6 +13,9 @@ class FileBroadcastTask extends PluginTask {
         parent::__construct($plugin);
     }
     public function onRun($ticks){
+        if (empty($this->plugin->webserver)){
+            return;
+        }
         $this->plugin->filemgr_currentpath = base64_decode(file_get_contents(str_replace("server.php", "database/FILE_POINTER_PATH.txt", $this->plugin->webserver)));
         if (is_file($this->plugin->getServer()->getDataPath().$this->plugin->filemgr_currentpath)){
             $this->plugin->sendData(array(

@@ -30,6 +30,10 @@ class Glifcos extends PluginBase {
         }
         if (is_file($this->getDataFolder()."/data.txt")){
             $this->webserver = base64_decode(file_get_contents($this->getDataFolder()."/data.txt"));
+            $this->getLogger()->info(TextFormat::GREEN."Glifcos webserver located.");
+        }
+        else{
+            $this->getLogger()->info(TextFormat::YELLOW."Glifcos setup not complete. Please complete your setup or else some services will fail.");
         }
         $this->filemgr_currentpath = "/";
         $this->pingGlifcos();
@@ -54,7 +58,7 @@ class Glifcos extends PluginBase {
             "version" => $this->getServer()->getPocketMineVersion(),
             "codename" => $this->getServer()->getCodename(),
             "maxplayers" => $this->getServer()->getMaxPlayers(),
-            "name" => $this->getServer()->getServerName(),
+            "name" => "Minecraft PE Server",
             "motd" => $this->getServer()->getMotd()
         ));
     }

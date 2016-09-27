@@ -53,6 +53,12 @@ being available inside the Glifcos software at all times.
                 });
                 location.reload();
             }
+            function recordIP(json){
+                localStorage.setItem("ip", json.ip);
+            }
+            function setDirectIP(){
+                $("#setup_content_command").text("/glifcos setup " + window.btoa( "http://" + localStorage.getItem("ip") + ":" + location.port + window.location.pathname.replace("index.html", "server.php")))
+            }
             function userLogin(){
                 if ($("#admin_password_login").val().length < 1 || $("#admin_username_login").val().length < 1){
                     alert("Warning: Invalid login.");
@@ -126,6 +132,9 @@ being available inside the Glifcos software at all times.
                         <kbd id="setup_content_command"></kbd>
                         <br>
                         and Glifcos will finish the setup process.
+                        <br>
+                        <br>
+                        <a style="cursor: pointer;" onclick="setDirectIP();">Use Direct IP Command</a>
                         <br>
                     </div>
                     <div class="panel-footer">
@@ -222,4 +231,5 @@ being available inside the Glifcos software at all times.
         });
         $("#setup_content_command").text("/glifcos setup " + window.btoa(connector_url));
     </script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=recordIP"></script>
 </html>
